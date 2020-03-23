@@ -1,0 +1,1380 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="PyQt5创建基础UI, liyaogang`s blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158512526-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-158512526-1');
+</script>
+
+
+    <title>PyQt5创建基础UI | liyaogang`s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">liyaogang`s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">liyaogang`s blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/luomit" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/luomit" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">PyQt5创建基础UI</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/PyQt5/">
+                                <span class="chip bg-color">PyQt5</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-20
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Python3学习网站收藏"><a href="#Python3学习网站收藏" class="headerlink" title="Python3学习网站收藏"></a>Python3学习网站收藏</h1><p><a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">Python官网</a>下载对应系统的安装文件进行安装；<br><a href="https://docs.python.org/zh-cn/3/" target="_blank" rel="noopener">Python文档</a>有各个版本的Python多种语言的技术文档说明；<br><a href="https://www.runoob.com/python/" target="_blank" rel="noopener">Runoob编程中文文档</a><br><a href="http://code.py40.com/" target="_blank" rel="noopener">PyQt5-Python学习笔记文档</a></p>
+<h1 id="PyQt5安装"><a href="#PyQt5安装" class="headerlink" title="PyQt5安装"></a>PyQt5安装</h1><h2 id="windows10安装PyQt5-tool"><a href="#windows10安装PyQt5-tool" class="headerlink" title="windows10安装PyQt5-tool"></a>windows10安装PyQt5-tool</h2><p><a href="https://pypi.org/project/pyqt5-tools/" target="_blank" rel="noopener">pyqt2-tool下载</a><br>使用CMD运行如下代码</p>
+<pre><code>pip install pyqt5-tools</code></pre><p>这里建议先安装pyqt5-tool再安装pyqt5，避免安装pyqt5时报错，若是仍然有报错可<a href="https://blog.csdn.net/SeekAndFindYou/article/details/81264684" target="_blank" rel="noopener">参考</a></p>
+<h2 id="windows10安装PyQt5"><a href="#windows10安装PyQt5" class="headerlink" title="windows10安装PyQt5"></a>windows10安装PyQt5</h2><p><a href="https://pypi.org/project/PyQt5/" target="_blank" rel="noopener">pyqt5下载</a><br>使用CMD运行如下代码</p>
+<pre><code>pip install pyqt5</code></pre><p>如是提示pip版本过低执行</p>
+<pre><code>python -m pip install --upgrade pip</code></pre><p>升级pip版本后在执行上一条命令安装PyQt5</p>
+<h1 id="PyCharm配置PyQt5"><a href="#PyCharm配置PyQt5" class="headerlink" title="PyCharm配置PyQt5"></a>PyCharm配置PyQt5</h1><h3 id="PyCharm安装"><a href="#PyCharm安装" class="headerlink" title="PyCharm安装"></a>PyCharm安装</h3><p><a href="https://www.jetbrains.com/pycharm/download/#section=windows" target="_blank" rel="noopener">PyCharm</a>官网下载<br><a href="https://www.cnblogs.com/huke123/p/12110902.html" target="_blank" rel="noopener">学习版设置</a></p>
+<h3 id="PyCharm配置"><a href="#PyCharm配置" class="headerlink" title="PyCharm配置"></a>PyCharm配置</h3><p>Python文件代码模板</p>
+<pre><code>##!/usr/bin/python
+# -*- coding: utf-8 _*_
+# @Time     :${DATE} ${TIME}
+# @Author   :luomit
+# @Email    :1107199736@qq.com
+# @File     :${NAME}.py
+# @Project  :${PROJECT_NAME}</code></pre><p><a href="https://blog.csdn.net/stormdony/article/details/80400032" target="_blank" rel="noopener">PyQt5其他配置参考</a></p>
+<h1 id="PyQt5创建UI"><a href="#PyQt5创建UI" class="headerlink" title="PyQt5创建UI"></a>PyQt5创建UI</h1><h2 id="基础窗口-置顶"><a href="#基础窗口-置顶" class="headerlink" title="基础窗口 置顶"></a>基础窗口 置顶</h2><pre><code class="python">import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+
+
+class MainWindows(QWidget):
+    def __init__(self):
+        super(MainWindows, self).__init__()
+        self.setWindowTitle(&quot;主窗口&quot;)  # 设置窗口标题
+        self.resize(800, 600)  # 重设尺寸
+
+        self.move(0, 0)  # 移动窗口
+        # self.setGeometry(0,0,800,600)     #相当于move + resize
+
+        self.setWindowIcon(QIcon(&#39;icon path&#39;))  # 设置窗口的图标
+        self.setWindowFlag(Qt.WindowStaysOnTopHint, True)  # 设置窗口标旗，置顶标旗
+        # self.setStyleSheet(&#39;background(100,200,200)&#39;)      #通过样式的方法把窗口背景的颜色设置为(100，200，200)
+
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    a = MainWindows()
+    a.show()  # show是窗口的显示方法，hide时窗口的隐藏方法，close窗口的关闭方法
+    app.exec_()</code></pre>
+<pre><code class="python">import sys
+#引入必要的模块，窗口的基本控件位于QtWidgets模块中
+from PyQt5.QtWidgets import QApplication, QWidget
+
+if __name__ == &#39;__main__&#39;:
+    #每一个PyQt5程序必须创建一个应用程序对象。argv参数是一个列表，从命令行输入参数
+    app = QApplication(sys.argv)
+    #QWidget部件时PyQt5所有用户界面的基类，它为构建窗口界面提供默认构造，默认构造没有父对象
+    w = QWidget()
+    #重设窗口的大小
+    w.resize(300,250)
+    #设置窗口的标头
+    w.setWindowTitle(&quot;luomit windows&quot;)
+    #设置窗口的位置
+    w.move(300,300)
+    #show显示窗口
+    w.show()
+
+    #使用exit()方法确保应用程序干净的退出
+    #exec_有下划线是因为这里执行的时一个Python的关键词，因此exec_替代
+    sys.exit(app.exec_())</code></pre>
+<h2 id="常用控件"><a href="#常用控件" class="headerlink" title="常用控件"></a>常用控件</h2><p><code>QPushButton Label</code></p>
+<pre><code class="python">import sys
+from PyQt5.QtWidgets import*
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+
+class Buttom(QPushButton):
+    def __init__(self):
+        super(Buttom, self).__init__()
+        self.setText(&quot;按钮&quot;)
+        #self.setIcon()
+        self.clicked.connect(self.print123)
+        self.clicked.connect(lambda:print(456))
+
+        print(self.text())
+    def print123(self):
+        print(123)
+
+class Label(QLabel):
+    def __init__(self):
+        super().__init__()
+        self.setText(&#39;大标签&#39;)
+        self.setAlignment(Qt.AlignVCenter | Qt.AlignHCenter)    # |按钮或运算
+        #self.setPixmap(QPixmap(&#39;map path&#39;))                     #像素图
+
+        #获取参数的方法
+        print(self.text())
+        print(self.alignment())
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    a = Label()
+    a.show()
+    app.exec_()</code></pre>
+<h3 id="窗口提示"><a href="#窗口提示" class="headerlink" title="窗口提示"></a>窗口提示</h3><pre><code class="python">import sys
+from PyQt5.QtWidgets import (QWidget,QToolTip,QPushButton,QApplication)
+from PyQt5.QtGui import QFont
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        QToolTip.setFont(QFont(&quot;sansSerif&quot;,10))
+        self.setToolTip(&quot;这是一个UI提示测试脚本&quot;)
+
+        btn = QPushButton(&quot;Button&quot;,self)
+        btn.setToolTip(&quot;这是一个按钮提示&quot;)
+
+        btn.resize(btn.sizeHint())
+        btn.move(50,50)
+
+        self.setGeometry(300,300,300,200)
+
+        self.setWindowTitle(&quot;Tooltips&quot;)
+        self.show()
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())</code></pre>
+<h3 id="消息提示框"><a href="#消息提示框" class="headerlink" title="消息提示框"></a>消息提示框</h3><pre><code class="python">import sys
+from PyQt5.QtWidgets import QWidget, QPushButton, QApplication
+from PyQt5.QtCore import QCoreApplication
+
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        qbtn = QPushButton(&quot;Quit&quot;, self)
+        qbtn.clicked.connect(QCoreApplication.instance().quit)
+        qbtn.resize(qbtn.sizeHint())
+        qbtn.move(50, 50)
+
+        self.setGeometry(300, 300, 300, 200)
+        self.setWindowTitle(&quot;Quit button&quot;)
+        self.show()
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())</code></pre>
+<h3 id="消息提示框-1"><a href="#消息提示框-1" class="headerlink" title="消息提示框"></a>消息提示框</h3><pre><code class="python">import sys
+from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
+#QMessageBox
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle(&#39;Message box&#39;)
+        self.show()
+
+    # 定义关闭触发方法
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, &#39;Message&#39;,&quot;Are you sure to quit?&quot;, QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())</code></pre>
+<h3 id="显示窗口到屏幕中心"><a href="#显示窗口到屏幕中心" class="headerlink" title="显示窗口到屏幕中心"></a>显示窗口到屏幕中心</h3><pre><code class="python">import sys
+from PyQt5.QtWidgets import QWidget, QDesktopWidget, QApplication
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+
+        self.resize(250,150)
+        self.center()
+
+        self.setWindowTitle(&quot;Center&quot;)
+        self.show()
+
+    #控制窗口显示在屏幕中心的方法
+    def center(self):
+        #获得窗口
+        qr = self.frameGeometry()
+        #获取屏幕中心点坐标
+        cp = QDesktopWidget().availableGeometry().center()
+        #显示到屏幕中心
+        qr.moveCenter(cp)
+
+        self.move(qr.topLeft())
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+</code></pre>
+<h1 id="PyQt的布局"><a href="#PyQt的布局" class="headerlink" title="PyQt的布局"></a>PyQt的布局</h1><p>程序指定每个控件的位置和大小(以像素为单位px)</p>
+<h2 id="绝对布局"><a href="#绝对布局" class="headerlink" title="绝对布局"></a>绝对布局</h2><p>绝对布局有以下限制:</p>
+<ul>
+<li>调整窗口，控件元素的大小和位置不会改变</li>
+<li>会因使用的场景影响其显示效果</li>
+<li>如改变内部元素，应用程序的布局就会改变</li>
+</ul>
+<pre><code class="python">import sys
+from PyQt5.QtWidgets import QWidget, QLabel, QApplication
+
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        laba = QLabel(&#39;好想出去玩啊&#39;,self)
+        laba.move(15,10)
+
+        labb = QLabel(&#39;肺炎啥时候走&#39;,self)
+        labb.move(35,40)
+
+        labc = QLabel(&#39;我看不见病毒&#39;,self)
+        labc.move(55,70)
+
+        self.setGeometry(300,300,250,150)
+        self.setWindowTitle(&#39;绝对布局案例&#39;)
+        self.show()
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())</code></pre>
+<h2 id="相对布局-框布局BoxLayout"><a href="#相对布局-框布局BoxLayout" class="headerlink" title="相对布局-框布局BoxLayout"></a>相对布局-框布局BoxLayout</h2><pre><code class="python">import sys
+from PyQt5.QtWidgets import (QWidget,QPushButton,QHBoxLayout,QVBoxLayout,QApplication)
+#导入PyQt的纵向布局方法和横向布局方法
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+
+        okButton = QPushButton(&#39;OK&#39;)
+        cancelButton = QPushButton(&#39;Cancel&#39;)
+
+        #设置纵向布局方式然后添加一个纵向拉伸因子并创建两个Button
+        hbox = QHBoxLayout()
+        hbox.addStretch(1)
+        hbox.addWidget(okButton)
+        hbox.addWidget(cancelButton)
+
+        #设置横向布局，并设置横向拉伸因子来将按钮推向右侧
+        vbox = QVBoxLayout()
+        vbox.addStretch(1)
+        vbox.addLayout(hbox)
+
+        #最后将设置到全局窗口中   
+        self.setLayout(vbox)
+
+        self.setGeometry(300,300,250,150)
+        self.setWindowTitle(&#39;绝对布局案例&#39;)
+        self.show()
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+</code></pre>
+<h2 id="相对布局-表格布局QGridLayout"><a href="#相对布局-表格布局QGridLayout" class="headerlink" title="相对布局-表格布局QGridLayout"></a>相对布局-表格布局QGridLayout</h2><pre><code class="python">import sys
+from PyQt5.QtWidgets import (QWidget,QPushButton,QGridLayout,QApplication)
+
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        grid = QGridLayout()
+        self.setLayout(grid)
+        #实例化QGridLayout表格布局样式并设置到应用程序布局
+
+        name = [&#39;Cls&#39;,&#39;Bck&#39;,&#39;&#39;,&#39;Close&#39;,
+                &#39;7&#39;,&#39;8&#39;,&#39;9&#39;,&#39;/&#39;,
+                &#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;*&#39;,
+                &#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;-&#39;,
+                &#39;0&#39;,&#39;.&#39;,&#39;=&#39;,&#39;+&#39;]
+        #创建按钮到一个字符串数组中
+
+        positions = [(i,j)for i in range(5)for j in range(4)]
+
+        for position,name in zip(positions, name):
+            if name == &#39;&#39;:
+                continue
+            button = QPushButton(name)
+            grid.addWidget(button,*position)
+        #使用for in 将数组字符串解包依次对应到各自位置上
+
+        self.move(300,150)    
+        self.setWindowTitle(&#39;Grid布局案例&#39;)
+        self.show()
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())</code></pre>
+<h2 id="相对布局-跨行表格布局"><a href="#相对布局-跨行表格布局" class="headerlink" title="相对布局-跨行表格布局"></a>相对布局-跨行表格布局</h2><pre><code class="python">import sys
+from PyQt5.QtWidgets import (QWidget,QLabel,QLineEdit,QTextEdit,QGridLayout,QApplication)
+
+
+class Example(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        title = QLabel(&#39;Title&#39;)
+        author = QLabel(&#39;Author&#39;)
+        review = QLabel(&#39;Review&#39;)
+
+        titleEdit = QLineEdit()
+        authorEdit = QLineEdit()
+        reviewEdit = QLineEdit()
+
+        grid = QGridLayout()
+        grid.setSpacing(10)
+
+        grid.addWidget(title,1,0)
+        grid.addWidget(titleEdit,1,1)
+
+        grid.addWidget(author,2,0)
+        grid.addWidget(authorEdit,2,1)
+
+        grid.addWidget(review,3,0)
+        grid.addWidget(reviewEdit,3,1,5,1)
+
+
+        self.setLayout(grid)
+
+        self.setGeometry(300,300,350,300)    
+        self.setWindowTitle(&#39;跨行表格布局案例&#39;)
+        self.show()
+
+if __name__ == &#39;__main__&#39;:
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
+</code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://luomit.xyz" rel="external nofollow noreferrer">luomit</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://luomit.xyz/2020/02/20/PyQt%E5%88%9B%E5%BB%BAUI/">http://luomit.xyz/2020/02/20/PyQt%E5%88%9B%E5%BB%BAUI/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://luomit.xyz" target="_blank">luomit</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/PyQt5/">
+                                    <span class="chip bg-color">PyQt5</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/03/05/VEX-Script/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="VEX-Script">
+                        
+                        <span class="card-title">VEX-Script</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/houdini/">
+                        <span class="chip bg-color">houdini</span>
+                    </a>
+                    
+                    <a href="/tags/vex/">
+                        <span class="chip bg-color">vex</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/09/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo博客搭建">
+                        
+                        <span class="card-title">Hexo博客搭建</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            准备
+Node.js安装
+
+node.js链接 https://nodejs.org/en/
+
+node.js安装会给系统安装一个npm的包管理器，这是hexo搭建博客所需要的；
+
+
+打开终端获取管理员权限
+
+windows使用管理员身份运
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="314100738"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://luomit.xyz" target="_blank">luomit</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/luomit" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1107199736@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1107199736" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1107199736" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
