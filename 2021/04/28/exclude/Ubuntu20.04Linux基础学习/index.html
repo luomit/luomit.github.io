@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Ubuntu20.04 Linux初识进阶轨迹Ubuntu简述Ubuntu是常见的三大操作系统Windows、Mac、Linux中，linux的其中一个发行版；linux系统有着种类繁杂的发行版，其中RedHet、CentOS、Ubuntu、Debian、Deepin(国人开发)等。Linux主要应用于服务器操作系统，它相对与Windows更加的稳定和安全。 系统文件结构linux 系统文件结构为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="筆跡">
+<meta property="og:url" content="https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="筆跡">
+<meta property="og:description" content="Ubuntu20.04 Linux初识进阶轨迹Ubuntu简述Ubuntu是常见的三大操作系统Windows、Mac、Linux中，linux的其中一个发行版；linux系统有着种类繁杂的发行版，其中RedHet、CentOS、Ubuntu、Debian、Deepin(国人开发)等。Linux主要应用于服务器操作系统，它相对与Windows更加的稳定和安全。 系统文件结构linux 系统文件结构为">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-04-28T11:06:39.991Z">
+<meta property="article:modified_time" content="2020-10-22T04:45:04.061Z">
+<meta property="article:author" content="阿刚">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>筆跡</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2021/04/28/python/Python/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2021/04/28/exclude/test/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回到頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu20-04-Linux%E5%88%9D%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu20.04 Linux初识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E8%BD%A8%E8%BF%B9"><span class="toc-number">1.1.</span> <span class="toc-text">进阶轨迹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu%E7%AE%80%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">Ubuntu简述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">系统文件结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4-cd-ls-cp-rm-tar"><span class="toc-number">1.3.</span> <span class="toc-text">常用的命令 cd ls cp rm tar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-list%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%8C%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E9%A1%B9-%E5%8C%85%E6%8B%AC%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.1.</span> <span class="toc-text">ls,list的缩写，列出目录下的所有项(包括文件和文件夹)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-%E5%8D%B3print-working-directory%E6%98%BE%E7%A4%BA%E6%89%93%E5%8D%B0%E5%BD%93%E5%89%8D%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E3%80%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">pwd,即print working directory显示打印当前的工作目录。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%88%87%E6%8D%A2%E6%88%96%E6%94%B9%E5%8F%98%E5%BD%93%E5%89%8D%E6%93%8D%E4%BD%9C%E6%89%A7%E8%A1%8C%E5%9C%A8%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E3%80%82"><span class="toc-number">1.3.3.</span> <span class="toc-text">cd 切换目录，切换或改变当前操作执行在系统目录中的位置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-make-directory%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.4.</span> <span class="toc-text">mkdir,make directory创建目录(文件夹)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-%E5%8D%B3remove%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">rm,即remove删除文件或者目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%8D%B3copy%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">1.3.6.</span> <span class="toc-text">cp,即copy复制文件或目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv-%E5%8D%B3move%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95-%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">1.3.7.</span> <span class="toc-text">mv,即move移动文件或目录(重命名)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-%E5%8D%B3tape-archive%E6%A1%A3%E6%A1%88%E6%89%93%E5%8C%85%E3%80%81%E5%88%9B%E5%BB%BA%E6%A1%A3%E6%A1%88%E5%8C%85"><span class="toc-number">1.3.8.</span> <span class="toc-text">tar,即tape archive档案打包、创建档案包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ln-%E8%BD%AF%E9%93%BE%E6%8E%A5%EF%BC%8C%E5%8D%B3windows%E4%B8%8B%E7%9A%84%E2%80%9D%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E2%80%9D"><span class="toc-number">1.3.9.</span> <span class="toc-text">ln 软链接，即windows下的”快捷方式”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8-vi-gedit"><span class="toc-number">1.4.</span> <span class="toc-text">文本编辑器 vi gedit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.4.1.</span> <span class="toc-text">vim的基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E7%9A%84%E6%9B%B4%E5%A4%9A%E7%94%A8%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">vim的更多用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%8F%8A%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F-chmod"><span class="toc-number">1.5.</span> <span class="toc-text">用户及权限系统 chmod</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">Ubuntu用户管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-number">1.5.2.</span> <span class="toc-text">超级管理员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-number">1.5.3.</span> <span class="toc-text">文件的权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-number">1.5.4.</span> <span class="toc-text">文件权限的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E4%B8%BB"><span class="toc-number">1.5.5.</span> <span class="toc-text">修改文件的属主</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8-sh"><span class="toc-number">1.6.</span> <span class="toc-text">shell脚本入门 .sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.</span> <span class="toc-text">shell中的变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.1.</span> <span class="toc-text">定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.2.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.3.</span> <span class="toc-text">用户环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.4.</span> <span class="toc-text">系统环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E4%B8%AD%E7%9A%84PATH%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.5.</span> <span class="toc-text">linux中的PATH环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ubuntu%E4%B8%AD%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="toc-number">1.7.6.</span> <span class="toc-text">ubuntu中手动配置网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8-vsftpd"><span class="toc-number">1.8.</span> <span class="toc-text">常见的服务器 vsftpd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.8.1.</span> <span class="toc-text">FTP服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SFTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.8.2.</span> <span class="toc-text">SFTP服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.9.</span> <span class="toc-text">文本文件的上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Tomcat%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA%E7%AD%89"><span class="toc-number">1.10.</span> <span class="toc-text">Java&#x2F;Tomcat运行环境的搭建等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%A8%8B%E5%BA%8F%E4%B8%8E%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.11.</span> <span class="toc-text">Linux程序与进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E8%BF%9B%E7%A8%8B%E4%B8%8E%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.12.</span> <span class="toc-text">前台进程与后台进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E5%AE%89%E8%A3%85-Redis"><span class="toc-number">1.13.</span> <span class="toc-text">其他软件的编译与安装 Redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85"><span class="toc-number">1.14.</span> <span class="toc-text">MySQL服务器安装</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">阿刚</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-28T11:06:39.991Z" itemprop="datePublished">2021-04-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Ubuntu20-04-Linux初识"><a href="#Ubuntu20-04-Linux初识" class="headerlink" title="Ubuntu20.04 Linux初识"></a>Ubuntu20.04 Linux初识</h1><h2 id="进阶轨迹"><a href="#进阶轨迹" class="headerlink" title="进阶轨迹"></a>进阶轨迹</h2><h2 id="Ubuntu简述"><a href="#Ubuntu简述" class="headerlink" title="Ubuntu简述"></a>Ubuntu简述</h2><p>Ubuntu是常见的三大操作系统Windows、Mac、Linux中，linux的其中一个发行版；linux系统有着种类繁杂的发行版，其中RedHet、CentOS、Ubuntu、Debian、Deepin(国人开发)等。<br>Linux主要应用于服务器操作系统，它相对与Windows更加的稳定和安全。</p>
+<h3 id="系统文件结构"><a href="#系统文件结构" class="headerlink" title="系统文件结构"></a>系统文件结构</h3><p>linux 系统文件结构为目录树结构，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/</span><br><span class="line">/home/vfx</span><br><span class="line">/root</span><br><span class="line">/<span class="built_in">bin</span></span><br><span class="line">/mnt</span><br><span class="line">/etc</span><br></pre></td></tr></table></figure>
+
+<font color=#fsd532 face="楷体">
+/   根目录，类似与windows的C盘，linux的/根目录包含其他所有的目录，是其他目录的父级。    
+/home/vfx   用户文件夹,在home下每当创建一个用户，都会创建一个用户文件夹，当前用户是fx。    
+/root   管理员文件夹，每个系统都有一个管理员，该用户拥有当前系统的最高权限。    
+......    
+</font>
+    
+<font color=red>linux文件的权限机制有利与保护系统的安全，避免用户的误操作。
+对于普通用户来说，能够操作和修改的文件仅限于当前用户的文件，管理员则可以管理包括系统文件在内的所有文件。</font>
+
+<h2 id="常用的命令-cd-ls-cp-rm-tar"><a href="#常用的命令-cd-ls-cp-rm-tar" class="headerlink" title="常用的命令 cd ls cp rm tar"></a>常用的命令 cd ls cp rm tar</h2><h3 id="ls-list的缩写，列出目录下的所有项-包括文件和文件夹"><a href="#ls-list的缩写，列出目录下的所有项-包括文件和文件夹" class="headerlink" title="ls,list的缩写，列出目录下的所有项(包括文件和文件夹)"></a>ls,list的缩写，列出目录下的所有项(包括文件和文件夹)</h3><p>例：列出home下fx用户的所有项</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="regexp">/home/</span>vfx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>模板  图片  下载  桌面    snap<br>公共的    视频  文档  音乐  Documents </p>
+</blockquote>
+<p>tips:<br>    在linux终端操作时可以使用Tab来补全未写全的命令，使用上下健来获取操作命令历史。</p>
+<h3 id="pwd-即print-working-directory显示打印当前的工作目录。"><a href="#pwd-即print-working-directory显示打印当前的工作目录。" class="headerlink" title="pwd,即print working directory显示打印当前的工作目录。"></a>pwd,即print working directory显示打印当前的工作目录。</h3><h3 id="cd-切换目录，切换或改变当前操作执行在系统目录中的位置。"><a href="#cd-切换目录，切换或改变当前操作执行在系统目录中的位置。" class="headerlink" title="cd 切换目录，切换或改变当前操作执行在系统目录中的位置。"></a>cd 切换目录，切换或改变当前操作执行在系统目录中的位置。</h3><p>例:切换到home下的vfx目录下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/vfx</span><br></pre></td></tr></table></figure>
+<p>tips:<br>    linux的几个特殊的目录：<br>    ～ 代表当前用户的主目录<br>    . 代表当前目录<br>    .. 代表上一级目录<br>    cd ～  切换到主目录<br>    cd ~/home 切换到主目录下home目录下<br>    cd ../maxman 切换到上一级目录下一个名字叫maxman子目录下    </p>
+<h3 id="mkdir-make-directory创建目录-文件夹"><a href="#mkdir-make-directory创建目录-文件夹" class="headerlink" title="mkdir,make directory创建目录(文件夹)"></a>mkdir,make directory创建目录(文件夹)</h3><p>例：创建一个名字为python的文件夹</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir python</span><br></pre></td></tr></table></figure>
+<p>例：在home下创建一个名字为maxman的文件夹</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/maxman</span><br></pre></td></tr></table></figure>
+<p>创建多层文件夹（一次性创建多个层级嵌套的文件目录树） -p</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /<span class="keyword">new</span>/max/man</span><br></pre></td></tr></table></figure>
+
+<h3 id="rm-即remove删除文件或者目录"><a href="#rm-即remove删除文件或者目录" class="headerlink" title="rm,即remove删除文件或者目录"></a>rm,即remove删除文件或者目录</h3><p>例：删除maxman目录</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf maxman</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的r表示recursive递归删除，f便是force强制删除（谨慎使用）</p>
+</blockquote>
+<h3 id="cp-即copy复制文件或目录"><a href="#cp-即copy复制文件或目录" class="headerlink" title="cp,即copy复制文件或目录"></a>cp,即copy复制文件或目录</h3><p>例：复制maxman到用户目录下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -rf maxman /home/vfx</span><br></pre></td></tr></table></figure>
+<h3 id="mv-即move移动文件或目录-重命名"><a href="#mv-即move移动文件或目录-重命名" class="headerlink" title="mv,即move移动文件或目录(重命名)"></a>mv,即move移动文件或目录(重命名)</h3><p>例:重命名maxman为houdini</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv maxman houdini</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是manman目录就会变为houdini，如果houdini已经存在，则自动变为houdini1或者houdini…</p>
+</blockquote>
+<h3 id="tar-即tape-archive档案打包、创建档案包"><a href="#tar-即tape-archive档案打包、创建档案包" class="headerlink" title="tar,即tape archive档案打包、创建档案包"></a>tar,即tape archive档案打包、创建档案包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf maxman.tar maxman</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>-cvf打包，其中c表示create创建档案，v表示verbose显示详情，f表示文件<br>也可以一次打包多个文件”tar -cvf xxx.tar file0 file1 file2”</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf maxman.tar -C /home/manman</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>-xvf解包，其中-C(大写)用来指定解包后文件要存放的地址，不指定默认解包到当前目录下</p>
+</blockquote>
+<p><b>归档并压缩</b>    </p>
+<blockquote>
+<p><code>-cfx -xvf</code> 只是对文件目录进行打包和解包，没有对文件进行压缩；<br><code>-czvf -xzvf</code> 则是在打包或解包时同时对文件进行压缩和解压缩处理；<br>通常所见到的*<font color=red>.tar.gz</font>格式就是压缩打包形式</p>
+</blockquote>
+<h3 id="ln-软链接，即windows下的”快捷方式”"><a href="#ln-软链接，即windows下的”快捷方式”" class="headerlink" title="ln 软链接，即windows下的”快捷方式”"></a>ln 软链接，即windows下的”快捷方式”</h3><p>使用ln命令(link)来创建软链接<br><code>ln -s source link</code><br>其中,-s表示soft软链接(默认为硬)    </p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s maxman <span class="regexp">/home/</span>vfx<span class="regexp">/桌面/m</span>anman</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>连接maxman到桌面的maxman</p>
+</blockquote>
+<h2 id="文本编辑器-vi-gedit"><a href="#文本编辑器-vi-gedit" class="headerlink" title="文本编辑器 vi gedit"></a>文本编辑器 vi gedit</h2><p>vi/vim,是一个基于控制台的文本编辑器，vim是vi的升级版<br>gedit，是一个基于GUI的文本编辑器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim name.txt <span class="comment">#打开name.txt文件，如果该文件存在则打开编辑，如果不存在则创建后打开</span></span><br></pre></td></tr></table></figure>
+<p>如果系统上没有vim,可以使用”sudo apt install vim”安装    </p>
+<h3 id="vim的基本用法"><a href="#vim的基本用法" class="headerlink" title="vim的基本用法"></a>vim的基本用法</h3><p>模式的切换<br>编辑模式Insert Mode 按键盘i键进入<br>命令模式Command Mode 按键盘ESC键进入<br>保存和退出命令<br><font color=yellow>:wq</font> 保存并推出<br><font color=yellow>:q</font> 退出<br><font color=yellow>:q!</font> 强制退出<br><font color=yellow>:qw!</font> 强制保存退出  </p>
+<h3 id="vim的更多用法"><a href="#vim的更多用法" class="headerlink" title="vim的更多用法"></a>vim的<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">更多用法</a></h3><p>vim 是一个全键盘操作的文本编辑器，工作效率比较底，掌握基本的用法即可，如果需要了解更多复杂的操作可以到网络上临时搜索用法即可    </p>
+<blockquote>
+<p>本人推荐使用vscode简单、强大、漂亮</p>
+</blockquote>
+<h2 id="用户及权限系统-chmod"><a href="#用户及权限系统-chmod" class="headerlink" title="用户及权限系统 chmod"></a>用户及权限系统 chmod</h2><h3 id="Ubuntu用户管理"><a href="#Ubuntu用户管理" class="headerlink" title="Ubuntu用户管理"></a>Ubuntu用户管理</h3><p>添加用户</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo useradd -m username</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>sudo表示使用管理员的身份执行操作，-m表示在/home下添加用户目录<br>删除用户</p>
+</blockquote>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo userdel username</span></span><br></pre></td></tr></table></figure>
+<p>修改用户密码</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo passwd username</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>除了管理员，还有特殊用户和普通用户的区别，区别在于特殊用户可以在命令前加sudo来暂时使用管理员权限，普通用户则不可以；能使用sudo权限的用户为sudoer</p>
+</blockquote>
+<h3 id="超级管理员"><a href="#超级管理员" class="headerlink" title="超级管理员"></a>超级管理员</h3><p>首次使用root用户需要设置管理员密码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+<p>切换到root用户</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">su root</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>su表示switch user    </p>
+</blockquote>
+<p>退出管理员权限</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+<h3 id="文件的权限"><a href="#文件的权限" class="headerlink" title="文件的权限"></a>文件的权限</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><font color=red>-</font><font color=yellow>rwx</font><font color=gred>rwx</font><font color=blue>rwx</font><br>  <font color=red>d</font><font color=yellow>rwx</font><font color=gred>rwx</font><font color=blue>r-x</font><br>使用ls -l 可以列出文件的权限信息，列出的字符中前面的十个字符第一个(红色)表示文件类型，-表示文件，d表示目录，l表示链接；然后剩下的九个三个为一组分别表示<font color=yellow>当前用户</font>的权限、<font color=gred>同组用户</font>对该文件的权限、<font color=blue>其他用户</font>对该文件的权限；<br>r表示可读，w表示可写，x表示可执行，每一组都用rwx来表示权限，-表示权限禁止；<br>rxw可读可写可执行 rx-可读可写不可执行 r–可读不可写不可执行 —不可读不可写不可执行</p>
+</blockquote>
+<h3 id="文件权限的修改"><a href="#文件权限的修改" class="headerlink" title="文件权限的修改"></a>文件权限的修改</h3><p>chmod,即change file mode 修改文件的访问权限<br>比如，一个文件想让其他用户可写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod o+w file</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中，o表示其他人；+w表示增写write权限；-w表示除去写入write权限</br><br>a表示所有人；u表示当前用户；如果w前不指定对象，则表示应用与当前用户及其所在组用户的权限</p>
+</blockquote>
+<h3 id="修改文件的属主"><a href="#修改文件的属主" class="headerlink" title="修改文件的属主"></a>修改文件的属主</h3><p>chown，即change owner修改文件的属性<br>一般来说，每个用户都只对自己的文件进行操作，很少使用到这个命令</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R vfx /opt/maxman</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将/opt/maxman目录（-R及其子目录）的属主改为vfx用户</p>
+</blockquote>
+<h2 id="shell脚本入门-sh"><a href="#shell脚本入门-sh" class="headerlink" title="shell脚本入门 .sh"></a>shell脚本入门 .sh</h2><p>脚本Script，一种解释执行的程序。<br>Linux下常见的三种脚本程序<br>-shell脚本 *.sh<br>-Pell脚本 *.pl<br>-Python脚本 *.py</p>
+<p>shell脚本，是linux自带的脚本语言，类似与windows下的dos批处理脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">echo &quot;hello,world&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>一个简单的打印hello world的shell脚本</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x hello.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>添加执行权限</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./hello.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行shell脚本</p>
+</blockquote>
+<p><code>书写shel脚本时第一行要声明(#!/bin/sh)解释器,要拥有执行权限才可执行</code></p>
+<h2 id="shell中的变量"><a href="#shell中的变量" class="headerlink" title="shell中的变量"></a>shell中的变量</h2><p>典型的环境变量，PATH，JAVA_HOME</p>
+<h3 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">OUTDIR=/opt     #定义变量</span><br><span class="line">echo&quot;output to : $&#123;OUTDIR&#125;&quot;     #使用变量</span><br><span class="line">ls $&#123;OUTDIR&#125; </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>定义变量NAME=alue等号的左右两侧不要有空格<br>使用${NAME}来调用变量，如果有定界符，则可以简写为$NAME,例如 echo ${NAME}/build<br>常用命令 exho打印 ls列出目录 cd跳转位置 cp复制文件目录<br>if逻辑判断 while循环逻辑</p>
+</blockquote>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export OUTDIR=/opt  #环境变量的定义</span><br><span class="line">echo $&#123;OUTDIR&#125;  #显示环境变量</span><br><span class="line">printenv    #显示当前系统的所有环境变量</span><br></pre></td></tr></table></figure>
+<p><code>在命令行中定义的环境变量，只有对当前shell终端有效；当终端关闭、重启后消失；</code></p>
+<h3 id="用户环境变量"><a href="#用户环境变量" class="headerlink" title="用户环境变量"></a>用户环境变量</h3><p><code>tips:使用&quot;ls -a&quot;可以查看当前目录下的所有文件(包括隐藏文件)</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gedit ~/.profile    #打开.profile用户隐藏文件件</span><br><span class="line">export PLUGIN_PATH=/opt/houdini_plugin   #添加自定义变量到.profile内</span><br><span class="line">echo $PLUGIN_PATH   #注销或重启系统后生效</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>通过.profile添加的环境变量，对当前用户有效，每个有户都有自己的.profile文件；有的linux系统中使用的是.bash_profile文件</p>
+</blockquote>
+<h3 id="系统环境变量"><a href="#系统环境变量" class="headerlink" title="系统环境变量"></a>系统环境变量</h3><blockquote>
+<p>系统环境变量定义在”/etc/profile”文件中，在这里定义的环境变量对当前系统下的所有用户有效</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile     <span class="comment">#一般不会直接修改/etc/profile,而是在/etc/profile.d创建一个自定义的脚本</span></span><br><span class="line">sudo gedit /etc/profile.d   <span class="comment">#添加自定义全局变量到/etc/profile.d目录下</span></span><br><span class="line">sudo gedit /etc/profile.d/new.sh    <span class="comment">#创建一个名字为new.sh的脚本，在上面添加自定义全局变量export PATH=/opt/hfs18.5.358 </span></span><br></pre></td></tr></table></figure>
+<p><font color=yellow face=仿宋>注销重启后生效</font></p>
+<h3 id="linux中的PATH环境变量"><a href="#linux中的PATH环境变量" class="headerlink" title="linux中的PATH环境变量"></a>linux中的PATH环境变量</h3><p>PATH，最常见的一个环境变量，用于描述可执行程序的搜索路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span>   <span class="comment">#显示当前系统PATH环境变量</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin<br>每个路径用冒号隔开</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">export PATH=$PATH:/opt/houdini_plugin   </span><br></pre></td></tr></table></figure>
+<p>这里<font color=yellow>$PATH</font>引入当前已有的变量，不引入会覆盖之前的PATH<br>sbin目录下的为超级管理员root才可以执行的程序<br>/usr/下是系统自带的程序<br>/usr/local/下是用户安装的程序    </p>
+<h3 id="ubuntu中手动配置网络"><a href="#ubuntu中手动配置网络" class="headerlink" title="ubuntu中手动配置网络"></a>ubuntu中手动配置网络</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig    <span class="comment">#查看当前网络配置，默认系统没有安装”sudo apt install net-tools“</span></span><br></pre></td></tr></table></figure>
+<p>ifconfig会列出当前系统所有的网络接口及接口的状态信息，其中if表示interface网络接口;第一行冒号前面的字符就是网络接口的名字   </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ifconfig xxxx up   <span class="comment">#开启网络接口</span></span><br><span class="line">sudo ifconfig xxxx down <span class="comment">#关闭网络接口</span></span><br></pre></td></tr></table></figure>
+<h2 id="常见的服务器-vsftpd"><a href="#常见的服务器-vsftpd" class="headerlink" title="常见的服务器 vsftpd"></a>常见的服务器 vsftpd</h2><p>在部署网站等需要使用到云服务器操作时，都会将本地的文件上传到云服务器上，这时就需要使用网络传输的方式将文件部署到云端。<br>网络传输一般有FTP、SFTP两种方式。</p>
+<h3 id="FTP服务器"><a href="#FTP服务器" class="headerlink" title="FTP服务器"></a>FTP服务器</h3><p>客户端 FileZilla(Windows)<br>服务器 vsftpd(Ubuntu)<br>略……</p>
+<h3 id="SFTP服务器"><a href="#SFTP服务器" class="headerlink" title="SFTP服务器"></a>SFTP服务器</h3><p>使用Xshll远程登陆<br>使用Xftp传输文件<br>略……</p>
+<h2 id="文本文件的上传"><a href="#文本文件的上传" class="headerlink" title="文本文件的上传"></a>文本文件的上传</h2><p>文本文件的换行符<br>Windows:    <font color=gred>\r\n</font><br>Linux:  <font color=gred>\n</font></p>
+<h2 id="Java-Tomcat运行环境的搭建等"><a href="#Java-Tomcat运行环境的搭建等" class="headerlink" title="Java/Tomcat运行环境的搭建等"></a>Java/Tomcat运行环境的搭建等</h2><h2 id="Linux程序与进程"><a href="#Linux程序与进程" class="headerlink" title="Linux程序与进程"></a>Linux程序与进程</h2><p>程序Program:指一个程序文件,如houdini.exe<br>进程Process:但一个程序在系统上运行是，系统会创建一条用来描述程序运行状态的记录，这个记录就叫做进程       </p>
+<p><font color=gred><b>ps -ef</b></font>查看系统所有进程</p>
+<blockquote>
+<p>User执行者，PID进程ID，PPID父进程ID，STIME启动时间，CMD启动时调用的命令行</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | <span class="keyword">grep</span> houdini </span><br><span class="line">#vfx        <span class="number">43668</span>    <span class="number">1538</span> <span class="number">82</span> <span class="number">11</span>:<span class="number">56</span> ?        <span class="number">00</span>:<span class="number">00</span>:<span class="number">13</span> <span class="regexp">/opt/</span>hfs18.<span class="number">5.351</span><span class="regexp">/bin/</span>houdinifx-bin</span><br><span class="line">#vfx        <span class="number">43738</span>   <span class="number">39606</span>  <span class="number">0</span> <span class="number">11</span>:<span class="number">57</span> pts/<span class="number">0</span>    <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> <span class="keyword">grep</span>  (省略) -dir=.tox houdini</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>按名字查找进程，”ps -ef”将读取的信息输出，重定向给”grep”命令进行过滤处理    </p>
+</blockquote>
+<p><font color=yellow><b>ps -ef | grep xxxx</b></font> 常用命令，必记</p>
+<p><b>使用<font color=gred>top</font>命令动态查看系统进程</b></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+<p>按上下键翻阅或者PaUp和PaDn翻页预览<br>按q或者CLRT+C终止退出</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">top</span> | <span class="type">grep</span> houdini #查看houdini动态进程</span><br><span class="line"><span class="built_in">top</span> - p  <span class="number">43668</span> #<span class="string">&quot;top -p PID&quot;</span>可以查看进程详细的使用状态 </span><br></pre></td></tr></table></figure>
+<p><font color=yellow><b>top -p xxxx</b></font> 常用命令，必记</p>
+<p><b>使用<font color=gred>kill</font>杀死终结系统进程</b></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 PID <span class="comment">#PID进程id号，使用&quot;ps -ef&quot;查看</span></span><br></pre></td></tr></table></figure>
+<p><b>使用<font color=gred>pkill</font>查找并杀死终结系统进程</b></p>
+<p>Ctrl+C 终止进程</p>
+<h2 id="前台进程与后台进程"><a href="#前台进程与后台进程" class="headerlink" title="前台进程与后台进程"></a>前台进程与后台进程</h2><p>差异1：有无控制台<br>前台进程，有控制台，运行结果输出至当前终端<br>后台进程，无控制台，看不到输出(运行状态)<br>差异2：有无父进程<br>前台进程，有父进程，父进程即当前终端；当终端关闭时，进程被一同关闭<br>后台进程，有父进程，父进程为系统进程(1号进程);当终端关闭时，后台进程不受影响    </p>
+<p><font color=yellow>xxxx  run</font>以前台方式运行<br><font color=yellow>xxxx  start</font>以后台方式运行    </p>
+<h2 id="其他软件的编译与安装-Redis"><a href="#其他软件的编译与安装-Redis" class="headerlink" title="其他软件的编译与安装 Redis"></a>其他软件的编译与安装 Redis</h2><h2 id="MySQL服务器安装"><a href="#MySQL服务器安装" class="headerlink" title="MySQL服务器安装"></a>MySQL服务器安装</h2><p>MySQL跨平台，”免费”<br>MariaDB是MySQL的免费开源版本<br>MySQL<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1GW411g7pF?from=search&seid=10930918099147167333">安装配置</a>    </p>
+<p>特别感谢<a target="_blank" rel="noopener" href="http://afanihao.cn/">阿发你好</a>提供的学习资料</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu20-04-Linux%E5%88%9D%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu20.04 Linux初识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E8%BD%A8%E8%BF%B9"><span class="toc-number">1.1.</span> <span class="toc-text">进阶轨迹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu%E7%AE%80%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">Ubuntu简述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">系统文件结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4-cd-ls-cp-rm-tar"><span class="toc-number">1.3.</span> <span class="toc-text">常用的命令 cd ls cp rm tar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-list%E7%9A%84%E7%BC%A9%E5%86%99%EF%BC%8C%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E9%A1%B9-%E5%8C%85%E6%8B%AC%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.1.</span> <span class="toc-text">ls,list的缩写，列出目录下的所有项(包括文件和文件夹)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd-%E5%8D%B3print-working-directory%E6%98%BE%E7%A4%BA%E6%89%93%E5%8D%B0%E5%BD%93%E5%89%8D%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E3%80%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">pwd,即print working directory显示打印当前的工作目录。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%88%87%E6%8D%A2%E6%88%96%E6%94%B9%E5%8F%98%E5%BD%93%E5%89%8D%E6%93%8D%E4%BD%9C%E6%89%A7%E8%A1%8C%E5%9C%A8%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E3%80%82"><span class="toc-number">1.3.3.</span> <span class="toc-text">cd 切换目录，切换或改变当前操作执行在系统目录中的位置。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-make-directory%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.4.</span> <span class="toc-text">mkdir,make directory创建目录(文件夹)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-%E5%8D%B3remove%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">rm,即remove删除文件或者目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%8D%B3copy%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-number">1.3.6.</span> <span class="toc-text">cp,即copy复制文件或目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv-%E5%8D%B3move%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95-%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">1.3.7.</span> <span class="toc-text">mv,即move移动文件或目录(重命名)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar-%E5%8D%B3tape-archive%E6%A1%A3%E6%A1%88%E6%89%93%E5%8C%85%E3%80%81%E5%88%9B%E5%BB%BA%E6%A1%A3%E6%A1%88%E5%8C%85"><span class="toc-number">1.3.8.</span> <span class="toc-text">tar,即tape archive档案打包、创建档案包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ln-%E8%BD%AF%E9%93%BE%E6%8E%A5%EF%BC%8C%E5%8D%B3windows%E4%B8%8B%E7%9A%84%E2%80%9D%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E2%80%9D"><span class="toc-number">1.3.9.</span> <span class="toc-text">ln 软链接，即windows下的”快捷方式”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8-vi-gedit"><span class="toc-number">1.4.</span> <span class="toc-text">文本编辑器 vi gedit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">1.4.1.</span> <span class="toc-text">vim的基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E7%9A%84%E6%9B%B4%E5%A4%9A%E7%94%A8%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">vim的更多用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%8F%8A%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F-chmod"><span class="toc-number">1.5.</span> <span class="toc-text">用户及权限系统 chmod</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text">Ubuntu用户管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-number">1.5.2.</span> <span class="toc-text">超级管理员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90"><span class="toc-number">1.5.3.</span> <span class="toc-text">文件的权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-number">1.5.4.</span> <span class="toc-text">文件权限的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%9A%84%E5%B1%9E%E4%B8%BB"><span class="toc-number">1.5.5.</span> <span class="toc-text">修改文件的属主</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E8%84%9A%E6%9C%AC%E5%85%A5%E9%97%A8-sh"><span class="toc-number">1.6.</span> <span class="toc-text">shell脚本入门 .sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.</span> <span class="toc-text">shell中的变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.1.</span> <span class="toc-text">定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.2.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.3.</span> <span class="toc-text">用户环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.4.</span> <span class="toc-text">系统环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E4%B8%AD%E7%9A%84PATH%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.7.5.</span> <span class="toc-text">linux中的PATH环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ubuntu%E4%B8%AD%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="toc-number">1.7.6.</span> <span class="toc-text">ubuntu中手动配置网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8-vsftpd"><span class="toc-number">1.8.</span> <span class="toc-text">常见的服务器 vsftpd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.8.1.</span> <span class="toc-text">FTP服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SFTP%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.8.2.</span> <span class="toc-text">SFTP服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.9.</span> <span class="toc-text">文本文件的上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-Tomcat%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA%E7%AD%89"><span class="toc-number">1.10.</span> <span class="toc-text">Java&#x2F;Tomcat运行环境的搭建等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%A8%8B%E5%BA%8F%E4%B8%8E%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.11.</span> <span class="toc-text">Linux程序与进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E8%BF%9B%E7%A8%8B%E4%B8%8E%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.12.</span> <span class="toc-text">前台进程与后台进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%BC%96%E8%AF%91%E4%B8%8E%E5%AE%89%E8%A3%85-Redis"><span class="toc-number">1.13.</span> <span class="toc-text">其他软件的编译与安装 Redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85"><span class="toc-number">1.14.</span> <span class="toc-text">MySQL服务器安装</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/exclude/Ubuntu20.04Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2021
+    阿刚
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-86660611-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

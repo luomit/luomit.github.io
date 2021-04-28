@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="基础概念USD基础知识即Solaris流程框架概述USD是Universal Scene Description的缩写，译通用场景描述；是皮克斯开发的一个文件格式。USD的优点:  树状分层描述场景数据，结构清晰，管理方便灵活。 分层(Layer)组织数据，强大的数据合成机制，实现非破坏性编辑。 多层嵌套引用机制，实现轻量化存储，场景载入效率极高。 基于Hydra渲染架构，实现大量集合体场景的高效">
+<meta property="og:type" content="article">
+<meta property="og:title" content="筆跡">
+<meta property="og:url" content="https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/index.html">
+<meta property="og:site_name" content="筆跡">
+<meta property="og:description" content="基础概念USD基础知识即Solaris流程框架概述USD是Universal Scene Description的缩写，译通用场景描述；是皮克斯开发的一个文件格式。USD的优点:  树状分层描述场景数据，结构清晰，管理方便灵活。 分层(Layer)组织数据，强大的数据合成机制，实现非破坏性编辑。 多层嵌套引用机制，实现轻量化存储，场景载入效率极高。 基于Hydra渲染架构，实现大量集合体场景的高效">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-04-28T11:06:39.974Z">
+<meta property="article:modified_time" content="2020-10-29T00:11:19.623Z">
+<meta property="article:author" content="阿刚">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>筆跡</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2021/04/28/exclude/test/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2021/04/28/exclude/Nuke%E6%8A%80%E8%83%BD(%E4%B8%80)/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回到頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#USD%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8D%B3Solaris%E6%B5%81%E7%A8%8B%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">USD基础知识即Solaris流程框架概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solaris%E6%A8%A1%E5%9D%97%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E8%AE%B2%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">Solaris模块基础操作讲解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%85%A5%E6%8E%A2%E7%A9%B6"><span class="toc-number">1.3.</span> <span class="toc-text">层与数据合成机制深入探究</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%93%8D%E6%BC%94%E7%BB%83"><span class="toc-number">2.</span> <span class="toc-text">实操演练</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAUSD%E8%B5%84%E4%BA%A7"><span class="toc-number">2.1.</span> <span class="toc-text">创建USD资产</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%85%8DUSD%E8%B5%84%E4%BA%A7"><span class="toc-number">2.2.</span> <span class="toc-text">装配USD资产</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Layout%E5%9C%BA%E6%99%AF%E6%90%AD%E5%BB%BA"><span class="toc-number">2.3.</span> <span class="toc-text">Layout场景搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%95%9C%E8%B5%84%E4%BA%A7%E5%88%B6%E4%BD%9C"><span class="toc-number">2.4.</span> <span class="toc-text">分镜资产制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C"><span class="toc-number">2.5.</span> <span class="toc-text">简单动画制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C"><span class="toc-number">2.6.</span> <span class="toc-text">特效制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%AF%E5%85%89%E5%92%8C%E6%B8%B2%E6%9F%93"><span class="toc-number">2.7.</span> <span class="toc-text">灯光和渲染</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">阿刚</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-04-28T11:06:39.974Z" itemprop="datePublished">2021-04-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><h2 id="USD基础知识即Solaris流程框架概述"><a href="#USD基础知识即Solaris流程框架概述" class="headerlink" title="USD基础知识即Solaris流程框架概述"></a>USD基础知识即Solaris流程框架概述</h2><p>USD是Universal Scene Description的缩写，译通用场景描述；是皮克斯开发的一个文件格式。<br>USD的优点:</p>
+<ul>
+<li>树状分层描述场景数据，结构清晰，管理方便灵活。</li>
+<li>分层(Layer)组织数据，强大的数据合成机制，实现非破坏性编辑。</li>
+<li>多层嵌套引用机制，实现轻量化存储，场景载入效率极高。</li>
+<li>基于Hydra渲染架构，实现大量集合体场景的高效预览。</li>
+</ul>
+<p>Solaris是Houdini新增的新模块，是houdini为USD所提供的工具和支持的统称。<br>Solaris模块在houdini中的主要工作层级是LOP(Light Operator);在LOP层级中，Stage指代当前正在操作的整个场景。<br>USD基础知识点:</p>
+<ul>
+<li>USD中对象的基本单位是Primitive(不同与SOP中的Primitive,这里的一个Primitive通常指代一个对象)</li>
+<li>USD文件的两种编码格式<ul>
+<li>二进制格式<font color=yellow>.usd(.usdc)</font>(体积小,方便调用)</li>
+<li>文本格式<font color=yellow>.usda</font>(有层级结构，方便使用文本编辑器打开查看)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Solaris模块基础操作讲解"><a href="#Solaris模块基础操作讲解" class="headerlink" title="Solaris模块基础操作讲解"></a>Solaris模块基础操作讲解</h2><p>Solaris在houdini中可以在Network层级和sop层级创建，也可以直接在Network View切换到Solaris，在Network和sop中创建时它的名字为LOP Network。<br>在Solaris中资产的创建和导入有多种方式:</p>
+<ul>
+<li> SOP Import 节点导入sop层级创建的资产(SOP Path指定sop路径；Primitive Path指定导入对象在场景中的位置路径…)</li>
+<li> Scene Import 节点导入方式和SOP Import类似，但是也有不同之处…</li>
+<li> SOP Create 该节点相当于在Solaris创建了一个SOP Network，然后在里面创建资产</li>
+<li> 也可以直接创建一些简单的几何体对象，如Sphere、Box等(直接创建的对象都是usd对象，不可编辑集合体顶点)</li>
+</ul>
+<p><font color=yellow>Scene Graph Path</font>大纲、场景树状结构图<br><font color=yellow>Primitive Type</font>对象类型<br><font color=yellow>Primitive Kind</font>类别、性质、组、单位<br><font color=yellow>Primitive Path</font>只是更改当前对象在SceneGraphPath(场景树状结构层级)中的位置;这个路径不能为空，也不能直接是<code>/</code>根(通俗讲SceneGraphPath相当于村地图，Primitive Path应该是指定从村口去到你家路线，途中可能会经过邻居家)<br><font color=yellow>Import Path Prefix</font>指定导入模型对象在Scene Graph Path中的路径;与Primitive Path都是用来指定路径，但是Primitive Path会叠加在Import path prefix前并且会替换调import path prefix指定路径的最顶层(如primpath指定的是/mail,importpath指定的是/box/acc，最终得到的是/mail/acc的路径),所以这项参数至少设置两层以上才有作用<br><font color=yellow>SOP Path Attribute</font>用来指定导入对象最里面那一层的名字，默认是根据name属性设置，如果没有nane属性且导入的不是sphere primitive那名字就是mesh_0；如果导入的sphere primtive，那名字就是sphere_0;导入的如果是体积且没有name属性，那名字就是field_0<br><font color=yellow>Make Instanceable</font>在需要复制大量对象是启用可以提高运行效率    </p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">实例</th>
+<th align="center">子层级Kind</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Assembly</td>
+<td align="center">BookShelf<br><font color=gray>Shelf</br>BookA</br>……</br>BookZ</font></td>
+<td align="center">Assemble<br>Group<br>Component</td>
+</tr>
+<tr>
+<td align="center">Group</td>
+<td align="center">Cups<br><font color=gray>Cup0</br>Cup1</br>……</br>Cup10</font></td>
+<td align="center">Assembly</br>Group</br>Component</td>
+</tr>
+<tr>
+<td align="center">Component</td>
+<td align="center">Shelf / BookA / Cup1</td>
+<td align="center">SubComponent</td>
+</tr>
+<tr>
+<td align="center">SubComponent</td>
+<td align="center">BookA<br><font color=gray>Book_Mesh</br></font>Cup0<font color=gray></br>Cup_Body</br>Cup_Liq</font></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>Configureprimitive 设置指定路径对象的Kind<br>在场景中，Kind不去设置不会影响场景的有效性，但是规范的kind层级可以在复杂场景进行遍历计算时有着良好的运行效率(不包含灯光材质)；</p>
+<p>Inlineusd 可以通过写usd脚本创建usd文件，或者粘贴usd脚本实现usd的重建(导入)<br>Sublayer 从硬盘导入usd文件或从场景(连线)导入(一个或多个)文件，在导入多个文件时，如果导入的usd的SceneGraphPath相同，就会根据SublayerPosition来选择覆盖<br>Reference 从硬盘导入usd文件或从场景(连线)导入(一个或多个)文件，并且可以修改导入文件的PrimitivePath、Kind等参数    </p>
+<p>以下问题将在下一解课中详细解释:</p>
+<ul>
+<li>该如何理解层的概念？层在实际制作中的意义是什么？</li>
+<li>数据合成机制是如何运作的？Sublayer和reference有哪些具体区别？</li>
+<li>激活层(Active Layer)是什么意思？</li>
+<li>展平层(Flattem Layers)是什么意思？</li>
+<li>层的输出路径有什么作用？如何设置输出路径？</li>
+<li>输出节点的Save Style参数有什么作用？</li>
+</ul>
+<h2 id="层与数据合成机制深入探究"><a href="#层与数据合成机制深入探究" class="headerlink" title="层与数据合成机制深入探究"></a>层与数据合成机制深入探究</h2><p>USD-ROP 分层输出机制分析</p>
+<h1 id="实操演练"><a href="#实操演练" class="headerlink" title="实操演练"></a>实操演练</h1><h2 id="创建USD资产"><a href="#创建USD资产" class="headerlink" title="创建USD资产"></a>创建USD资产</h2><p>sopimport从sop导入资产数据，如果资产数据带有name属性，就会在SceneGraphPath中根据name分成多个Primitive;<br>sopimport资产通常占用较大的存储空间，可以在sopimport下的LayerSavePath中指定该层的存储路径;<br>PrimitivePath在设定时注意上下层级之间最好不要有重名，不然会在其他节点上出现报错，甚至节点网络无法工作;<br><font color=yellow>在USD资产创建时，如果使用到Prune对上游资产进行操作时，操作的对象不能勾选MakeInstanceable</font><br>在为资产创建变体时，variantblok_end的PrimitivePath要设置到主体个层级上，这样就不会产生多余的SceneGraphPath层了。<br>在usd资产导出前检查整理SceneGraphPath里的层级和属性，使用configureprimitive为资产设置合理的Kind，使用ConfigureLayer为需要单独设置保存路径的资产设置保存路径。<br><font color=blue>总结:</font>    </p>
+<ul>
+<li>模型的处理，需要注意的时模型在创建usd资产过程中需不需要制作变体，模型有没有组信息(name)，没有就添加；模型是否在世界坐标中心，这个视具体情况而定，通常要把物体设置到世界坐标中心(matchsize);    </li>
+<li>在stage内引入sop资产时，通常会勾选Load As Reference(导入物体通常较大,单独设置保存独立的usd文件)有利于资产的管理和调用;    </li>
+<li>在设置变体时，需要注意变体的PrimtivePath一定要设置合理，不然会导致调用变体时查找不到变体集的路径;    </li>
+<li>材质和灯光通常也会单独输出(configurelayer设置单独的存储路径)，根据具体项目进行调整;</li>
+</ul>
+<h2 id="装配USD资产"><a href="#装配USD资产" class="headerlink" title="装配USD资产"></a>装配USD资产</h2><p>stagemanager 用来搭建场景,可以方便快速的在场景白方资产文件;</p>
+<h2 id="Layout场景搭建"><a href="#Layout场景搭建" class="headerlink" title="Layout场景搭建"></a>Layout场景搭建</h2><h2 id="分镜资产制作"><a href="#分镜资产制作" class="headerlink" title="分镜资产制作"></a>分镜资产制作</h2><h2 id="简单动画制作"><a href="#简单动画制作" class="headerlink" title="简单动画制作"></a>简单动画制作</h2><h2 id="特效制作"><a href="#特效制作" class="headerlink" title="特效制作"></a>特效制作</h2><h2 id="灯光和渲染"><a href="#灯光和渲染" class="headerlink" title="灯光和渲染"></a>灯光和渲染</h2>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#USD%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8D%B3Solaris%E6%B5%81%E7%A8%8B%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">USD基础知识即Solaris流程框架概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Solaris%E6%A8%A1%E5%9D%97%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E8%AE%B2%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">Solaris模块基础操作讲解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%90%88%E6%88%90%E6%9C%BA%E5%88%B6%E6%B7%B1%E5%85%A5%E6%8E%A2%E7%A9%B6"><span class="toc-number">1.3.</span> <span class="toc-text">层与数据合成机制深入探究</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%93%8D%E6%BC%94%E7%BB%83"><span class="toc-number">2.</span> <span class="toc-text">实操演练</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAUSD%E8%B5%84%E4%BA%A7"><span class="toc-number">2.1.</span> <span class="toc-text">创建USD资产</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%85%E9%85%8DUSD%E8%B5%84%E4%BA%A7"><span class="toc-number">2.2.</span> <span class="toc-text">装配USD资产</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Layout%E5%9C%BA%E6%99%AF%E6%90%AD%E5%BB%BA"><span class="toc-number">2.3.</span> <span class="toc-text">Layout场景搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%95%9C%E8%B5%84%E4%BA%A7%E5%88%B6%E4%BD%9C"><span class="toc-number">2.4.</span> <span class="toc-text">分镜资产制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C"><span class="toc-number">2.5.</span> <span class="toc-text">简单动画制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%95%88%E5%88%B6%E4%BD%9C"><span class="toc-number">2.6.</span> <span class="toc-text">特效制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%AF%E5%85%89%E5%92%8C%E6%B8%B2%E6%9F%93"><span class="toc-number">2.7.</span> <span class="toc-text">灯光和渲染</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/exclude/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2021
+    阿刚
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-86660611-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

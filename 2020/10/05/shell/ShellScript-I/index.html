@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="shell属于解释性高级语言，简单、跨平台能力强shell是linux自带的系统语言 shell用来做什么自动化批量系统初始化程序(系统安装、系统升级、软件安装、时区设置、安全策略等)  自动化部署或者运行程序(系统程序、桌面程序自动运行等)  日志分析  zabbix监控CPU80%+|-50% Python API AWS&#x2F;EC2  shell特性  自动补全在shell输入过程中使用tab键">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ShellScript I">
+<meta property="og:url" content="https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/index.html">
+<meta property="og:site_name" content="筆跡">
+<meta property="og:description" content="shell属于解释性高级语言，简单、跨平台能力强shell是linux自带的系统语言 shell用来做什么自动化批量系统初始化程序(系统安装、系统升级、软件安装、时区设置、安全策略等)  自动化部署或者运行程序(系统程序、桌面程序自动运行等)  日志分析  zabbix监控CPU80%+|-50% Python API AWS&#x2F;EC2  shell特性  自动补全在shell输入过程中使用tab键">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-10-05T12:00:22.000Z">
+<meta property="article:modified_time" content="2020-12-13T05:40:59.397Z">
+<meta property="article:author" content="阿刚">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="shell">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>ShellScript I</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/10/05/linux/Vim%E9%85%8D%E7%BD%AE/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/03/30/houdini/Houdini%20Python%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回到頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&text=ShellScript I"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&is_video=false&description=ShellScript I"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ShellScript I&body=Check out this article: https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&name=ShellScript I&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&t=ShellScript I"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E7%94%A8%E6%9D%A5%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">shell用来做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">bash的初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">bash的特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bash%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">3.1.</span> <span class="toc-text">bash快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BD%9C%E4%B8%9A%E5%91%BD%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text">bash常见的几个作业命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">4.</span> <span class="toc-text">bash输出重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">5.</span> <span class="toc-text">bash输入重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text">shell中的特殊字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8F%B7%EF%BC%8C%E8%BF%9E%E7%BB%AD%E8%BF%90%E8%A1%8C%E5%A4%9A%E4%B8%AA%E5%91%BD%E4%BB%A4"><span class="toc-number">6.1.</span> <span class="toc-text">; 分号，连续运行多个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E8%A1%A8%E7%A4%BA%E6%88%96%E8%80%85"><span class="toc-number">6.2.</span> <span class="toc-text">| 管道,正则表达式中表示或者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-%E5%B0%86%E5%91%BD%E4%BB%A4%E6%94%BE%E5%88%B0%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C"><span class="toc-number">6.3.</span> <span class="toc-text">&amp; 将命令放到后台执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-amp-%E5%89%8D%E9%9D%A2%E5%91%BD%E4%BB%A4%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%BA0%E6%89%8D%E6%89%A7%E8%A1%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">6.4.</span> <span class="toc-text">&amp;&amp; 前面命令返回值为0才执行后面的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%BA0%E7%9A%84%E6%97%B6%E5%80%99%E6%89%8D%E6%89%A7%E8%A1%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">6.5.</span> <span class="toc-text">|| 前面的命令返回值为0的时候才执行后面的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B7-%E7%94%A8%E6%9D%A5%E8%A1%A8%E7%A4%BA%E5%86%85%E5%AE%B9%E4%B8%BA%E6%B3%A8%E9%87%8A"><span class="toc-number">6.6.</span> <span class="toc-text"># 号,用来表示内容为注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%81-%E6%83%8A%E5%8F%B9%E5%8F%B7-%E5%B0%86%E5%91%BD%E4%BB%A4%E6%88%96%E8%80%85%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%94%E5%9B%9E%E5%80%BC%E5%8F%96%E5%8F%8D"><span class="toc-number">6.7.</span> <span class="toc-text">！ 惊叹号 将命令或者条件表达式返回值取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E5%85%83%E7%AC%A6%E5%8F%B7%EF%BC%8C%E5%8F%96%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%EF%BC%9B%E5%9C%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E8%A1%A8%E7%A4%BA%E8%A1%8C%E5%B0%BE"><span class="toc-number">6.8.</span> <span class="toc-text">$ 美元符号，取变量的值；在正则表达式中表示行尾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-%E5%A4%A7%E4%BA%8E%E5%8F%B7%EF%BC%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">6.9.</span> <span class="toc-text">&gt; 大于号，输出重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-%E5%B0%8F%E4%BA%8E%E5%8F%B7%EF%BC%8C%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%8C%E6%9D%A1%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%AD%E7%9A%84%E5%B0%8F%E4%BA%8E%E5%8F%B7"><span class="toc-number">6.10.</span> <span class="toc-text">&lt; 小于号，输入重定向，条件测试中的小于号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BA%8E%E5%8F%B7%EF%BC%8C%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">6.11.</span> <span class="toc-text">&#x3D; 等于号，变量赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%8F%B7"><span class="toc-number">6.12.</span> <span class="toc-text">+ 加号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-gt-%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E8%BF%BD%E5%8A%A0"><span class="toc-number">6.13.</span> <span class="toc-text">&gt;&gt; 输出重定向追加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-lt-%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%E8%BF%BD%E5%8A%A0"><span class="toc-number">6.14.</span> <span class="toc-text">&lt;&lt; 输入重定向追加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%8F%B7"><span class="toc-number">6.15.</span> <span class="toc-text">- 减号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%98%E2%80%99-%E5%8D%95%E5%BC%95%E5%8F%B7"><span class="toc-number">6.16.</span> <span class="toc-text">‘’ 单引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E2%80%9D-%E5%8F%8C%E5%BC%95%E5%8F%B7"><span class="toc-number">6.17.</span> <span class="toc-text">“” 双引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BC%95%E5%8F%B7-%E7%9B%B8%E5%BD%93%E4%BA%8E"><span class="toc-number">6.18.</span> <span class="toc-text">&#96;&#96; 反引号 相当于$()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BE%E5%88%86%E5%8F%B7"><span class="toc-number">6.19.</span> <span class="toc-text">% 百分号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%9C%86%E6%8B%AC%E5%8F%B7"><span class="toc-number">6.20.</span> <span class="toc-text">()单圆括号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">7.</span> <span class="toc-text">命令的排序</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        ShellScript I
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">阿刚</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-10-05T12:00:22.000Z" itemprop="datePublished">2020-10-05</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/linux/" rel="tag">linux</a>, <a class="tag-link-link" href="/tags/shell/" rel="tag">shell</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>shell属于解释性高级语言，简单、跨平台能力强<br>shell是linux自带的系统语言</p>
+<h2 id="shell用来做什么"><a href="#shell用来做什么" class="headerlink" title="shell用来做什么"></a>shell用来做什么</h2><p>自动化批量系统初始化程序(系统安装、系统升级、软件安装、时区设置、安全策略等)</p>
+<ol>
+<li><p>自动化部署或者运行程序(系统程序、桌面程序自动运行等)</p>
+</li>
+<li><p>日志分析</p>
+</li>
+<li><p>zabbix监控CPU80%+|-50% Python API AWS/EC2</p>
+</li>
+<li><p>shell特性</p>
+</li>
+<li><p>自动补全<br>在shell输入过程中使用tab键可以获得脚本的提示和补全，加快代码编写效率；bash-completion Ubuntu已自动安装这个bash的自动补全扩展</p>
+</li>
+<li><p>历史命令的记录<br>shell会记录执行过的命令，可以使用上下方向键调用或者使用history命令来查看</p>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">history             # 查看之前使用的所有命令</span><br><span class="line">history n           # 查看最近的n个命令；这里的n是一个整数，表示查看历史记录数量</span><br><span class="line">history -d n        # 删除历史记录中的第n个命令，将命令从记录中删除</span><br><span class="line"><span class="meta">#!n                  # 执行第n个命令，用来直接执行历史记录中的命令</span></span><br><span class="line"><span class="meta">#!-n                 # 执行历史记录中倒数第n条命令</span></span><br><span class="line"><span class="meta">#!!                  # 执行历史记录中最后一条命令</span></span><br><span class="line"><span class="meta">#!cd                 # 执行历史记录中最近已cd开头的shell命令</span></span><br><span class="line">history -c          # 清除历史记录</span><br></pre></td></tr></table></figure></li>
+<li><p>别名功能<br>alias命令，别名的好处就是可以把很长的指令简化缩写，用来提升工作效率</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span>                                   <span class="comment"># 查看当前系统的所有别名</span></span><br><span class="line"><span class="built_in">alias</span> blog_edit=<span class="string">&#x27;code ~/.blog/_post&#x27;</span>    <span class="comment"># 用编辑器打开博客文件夹</span></span><br><span class="line"><span class="built_in">unalias</span> blog_edit                       <span class="comment"># 取消这个blog_edit别名</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>这些如需要永久生效需要将他们写入到~/.bashrc配置文件中</p>
+</blockquote>
+<h2 id="bash的初始化"><a href="#bash的初始化" class="headerlink" title="bash的初始化"></a>bash的初始化</h2><p>bahs环境变量文件的加载</p>
+<ol>
+<li>/etc/profile 配置文件</li>
+<li>/etc/bashrc 系统配置</li>
+<li>~/.profile 用户配置</li>
+<li>~/.bash_login 登录时加载</li>
+<li>~/.bash_profile 用户配置</li>
+<li>~/.bashrc 用户配置</li>
+<li>~/.bash_logout 登出时加载</li>
+</ol>
+<ul>
+<li>在linux系统启动时，bash会去加载环境配置文件，首先会加载全局配置文件再加载用户配置文件</li>
+<li>在图形化界面登录时，会先读取/etc/profile再读取~/.profile;如果后者和前者的配置存在差异，后者会覆盖前者的配置</li>
+</ul>
+<h2 id="bash的特性"><a href="#bash的特性" class="headerlink" title="bash的特性"></a>bash的特性</h2><h3 id="bash快捷键"><a href="#bash快捷键" class="headerlink" title="bash快捷键"></a>bash快捷键</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl+A</td>
+<td>光标移动到开头</td>
+</tr>
+<tr>
+<td>Ctrl+E</td>
+<td>光标移动到结尾</td>
+</tr>
+<tr>
+<td>Ctrl+C</td>
+<td>强制终止命令</td>
+</tr>
+<tr>
+<td>Ctrl+L</td>
+<td>清屏</td>
+</tr>
+<tr>
+<td>Ctrl+U</td>
+<td>删除或剪切光标之前的命令</td>
+</tr>
+<tr>
+<td>Ctrl+K</td>
+<td>删除或见前光标之后的命令</td>
+</tr>
+<tr>
+<td>Ctrl+Y</td>
+<td>粘贴Ctrl+K或Ctrl+U剪切的内容</td>
+</tr>
+<tr>
+<td>Ctrl+R</td>
+<td>在历史命令中搜索</td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>退出当前终端</td>
+</tr>
+<tr>
+<td>Ctrl+Z</td>
+<td>暂停并放入后台</td>
+</tr>
+<tr>
+<td>Ctrl+S</td>
+<td>暂停屏幕输出</td>
+</tr>
+<tr>
+<td>Ctrl+Q</td>
+<td>恢复屏幕输出</td>
+</tr>
+</tbody></table>
+<h3 id="bash常见的几个作业命令"><a href="#bash常见的几个作业命令" class="headerlink" title="bash常见的几个作业命令"></a>bash常见的几个作业命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &amp;           <span class="comment"># 执行命令后面加 &amp; ，让这个命令在后台运行</span></span><br><span class="line">                    <span class="comment"># Ctrl+Z 暂停并放入后台</span></span><br><span class="line"><span class="built_in">jobs</span>                <span class="comment"># 查看后台作业状态</span></span><br><span class="line"><span class="built_in">fg</span> %n               <span class="comment"># 将后台作业n切换到前台</span></span><br><span class="line"><span class="built_in">bg</span> %n               <span class="comment"># 将前台作业n切换到后台</span></span><br><span class="line"><span class="built_in">kill</span> %n             <span class="comment"># 将作业n移除</span></span><br><span class="line"><span class="built_in">kill</span> -9 %n          <span class="comment"># 将作业n强制移除</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意这里的n不是pid进程id；这里的n时当前终端工作脚本程序的编号；这个编号从1开始分配；当一个工作完成或者移除后后，工作编号也会发生改变</p>
+</blockquote>
+<h2 id="bash输出重定向"><a href="#bash输出重定向" class="headerlink" title="bash输出重定向"></a>bash输出重定向</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>标准输出重定向</td>
+<td>command&gt;file</td>
+<td>以覆盖的方式,把command的正确输出结果输出到file文件中</td>
+</tr>
+<tr>
+<td></td>
+<td>command&gt;&gt;file</td>
+<td>以追加的方式，把command的正确输出结果输出到file文件中</td>
+</tr>
+<tr>
+<td>标准错误输出重定向</td>
+<td>command 2&gt;file</td>
+<td>以覆盖的方式,把command的错误输出结果输出到file文件中</td>
+</tr>
+<tr>
+<td></td>
+<td>command 2&gt;&gt;file</td>
+<td>以覆盖的方式,把command的错误输出结果输出到file文件中</td>
+</tr>
+<tr>
+<td>正确输出和错误输出同时保存</td>
+<td>command&gt;file 2&gt;&amp;1</td>
+<td>以覆盖的方式,把command的正确输出结果和错误输出结果输出到file文件中</td>
+</tr>
+<tr>
+<td></td>
+<td>command&gt;&gt;file 2&gt;&amp;1</td>
+<td>以追加的方式,把command的正确输出结果和错误输出结果输出到file文件中</td>
+</tr>
+<tr>
+<td>分别输出到不同文件</td>
+<td>command&gt;file1 2&gt;file2</td>
+<td>以覆盖的方式,把command的正确输出结果输出到file1文件中；把错误输出结果输出到file2文件中</td>
+</tr>
+<tr>
+<td></td>
+<td>command&gt;&gt;file1 2&gt;&gt;file2</td>
+<td>以追加的方式,把command的正确输出结果输出到file1文件中；把错误输出结果输出到file2文件中</td>
+</tr>
+<tr>
+<td></td>
+<td>command&gt;file 2&gt;file</td>
+<td>[不推荐]这两种写法会导致file会被打开两次,引起资源竞争，所以stdout和stderr会相互覆盖</td>
+</tr>
+<tr>
+<td></td>
+<td>command&gt;&gt;file 2&gt;&gt;file</td>
+<td>[不推荐]</td>
+</tr>
+<tr>
+<td></td>
+<td>command &amp;&gt;&gt;file</td>
+<td>[推荐]全部以追加的方式重定向到file文件中</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>输出重定向中, &gt;代表以覆盖的方式, &gt;&gt;代表以追加的方式；<br>输出重定向的额完整写法时fd&gt;file,其中fd表示文件描述符，如果不写，默认为1，也就是标准输出文件；<br>当文件描述符为1时，一般省略不写，如上表所示；当然也可以将 command&gt;file 写作 command 1&gt;file,但这样略显繁琐;<br>当文件描述符大于1时，比如2，就必须写上;<br>需要注意的时fd和&gt;之间不能有空个，否则shell会解析失败；&gt;和file之间的空格可有可无，但是为了避免出错，习惯性保持一致&gt;两边都不加空格;<br>/dev/null 可以把不想显示的内容输入到这个文件里(相当于垃圾回收站)</p>
+</blockquote>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sl &amp;&gt;<span class="regexp">/dev/</span><span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="bash输入重定向"><a href="#bash输入重定向" class="headerlink" title="bash输入重定向"></a>bash输入重定向</h2><p>输入重定向就是改变输入的方向，不使用键盘作为命令输入的来源，而是使用文件作为命令的输入来源。</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>command&lt;file</td>
+<td>将文件file作为command的输入</td>
+</tr>
+<tr>
+<td>command&lt;&lt;END</td>
+<td>从标准输入(键盘输入)中读取数据，直到读取到END字符才停止(分解符,可以时任意的字符串，用户可自定义的)。</td>
+</tr>
+<tr>
+<td><del>file1 command file2</del></td>
+<td><del>将file1作为command的输入，并将command的结果输出到file2中。</del></td>
+</tr>
+</tbody></table>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cat</span> readme.txt                              <span class="comment"># 打印预览文件</span></span><br><span class="line">wc -l readme.txt                            <span class="comment"># 输入重定向(统计文件行数)</span></span><br></pre></td></tr></table></figure>
+
+<p>总结:</p>
+<ol>
+<li>/dev/null 表示空的设备文件，无穷的大小，进入的文件不可再回收</li>
+<li>0表示stdin标准输入</li>
+<li>1表示stdout标准输出</li>
+<li>2表示stderr标准错误</li>
+<li>&gt;默认标准输出重定向，与 1&gt; 相同</li>
+<li>2&gt;&amp;1意思是把 标准错误输出 重定向到 标准输出</li>
+<li>&amp;file意思是把 标准输出 和 标准错误输出 都重定向到file中</li>
+<li>&gt;&amp;file意思是把 标准输出 和 标准错误输出 都重定向到file中</li>
+</ol>
+<h2 id="shell中的特殊字符"><a href="#shell中的特殊字符" class="headerlink" title="shell中的特殊字符"></a>shell中的特殊字符</h2><h3 id="分号，连续运行多个命令"><a href="#分号，连续运行多个命令" class="headerlink" title="; 分号，连续运行多个命令"></a>; 分号，连续运行多个命令</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat readme.txt;redame.txt&gt;&gt;<span class="regexp">/dev/</span><span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="管道-正则表达式中表示或者"><a href="#管道-正则表达式中表示或者" class="headerlink" title="| 管道,正则表达式中表示或者"></a>| 管道,正则表达式中表示或者</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">&quot;shell基础&quot;</span> |egrep <span class="string">&#x27;(e|基)&#x27;</span>&#123;<span class="number">2</span>&#125;             # 表示匹配 <span class="keyword">e</span> 或者 基 字符</span><br><span class="line">ifconfig|<span class="keyword">grep</span> eth0                             # 表示ifconfig查处来的信息过滤出eth0这一行</span><br><span class="line"><span class="keyword">cat</span> inputName.<span class="keyword">sh</span>|<span class="keyword">grep</span> <span class="string">&#x27;$name&#x27;</span>&gt;about.txt        # 过滤inputNmae.<span class="keyword">sh</span>中带 $name 的行,并显示(<span class="keyword">cat</span>)和重定向(&gt;)到about.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="amp-将命令放到后台执行"><a href="#amp-将命令放到后台执行" class="headerlink" title="&amp; 将命令放到后台执行"></a>&amp; 将命令放到后台执行</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqld_safe --usr=mysql &amp;                      # 将mysql放到后台执行</span><br><span class="line">ifconfig &amp;&gt;<span class="regexp">/dev/</span><span class="keyword">null</span>                           # 将ifconfig标准输出和标准错误输出重定向到<span class="regexp">/dev/</span><span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="amp-amp-前面命令返回值为0才执行后面的命令"><a href="#amp-amp-前面命令返回值为0才执行后面的命令" class="headerlink" title="&amp;&amp; 前面命令返回值为0才执行后面的命令"></a>&amp;&amp; 前面命令返回值为0才执行后面的命令</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> &amp;&amp; <span class="keyword">echo</span> <span class="string">&#x27;ok&#x27;</span>                                # 执行<span class="keyword">ls</span>结束后，返回 ok</span><br></pre></td></tr></table></figure>
+
+<h3 id="前面的命令返回值为0的时候才执行后面的命令"><a href="#前面的命令返回值为0的时候才执行后面的命令" class="headerlink" title="|| 前面的命令返回值为0的时候才执行后面的命令"></a>|| 前面的命令返回值为0的时候才执行后面的命令</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lls || <span class="keyword">echo</span> <span class="string">&#x27;ok&#x27;</span>                               # lls 不是<span class="keyword">shell</span>命令，执行结果为<span class="number">0</span>，输出 ok</span><br><span class="line"><span class="keyword">ls</span> || <span class="keyword">echo</span> <span class="string">&#x27;ok&#x27;</span>                                # <span class="keyword">ls</span> 是<span class="keyword">shell</span>的命令，执行结果为真,不在执行||后面的命令</span><br></pre></td></tr></table></figure>
+
+<h3 id="号-用来表示内容为注释"><a href="#号-用来表示内容为注释" class="headerlink" title="# 号,用来表示内容为注释"></a># 号,用来表示内容为注释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$#</span></span><br><span class="line"></span><br><span class="line">a=<span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#a&#125;</span>                                 <span class="comment"># 返回变量a的长度</span></span><br><span class="line"><span class="comment"># $&#123;#变量名&#125;表示变量的长度</span></span><br><span class="line"><span class="comment"># $# 表示位置参数的个数</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="！-惊叹号-将命令或者条件表达式返回值取反"><a href="#！-惊叹号-将命令或者条件表达式返回值取反" class="headerlink" title="！ 惊叹号 将命令或者条件表达式返回值取反"></a>！ 惊叹号 将命令或者条件表达式返回值取反</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ![1&lt;2];<span class="keyword">then</span> <span class="built_in">echo</span> <span class="string">&#x27;ok&#x27;</span>;<span class="keyword">else</span> <span class="built_in">echo</span> <span class="string">&#x27;no&#x27;</span>;<span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>不知道是书写规范问题还是什么，执行结果返回找不到那个文件和目录</p>
+<h3 id="美元符号，取变量的值；在正则表达式中表示行尾"><a href="#美元符号，取变量的值；在正则表达式中表示行尾" class="headerlink" title="$ 美元符号，取变量的值；在正则表达式中表示行尾"></a>$ 美元符号，取变量的值；在正则表达式中表示行尾</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">10</span>                                            <span class="comment"># 定义变量a</span></span><br><span class="line">echo <span class="variable">$a</span>                                         <span class="comment"># 查看变量a</span></span><br><span class="line"></span><br><span class="line">egrep <span class="string">&#x27;:$&#x27;</span> <span class="regexp">/etc/i</span>nittab                         <span class="comment"># 打印 /etc/inittab 中以 : 结尾的行</span></span><br><span class="line">egrep <span class="string">&#x27;hello$&#x27;</span> file                             <span class="comment"># 打印 file 文件中以 hello 结尾的行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="gt-大于号，输出重定向"><a href="#gt-大于号，输出重定向" class="headerlink" title="&gt; 大于号，输出重定向"></a>&gt; 大于号，输出重定向</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;添加新的内容&#x27;</span>&gt;test.txt                      <span class="comment"># 将 添加新的内容 字符串以覆盖的方式添加到 test.txt 文件中</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="lt-小于号，输入重定向，条件测试中的小于号"><a href="#lt-小于号，输入重定向，条件测试中的小于号" class="headerlink" title="&lt; 小于号，输入重定向，条件测试中的小于号"></a>&lt; 小于号，输入重定向，条件测试中的小于号</h3><h3 id="等于号，变量赋值"><a href="#等于号，变量赋值" class="headerlink" title="= 等于号，变量赋值"></a>= 等于号，变量赋值</h3><p>条件测试中的等号(数值比较中的 == )</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">a=15</span>                                            <span class="comment"># 变量a赋值</span></span><br><span class="line">[<span class="attr">a=b]</span>                                           <span class="comment"># 判断变量a是否等于变量b(条件测试)</span></span><br><span class="line">((<span class="attr">a==20))</span>                                       <span class="comment"># 判断变量a是否等于变量b(数值比较)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="加号"><a href="#加号" class="headerlink" title="+ 加号"></a>+ 加号</h3><p>算术运算符中的加号(1+3)<br>正则表达式中表示一个或者多个前面的字符(a+bc 表示a和bc之间有1个字符)</p>
+<h3 id="gt-gt-输出重定向追加"><a href="#gt-gt-输出重定向追加" class="headerlink" title="&gt;&gt; 输出重定向追加"></a>&gt;&gt; 输出重定向追加</h3><h3 id="lt-lt-输入重定向追加"><a href="#lt-lt-输入重定向追加" class="headerlink" title="&lt;&lt; 输入重定向追加"></a>&lt;&lt; 输入重定向追加</h3><h3 id="减号"><a href="#减号" class="headerlink" title="- 减号"></a>- 减号</h3><p>运算符中的减号<br>命令的选项( ls -l )<br>上一次的工作目录( cd - 前提是先要在上一个目录进行变量设置 set OLDPWD 否则会提示OLDPWD变量未设定)<br>通配符和正则表达式中表示范围 [a-z]</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf - /home <span class="string">| tar -xvf -</span></span><br><span class="line"><span class="meta"># 表示输出或输入流，将前面的结果通过管道传递给后面作为对象进行操作</span></span><br></pre></td></tr></table></figure>
+
+<p>表示输出或输入流,将前面的输出 ，通过管道交给后面的命令，前面的压缩，后面的解压</p>
+<h3 id="‘’-单引号"><a href="#‘’-单引号" class="headerlink" title="‘’ 单引号"></a>‘’ 单引号</h3><p>解决赋值空格的问题(a=’1 2’)<br>阻止shell替换</p>
+<h3 id="“”-双引号"><a href="#“”-双引号" class="headerlink" title="“” 双引号"></a>“” 双引号</h3><p>和单引号一样的作用<br>阻止shell部分字符替换，对$ ! 等无效</p>
+<h3 id="反引号-相当于"><a href="#反引号-相当于" class="headerlink" title="`` 反引号 相当于$()"></a>`` 反引号 相当于$()</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">a</span>=`ls`                                      <span class="comment"># 命令行替换，设置变量a为shell命令ls</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="百分号"><a href="#百分号" class="headerlink" title="% 百分号"></a>% 百分号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $((<span class="number">100</span>%<span class="number">10</span>))                            <span class="comment"># 算术运算中的模运算</span></span><br></pre></td></tr></table></figure>
+
+<p>vi中替换操作中表示所有行(末行模式下，替换所有前面加%)</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%s<span class="regexp">/D/</span>d 表示将文本中的所有的D替换为d</span><br></pre></td></tr></table></figure>
+
+<h3 id="单圆括号"><a href="#单圆括号" class="headerlink" title="()单圆括号"></a>()单圆括号</h3><p>在子shell中执行命令，会继承父shell的变量.</p>
+<h2 id="命令的排序"><a href="#命令的排序" class="headerlink" title="命令的排序"></a>命令的排序</h2><ol>
+<li>&amp;&amp; || 具有逻辑判断的</li>
+<li>; (分号) 不具备逻辑判断，只用作链接两个命令的字符</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E7%94%A8%E6%9D%A5%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">shell用来做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">bash的初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">bash的特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bash%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">3.1.</span> <span class="toc-text">bash快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BD%9C%E4%B8%9A%E5%91%BD%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text">bash常见的几个作业命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">4.</span> <span class="toc-text">bash输出重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bash%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">5.</span> <span class="toc-text">bash输入重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text">shell中的特殊字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8F%B7%EF%BC%8C%E8%BF%9E%E7%BB%AD%E8%BF%90%E8%A1%8C%E5%A4%9A%E4%B8%AA%E5%91%BD%E4%BB%A4"><span class="toc-number">6.1.</span> <span class="toc-text">; 分号，连续运行多个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E8%A1%A8%E7%A4%BA%E6%88%96%E8%80%85"><span class="toc-number">6.2.</span> <span class="toc-text">| 管道,正则表达式中表示或者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-%E5%B0%86%E5%91%BD%E4%BB%A4%E6%94%BE%E5%88%B0%E5%90%8E%E5%8F%B0%E6%89%A7%E8%A1%8C"><span class="toc-number">6.3.</span> <span class="toc-text">&amp; 将命令放到后台执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-amp-%E5%89%8D%E9%9D%A2%E5%91%BD%E4%BB%A4%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%BA0%E6%89%8D%E6%89%A7%E8%A1%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">6.4.</span> <span class="toc-text">&amp;&amp; 前面命令返回值为0才执行后面的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4%E8%BF%94%E5%9B%9E%E5%80%BC%E4%B8%BA0%E7%9A%84%E6%97%B6%E5%80%99%E6%89%8D%E6%89%A7%E8%A1%8C%E5%90%8E%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">6.5.</span> <span class="toc-text">|| 前面的命令返回值为0的时候才执行后面的命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B7-%E7%94%A8%E6%9D%A5%E8%A1%A8%E7%A4%BA%E5%86%85%E5%AE%B9%E4%B8%BA%E6%B3%A8%E9%87%8A"><span class="toc-number">6.6.</span> <span class="toc-text"># 号,用来表示内容为注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%81-%E6%83%8A%E5%8F%B9%E5%8F%B7-%E5%B0%86%E5%91%BD%E4%BB%A4%E6%88%96%E8%80%85%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%94%E5%9B%9E%E5%80%BC%E5%8F%96%E5%8F%8D"><span class="toc-number">6.7.</span> <span class="toc-text">！ 惊叹号 将命令或者条件表达式返回值取反</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E5%85%83%E7%AC%A6%E5%8F%B7%EF%BC%8C%E5%8F%96%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%EF%BC%9B%E5%9C%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E8%A1%A8%E7%A4%BA%E8%A1%8C%E5%B0%BE"><span class="toc-number">6.8.</span> <span class="toc-text">$ 美元符号，取变量的值；在正则表达式中表示行尾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-%E5%A4%A7%E4%BA%8E%E5%8F%B7%EF%BC%8C%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">6.9.</span> <span class="toc-text">&gt; 大于号，输出重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-%E5%B0%8F%E4%BA%8E%E5%8F%B7%EF%BC%8C%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%8C%E6%9D%A1%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%B8%AD%E7%9A%84%E5%B0%8F%E4%BA%8E%E5%8F%B7"><span class="toc-number">6.10.</span> <span class="toc-text">&lt; 小于号，输入重定向，条件测试中的小于号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BA%8E%E5%8F%B7%EF%BC%8C%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC"><span class="toc-number">6.11.</span> <span class="toc-text">&#x3D; 等于号，变量赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%8F%B7"><span class="toc-number">6.12.</span> <span class="toc-text">+ 加号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gt-gt-%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E8%BF%BD%E5%8A%A0"><span class="toc-number">6.13.</span> <span class="toc-text">&gt;&gt; 输出重定向追加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-lt-%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%E8%BF%BD%E5%8A%A0"><span class="toc-number">6.14.</span> <span class="toc-text">&lt;&lt; 输入重定向追加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%8F%E5%8F%B7"><span class="toc-number">6.15.</span> <span class="toc-text">- 减号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%98%E2%80%99-%E5%8D%95%E5%BC%95%E5%8F%B7"><span class="toc-number">6.16.</span> <span class="toc-text">‘’ 单引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E2%80%9D-%E5%8F%8C%E5%BC%95%E5%8F%B7"><span class="toc-number">6.17.</span> <span class="toc-text">“” 双引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BC%95%E5%8F%B7-%E7%9B%B8%E5%BD%93%E4%BA%8E"><span class="toc-number">6.18.</span> <span class="toc-text">&#96;&#96; 反引号 相当于$()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BE%E5%88%86%E5%8F%B7"><span class="toc-number">6.19.</span> <span class="toc-text">% 百分号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%9C%86%E6%8B%AC%E5%8F%B7"><span class="toc-number">6.20.</span> <span class="toc-text">()单圆括号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-number">7.</span> <span class="toc-text">命令的排序</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&text=ShellScript I"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&is_video=false&description=ShellScript I"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ShellScript I&body=Check out this article: https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&title=ShellScript I"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&name=ShellScript I&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2020/10/05/shell/ShellScript-I/&t=ShellScript I"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2021
+    阿刚
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/archives/">文章</a></li>
+         
+          <li><a href="/projects_url">項目</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-86660611-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
