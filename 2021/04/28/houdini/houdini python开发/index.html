@@ -9,7 +9,7 @@
     <meta name="description" content="节点创建1234hou.pwd().createNode(&quot;sphere&quot;,name&#x3D;&quot;球体&quot;)  # hou.pwd()表示当前窗口所在工作路径 creatNode(节点原名，name&#x3D;“设置新的名字”)    hou.cd(&quot;&#x2F;obj&quot;) # hou.cd() 移动当前窗口工作路径到指定的新路径上 节点删除12345node &#x3D; ho">
 <meta property="og:type" content="article">
 <meta property="og:title" content="筆跡">
-<meta property="og:url" content="https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:url" content="https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="筆跡">
 <meta property="og:description" content="节点创建1234hou.pwd().createNode(&quot;sphere&quot;,name&#x3D;&quot;球体&quot;)  # hou.pwd()表示当前窗口所在工作路径 creatNode(节点原名，name&#x3D;“设置新的名字”)    hou.cd(&quot;&#x2F;obj&quot;) # hou.cd() 移动当前窗口工作路径到指定的新路径上 节点删除12345node &#x3D; ho">
 <meta property="og:locale" content="zh_TW">
@@ -79,7 +79,7 @@
         <li><a class="icon" href="/2021/04/28/exclude/Mermaid%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2021/04/28/exclude/CentOS8.1%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2021/04/28/linux/CentOS8.1%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -92,17 +92,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&text="><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&is_video=false&description="><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&name=&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&t="><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -183,17 +183,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/exclude/houdini%20python%E5%BC%80%E5%8F%91/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://g-note.gitlab.io/2021/04/28/houdini/houdini%20python%E5%BC%80%E5%8F%91/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
