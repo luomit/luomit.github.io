@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang=en>
 <head>
     <!-- so meta -->
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://luomit.github.io/2019/09/01/%E7%AD%86%E8%A8%98/houdini/Houdini%E7%B2%92%E5%AD%90%E6%8B%96%E5%B0%BE%20%E2%85%A0/index.html">
 <meta property="og:site_name" content="筆跡">
 <meta property="og:description" content="实现路径运动节点网络 节点概述 创建一个不规则的发射源用于发射粒子，不规则的形状可以使粒子在发射开始时便获得一个随机的初始位置； 以粒子发射源位置为起点绘制创建一条曲线(曲线间点和点的位置均分布，不宜过于靠近，否则力会相互间影响)，计算线的切线向量，并转为速度场； 在粒子系统中使用popadvectbyvolume将速度场引入**(重点：advection type 平流类型使用Update ve">
-<meta property="og:locale" content="zh_TW">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190831021017911.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019090112351688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2019-09-01T00:51:04.000Z">
@@ -68,21 +68,17 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">首頁</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/archives/">歸檔</a></li>
+          <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="/categories/notes/">筆記</a></li>
+          <li><a href="/categories/">Categories</a></li>
          
-          <li><a href="/categories/gallery/">畫冊</a></li>
+          <li><a href="/friends/">friends</a></li>
          
-          <li><a href="/categories/diary/">日記</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/categories/projects/">項目</a></li>
-         
-          <li><a href="/categories/links/">鏈接</a></li>
-         
-          <li><a href="/about/">關於</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </span>
@@ -96,10 +92,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">回到頁首</span>
-      <span id="i-share" class="info" style="display:none;">分享</span>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -214,21 +210,17 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">首頁</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/archives/">歸檔</a></li>
+          <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="/categories/notes/">筆記</a></li>
+          <li><a href="/categories/">Categories</a></li>
          
-          <li><a href="/categories/gallery/">畫冊</a></li>
+          <li><a href="/friends/">friends</a></li>
          
-          <li><a href="/categories/diary/">日記</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/categories/projects/">項目</a></li>
-         
-          <li><a href="/categories/links/">鏈接</a></li>
-         
-          <li><a href="/about/">關於</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </div>
@@ -255,10 +247,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
     </div>
 
   </div>
@@ -277,21 +269,17 @@
     <nav>
       <ul>
          
-          <li><a href="/">首頁</a></li>
+          <li><a href="/">Home</a></li>
          
-          <li><a href="/archives/">歸檔</a></li>
+          <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="/categories/notes/">筆記</a></li>
+          <li><a href="/categories/">Categories</a></li>
          
-          <li><a href="/categories/gallery/">畫冊</a></li>
+          <li><a href="/friends/">friends</a></li>
          
-          <li><a href="/categories/diary/">日記</a></li>
+          <li><a href="/about/">About</a></li>
          
-          <li><a href="/categories/projects/">項目</a></li>
-         
-          <li><a href="/categories/links/">鏈接</a></li>
-         
-          <li><a href="/about/">關於</a></li>
+          <li><a href="/search/">Search</a></li>
         
       </ul>
     </nav>
@@ -325,7 +313,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -336,7 +324,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })
