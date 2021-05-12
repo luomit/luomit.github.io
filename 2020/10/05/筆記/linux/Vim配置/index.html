@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="vim基础Vim 是一个优秀的终端文本编辑器，可以不使用鼠标，完全键盘操作；对新手不太友好，一旦适应了键盘操作的习惯，可以极大的提高工作效率；且系统占用较小，打开较大的文件也不会有任何压力； Vim在启动时会根据配置文件(.vimrc)来配置Vim，因此我们可以通过这个文件来定制适合自己使用习惯的Vim；  vim的默认配置在 &#x2F;etc&#x2F;.vimrc vim用户的配置通常位于 ~&#x2F;.vimrc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vim 配置">
+<meta property="og:url" content="https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="筆跡">
+<meta property="og:description" content="vim基础Vim 是一个优秀的终端文本编辑器，可以不使用鼠标，完全键盘操作；对新手不太友好，一旦适应了键盘操作的习惯，可以极大的提高工作效率；且系统占用较小，打开较大的文件也不会有任何压力； Vim在启动时会根据配置文件(.vimrc)来配置Vim，因此我们可以通过这个文件来定制适合自己使用习惯的Vim；  vim的默认配置在 &#x2F;etc&#x2F;.vimrc vim用户的配置通常位于 ~&#x2F;.vimrc">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-10-05T12:00:22.000Z">
+<meta property="article:modified_time" content="2020-12-13T05:42:13.277Z">
+<meta property="article:author" content="阿刚">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="vim">
+<meta property="article:tag" content="neovim">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Vim 配置</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/10/06/%E7%AD%86%E8%A8%98/shell/ShellScript-II/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/10/05/%E7%AD%86%E8%A8%98/shell/ShellScript-I/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回到頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&text=Vim 配置"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&is_video=false&description=Vim 配置"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vim 配置&body=Check out this article: https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&name=Vim 配置&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&t=Vim 配置"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">vim基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%A8%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">自用部分配置</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Vim 配置
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">阿刚</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-10-05T12:00:22.000Z" itemprop="datePublished">2020-10-05</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/linux/" rel="tag">linux</a>, <a class="tag-link-link" href="/tags/neovim/" rel="tag">neovim</a>, <a class="tag-link-link" href="/tags/vim/" rel="tag">vim</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="vim基础"><a href="#vim基础" class="headerlink" title="vim基础"></a>vim基础</h2><p>Vim 是一个优秀的终端文本编辑器，可以不使用鼠标，完全键盘操作；对新手不太友好，一旦适应了键盘操作的习惯，可以极大的提高工作效率；且系统占用较小，打开较大的文件也不会有任何压力；</p>
+<p>Vim在启动时会根据配置文件(.vimrc)来配置Vim，因此我们可以通过这个文件来定制适合自己使用习惯的Vim；</p>
+<ul>
+<li>vim的默认配置在 /etc/.vimrc</li>
+<li>vim用户的配置通常位于 ~/.vimrc</li>
+</ul>
+<p>Vim环境变量设置参数</p>
+<table>
+<thead>
+<tr>
+<th>设置参数</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936;set termencoding=utf-8;set encoding=utf-8</td>
+<td>设置编码格式，enconding选项用于缓存的额文本、寄存器、Vim脚本文件等；fileencoding选项是Vim写入文件时采用的编码类型；termencoding选项表示输出到终端时采用的编码类型</td>
+</tr>
+<tr>
+<td>set nu;set num</td>
+<td>nu时number的缩写，所以这两个配置命令效果是一样的；取消行号可以使用set nonu</td>
+</tr>
+<tr>
+<td>set cursorline</td>
+<td>突出显示当前行</td>
+</tr>
+<tr>
+<td>set mouse=a;set selection=execlusive;set selectmode=mounse,key</td>
+<td>Vim默认是不启用鼠标的，可以通过此配置启用鼠标</td>
+</tr>
+<tr>
+<td>set autoindent</td>
+<td>设置自动缩进，即每一行的缩进同上一行相同</td>
+</tr>
+<tr>
+<td>set tabstop=4</td>
+<td>设置Tab键宽度为4个空格</td>
+</tr>
+</tbody></table>
+<p>将上面这些内容写进~/.vimrc中可以让vim启动时加载，避免每次使用都要再次配置</p>
+<h2 id="自用部分配置"><a href="#自用部分配置" class="headerlink" title="自用部分配置"></a>自用部分配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&quot; 设置环境变量</span></span><br><span class="line"><span class="keyword">set</span> showcmd                                     <span class="comment">&quot; Show (partial) command in status line.</span></span><br><span class="line"><span class="keyword">set</span> showmatch                                   <span class="comment">&quot; Show matching brackets.</span></span><br><span class="line"><span class="keyword">set</span> ignorecase                                  <span class="comment">&quot; Do case insensitive matching</span></span><br><span class="line"><span class="keyword">set</span> incsearch                                   <span class="comment">&quot; Incremental search</span></span><br><span class="line"><span class="keyword">set</span> mouse=<span class="keyword">a</span>                                     <span class="comment">&quot; Enable mouse usage (all modes)</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span>                                      <span class="comment">&quot; 显示行号</span></span><br><span class="line"><span class="keyword">set</span> cursorline                                  <span class="comment">&quot; 高亮当前行</span></span><br><span class="line"><span class="keyword">set</span> textwidth                                   <span class="comment">&quot; 设置行宽,即一行显示多少个字符</span></span><br><span class="line"><span class="keyword">set</span> wrap                                        <span class="comment">&quot; 自动折行</span></span><br><span class="line"><span class="keyword">set</span> linebreak                                   <span class="comment">&quot; 不会在单词中间折行</span></span><br><span class="line"><span class="keyword">set</span> wrapmargin=<span class="number">2</span>                                <span class="comment">&quot; 指定折行处与右边缘之间空出的字符</span></span><br><span class="line"><span class="string">&quot;set spell spelllang=en_us                      &quot;</span> 英语拼写检查</span><br><span class="line"><span class="keyword">set</span> autochdir                                   <span class="comment">&quot; 自动切换文件路径</span></span><br><span class="line"><span class="keyword">set</span> visualbell                                  <span class="comment">&quot; 出错闪屏幕</span></span><br><span class="line"><span class="keyword">set</span> autoread                                    <span class="comment">&quot; 文件改变提示</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"><span class="keyword">set</span> wildmode=longes<span class="variable">t:list</span>,full                  <span class="comment">&quot; tab补全，再次tab依次选择提示</span></span><br><span class="line"><span class="keyword">set</span> encoding=utf-<span class="number">8</span>                              <span class="comment">&quot; 设置编码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> backupdir=~/.config/nvim/.backup//  </span><br><span class="line"><span class="keyword">set</span> directory=~/.config/nvim/.swp//</span><br><span class="line"><span class="keyword">set</span> undodir=~/.config/nvim/.<span class="keyword">undo</span>//</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 安装插件 start</span></span><br><span class="line"><span class="keyword">call</span> plug#begin(<span class="string">&#x27;~/.config/nvim/plugged&#x27;</span>)</span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;mattn/emmet-vim&#x27;</span>                          <span class="comment">&quot;插件的github位置</span></span><br><span class="line"><span class="comment">&quot;Plug &#x27;https://github.com/vim-scripts/fcitx.vim.git&#x27;</span></span><br><span class="line"><span class="comment">&quot;Plug &#x27;norcalli/nvim-colorizer.lua&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline-themes&#x27;</span>           <span class="comment">&quot; 状态栏配置</span></span><br><span class="line"><span class="comment">&quot;Plug &#x27;altercation/vim-colors-solarized&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;joshdick/onedark.vim&#x27;</span>                     <span class="comment">&quot; 主题</span></span><br><span class="line">Plug <span class="string">&#x27;junegunn/vim-easy-align&#x27;</span>                  <span class="comment">&quot; 自动对齐</span></span><br><span class="line">Plug <span class="string">&#x27;jiangmiao/auto-pairs&#x27;</span>                     <span class="comment">&quot; 自动引号&amp;括号补全</span></span><br><span class="line">Plug <span class="string">&#x27;luochen1990/rainbow&#x27;</span>                      <span class="comment">&quot; 括号色彩匹配</span></span><br><span class="line">Plug <span class="string">&#x27;preservim/nerdtree&#x27;</span></span><br><span class="line">Plug <span class="string">&#x27;Xuyuanp/nerdtree-git-plugin&#x27;</span>              <span class="comment">&quot; 文件树状结果</span></span><br><span class="line">Plug <span class="string">&#x27;neoclide/coc.nvim&#x27;</span>, &#123;<span class="string">&#x27;branch&#x27;</span>: <span class="string">&#x27;release&#x27;</span>&#125; <span class="comment">&quot; coc补全插件</span></span><br><span class="line">Plug <span class="string">&#x27;zchee/deoplete-jedi&#x27;</span>                      <span class="comment">&quot; python</span></span><br><span class="line">Plug <span class="string">&#x27;scrooloose/nerdcommenter&#x27;</span>                 <span class="comment">&quot; 注释插件</span></span><br><span class="line">Plug <span class="string">&#x27;scrooloose/syntastic&#x27;</span>                     <span class="comment">&quot; 语法检查</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">call</span> plug#end()</span><br><span class="line"><span class="comment">&quot; 安装插件 End</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 主题颜色</span></span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"><span class="keyword">set</span> background=dark</span><br><span class="line"><span class="keyword">colorscheme</span> onedark</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:onedark_termcolors</span>=<span class="number">256</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:airline_theme</span>=<span class="string">&#x27;onedark&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:lightline</span> = &#123;</span><br><span class="line">  \ <span class="string">&#x27;colorscheme&#x27;</span>: <span class="string">&#x27;onedark&#x27;</span>,</span><br><span class="line">  \ &#125;</span><br><span class="line"></span><br><span class="line"><span class="string">&quot; autocmd vimenter * NERDTree                   &quot;</span> 自动开启Nerdtree</span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:NERDTreeWinSize</span> = <span class="number">25</span>                      <span class="comment">&quot; 设定 NERDTree 视窗大小</span></span><br><span class="line"><span class="keyword">let</span> NERDTreeShowBookmarks=<span class="number">1</span>                     <span class="comment">&quot; 开启Nerdtree时自动显示Bookmarks</span></span><br><span class="line"><span class="comment">&quot;打开vim时如果没有文件自动打开NERDTree</span></span><br><span class="line"><span class="comment">&quot; autocmd vimenter * if !argc()|NERDTree|endif</span></span><br><span class="line"><span class="comment">&quot;当NERDTree为剩下的唯一窗口时自动关闭</span></span><br><span class="line"><span class="keyword">autocmd</span> bufenter * <span class="keyword">if</span> (<span class="built_in">winnr</span>(<span class="string">&quot;$&quot;</span>) == <span class="number">1</span> &amp;&amp; <span class="built_in">exists</span>(<span class="string">&quot;b:NERDTree&quot;</span>) &amp;&amp; <span class="variable">b:NERDTree</span>.isTabTree()) | q | <span class="keyword">endif</span></span><br><span class="line"><span class="comment">&quot; 设置树的显示图标</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:NERDTreeDirArrowExpandable</span> = <span class="string">&#x27;+&#x27;</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:NERDTreeDirArrowCollapsible</span> = <span class="string">&#x27;-&#x27;</span></span><br><span class="line"><span class="keyword">let</span> NERDTreeIgnore = [<span class="string">&#x27;\.pyc$&#x27;</span>]                 <span class="comment">&quot; 过滤所有.pyc文件不显示</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:NERDTreeShowLineNumbers</span>=<span class="number">0</span>                 <span class="comment">&quot; 是否显示行号</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:NERDTreeHidden</span>=<span class="number">0</span>                          <span class="comment">&quot; 不显示隐藏文件</span></span><br><span class="line"><span class="string">&quot;&quot;</span>Making it prettier</span><br><span class="line"><span class="keyword">let</span> NERDTreeMinimalUI = <span class="number">1</span></span><br><span class="line"><span class="keyword">let</span> NERDTreeDirArrows = <span class="number">1</span></span><br><span class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F3&gt;</span> :NERDTreeToggle<span class="symbol">&lt;CR&gt;</span>               <span class="comment">&quot; 开启/关闭nerdtree快捷键</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 按键配置</span></span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">vim基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%A8%E9%83%A8%E5%88%86%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">自用部分配置</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&text=Vim 配置"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&is_video=false&description=Vim 配置"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vim 配置&body=Check out this article: https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&title=Vim 配置"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&name=Vim 配置&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://luomit.github.io/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/&t=Vim 配置"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    阿刚
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+<!-- search -->
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-86660611-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

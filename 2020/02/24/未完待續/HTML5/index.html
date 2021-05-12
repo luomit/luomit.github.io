@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Html基础概念和语法笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5基础入门">
+<meta property="og:url" content="https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/index.html">
+<meta property="og:site_name" content="筆跡">
+<meta property="og:description" content="Html基础概念和语法笔记。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg">
+<meta property="article:published_time" content="2020-02-24T04:06:44.000Z">
+<meta property="article:modified_time" content="2020-04-24T13:17:24.575Z">
+<meta property="article:author" content="阿刚">
+<meta property="article:tag" content="HTML5">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>HTML5基础入门</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/02/25/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/CSS%E5%9F%BA%E7%A1%80/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/02/22/%E7%AD%86%E8%A8%98/houdini/Solaris%E5%9F%BA%E7%A1%80(%E4%B8%80)/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回到頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&text=HTML5基础入门"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&is_video=false&description=HTML5基础入门"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HTML5基础入门&body=Check out this article: https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&name=HTML5基础入门&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&t=HTML5基础入门"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">HTML的基本格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">HTML5的基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5%E6%A0%87%E8%AE%B0%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">HTML5标记的语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.</span> <span class="toc-text">HTML5常用标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E5%88%97%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">HTML5列表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">3.1.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">3.2.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E8%A1%A8"><span class="toc-number">3.3.</span> <span class="toc-text">自定义列表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E5%9B%BE%E5%83%8F"><span class="toc-number">4.</span> <span class="toc-text">HTML5超链接和图像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-number">4.1.</span> <span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F"><span class="toc-number">4.2.</span> <span class="toc-text">图像</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">5.</span> <span class="toc-text">文件的相对路径与绝对路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">5.1.</span> <span class="toc-text">相对路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">5.2.</span> <span class="toc-text">绝对路径</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0"><span class="toc-number">6.</span> <span class="toc-text">HTML5常用元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%A0%87%E7%AD%BE"><span class="toc-number">6.1.</span> <span class="toc-text">快标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">6.2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B1%9E%E6%80%A7"><span class="toc-number">6.3.</span> <span class="toc-text">表格属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">6.4.</span> <span class="toc-text">表单元素与属性</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        HTML5基础入门
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">luomit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-24T04:06:44.000Z" itemprop="datePublished">2020-02-24</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/HTML5/" rel="tag">HTML5</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+<div class="article-gallery">
+    
+    <a class="gallery-item" target="_blank" href="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg" rel="gallery_ckol9bhrp000a80u9dme3h90r noopener">
+        <img src="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg" itemprop="image" />
+    </a>
+    
+</div>
+
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="HTML的基本格式"><a href="#HTML的基本格式" class="headerlink" title="HTML的基本格式"></a>HTML的基本格式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span>                 <span class="comment">&lt;!---命名文档类型HTML5---&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span>                <span class="comment">&lt;!---说明我们写的是标记语言HTML文档---&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>                          <span class="comment">&lt;!---头部文件(描述区)---&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>      <span class="comment">&lt;!---编码格式utf-8、gb2312、gbk---&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span>        <span class="comment">&lt;!---网页标题---&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>                          <span class="comment">&lt;!---命网页主体---&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="HTML5的基本语法"><a href="#HTML5的基本语法" class="headerlink" title="HTML5的基本语法"></a>HTML5的基本语法</h1><h2 id="HTML5标记的语法"><a href="#HTML5标记的语法" class="headerlink" title="HTML5标记的语法"></a>HTML5标记的语法</h2><p><code>常规标记</code></p>
+<p>&lt;标记名称 属性1名=”属性1值” 属性2名=”属性2值” ……&gt;&lt;/标记名称&gt;</p>
+<p><code>空标记</code></p>
+<p>&lt;标记名称 属性1名=”属性1值”/&gt;<br>标记有两种形式，我们分别称它们为单标记和双标记或者空标记和普通标记;<br>说明：<br>    (1)写在&lt;&gt;括号里的第一个单词，叫做标记，也叫标签，也称做元素；<br>    (2)标记和属性用空格隔开，属性和属性值用等号相连接，属性值必须用双引号括起来；<br>    (3)一个标记可以有多个属性，属性和属性之间用空格隔开，属性不分先后顺序；<br>    (4)空标记是指没有结束标签的标记，必须使用”/“来关闭，例如:<hr/>;</p>
+<h2 id="HTML5常用标签"><a href="#HTML5常用标签" class="headerlink" title="HTML5常用标签"></a>HTML5常用标签</h2><p><code>标题标签</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>标题标签共有六级，一级字体最大；</p>
+<p><code>字体标签</code></p>
+<P></P>
+段落标签，标识一个段落(默认情况下段落与段落之间有段间距)
+
+<p><i></i>  <em></em><br>这两个标签都是使字体倾斜，一般情况下推荐使用<em></em>标签</p>
+<p><b></b>  <strong></strong><br>设置文本加粗效果的标签，一般情况下推荐使用<strong></strong>标签，语义明确</p>
+<p><u></u><br>设置文本下划线的标签</p>
+<br/>
+空标签，换行标签
+
+<hr/>
+空标签，水平线标签
+
+<p><code>字符实体(转义字符)</code></p>
+<!--&nbsp;-->
+<p>空格</p>
+<!--&gt;-->
+<p>&gt;右尖括号</p>
+<!--&lt;-->
+<p>&lt;左尖括号</p>
+<!--&copy;-->
+<p>备案中图标</p>
+<h1 id="HTML5列表"><a href="#HTML5列表" class="headerlink" title="HTML5列表"></a>HTML5列表</h1><p>HTML中有三种列表，分别是：无序列表，有序列表，自定义列表</p>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>有序列表的属性<br>(1)type 规定列表中的列表项目的项目符号的类型<br>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">&quot;A&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">type</span>=<span class="string">&quot;I&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>1 数字的有序列表默认有(1，2，3，4)<br>a 字母顺序的有序列表有(a,b,c,d)<br>A 大写字母的有序列表有(A,B,C,D)<br>i 罗马数字小写(i,ii,iii,iv)IV<br>I 罗马数字大写(I，II，III，)</p>
+<p>(2)start 属性规定有序列表的开始点<br>语法:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span> <span class="attr">start</span>=<span class="string">&quot;5&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>名词<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dd</span>&gt;</span>解释<span class="tag">&lt;/<span class="name">dd</span>&gt;</span>     <span class="comment">&lt;!---definition description 定义描述---&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="HTML5超链接和图像"><a href="#HTML5超链接和图像" class="headerlink" title="HTML5超链接和图像"></a>HTML5超链接和图像</h1><h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>语法：<br><a target="_blank" rel="noopener" href="https://luomit.xyz" title="我的博客"> 链接文本或图片</a><br><a href="#">空连接</a></p>
+<p>说明：<br>href部分中url后边跟的是链接页面的地址(包含文件名) title属性，当加入title属性是鼠标指针在这个对象上会显示title的内容；<br>target 属性定义了打开链接的目标窗口；<br>_blank 在新的浏览器标签页上打开一个新的窗口(保留原始页面)；<br>_self 在当前浏览器标签页打开新的跳转窗口，此为默认；</p>
+<h2 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h2><p>语法：<br><img src="图片路径" border="边框" alt="图片替代文本" title="图片标题" width="图片的宽度" heigth="图片的高度"/></p>
+<p>说明：<br>属性src表示图片的来源(图像的存放路径)；<br>border属性标识了图像的面框；<br>width和height设定图像在页面上显示的宽高；<br>title这是当鼠标悬停在图片上时要显示的信息；<br>alt当图片不能正确显示的时候，可以用作提示的信息给用的属性，这样用户体验也许会好些；</p>
+<h1 id="文件的相对路径与绝对路径"><a href="#文件的相对路径与绝对路径" class="headerlink" title="文件的相对路径与绝对路径"></a>文件的相对路径与绝对路径</h1><h2 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h2><p>相对路径的写法：<br>(同级)当文件目录与目标目录在同一文件夹下时，直接书写文件名+文件后缀<br>(上级找下级)当当前文件夹和目标文件所处的文件夹在同一路径下时，目标文件夹名/目标文件全称+目标文件后缀<br>(下级找上级)当当前文件所处的文件夹和目标文件在同一目录时，使用../将当前文件跳转到上一级别目录同级文职再+目标文件名+目标文件后缀；例如../images/a01.jpg</p>
+<h2 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h2><p>例如:<br><img sec="D:/OneDrive - JJXY/luomitBlog/Github/cdn/img/cover/001jpg"></p>
+<h1 id="HTML5常用元素"><a href="#HTML5常用元素" class="headerlink" title="HTML5常用元素"></a>HTML5常用元素</h1><h2 id="快标签"><a href="#快标签" class="headerlink" title="快标签"></a>快标签</h2><p>语法：<br><dic></div><br>说明：<br>没有具体含义，统称为快标签，用来设置文档区域，是文档布局常用对象</p>
+<p>语法：<br><span></span><br>说明：<br>文本结点标签，可以是某一段文字或是某一个字</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><!--注释信息等-->
+
+
+<h2 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h2><p>说明:<br>注：一对tr表示一行；一对td表示一个单元格(一列)</p>
+<p>表的相关属性：<br>(1)width=”表格的宽度”<br>(2)height=”表格的高度”<br>(3)border=”表格的边框”<br>(4)bordercolor=”边框色”<br>(5)cellspacing=”单元格与单元格的间距”<br>(6)cellpadding=”单元格与内容的距离”<br>(7)aligh=”表格的对其方式”  取值：”left”、”center”、”right” (valigh=”垂直对齐”、top、buttom、middle)<br>(8)合并单元格属性:(td)     合并列：colspan”所有要合并的单元格列数”  合并行：rowspan=”所有要合并单元格的行数”</p>
+<h2 id="表单元素与属性"><a href="#表单元素与属性" class="headerlink" title="表单元素与属性"></a>表单元素与属性</h2><p>表单的作用：<br>用来收集用户的信息</p>
+<p><code>表单框</code></p>
+<p><from name="表单名称" method="post/get" action="路径"></form></p>
+<p><code>表单控件</code></p>
+<input type=""/>
+语法：
+<input type="" name="" value="" size="" maxlenght="" />
+说明：
+`input：`表即可创建按钮、文本输入框、选择框等各种类型的输入字段
+`name：`属性标识表单域的名称
+`type：`属性标识表单控件的类型，大概有十多种
+`value：`属性定义表单域的默认值，其他属性根据type的不同而有所变化
+`maxlength`：控制最多输入的字符数
+`size：`控制框的宽度(以字符为单位)
+
+<p>(1)文本框<input type="text" value="默认值"/><br>(2)密码框<input type="password"/><br>(3)提交按钮<input type="submit" value="按钮内容"/><br>(4)重置按钮<input type="reset" value="按钮内容"/><br>(5)空按钮<input type="button" value="按钮内容"/><br>(6)单选按钮组<br><input type="radio" name="ral" /><br><input type="radio" name="ral" checked="checked"/>默认选中<br>(7)复选框组<br><input type="checkbox" name=""/><input type="checkbox" name="" disabled="disabled"><br>disabled=”disabled”(禁用) checked=”checked”(默认启用)</p>
+<p><code>下拉菜单</code></p>
+<p>语法：<br><select><br>    <option>下拉选项1</option><br>    <option>下拉选项2</option><br></select><br>表单域多行文本定义</p>
+<p>语法：<br><textarea name="" cols="" rows="" style="resize:none"></textarea><br>说明：<br>多行文本，row属性和cols属性用来设置文本输入窗口的高度和宽度，单位是字符<br>阻止浏览器对窗口的拖到设置：{resize=none;}(这是css属性)</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">HTML的基本格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">HTML5的基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5%E6%A0%87%E8%AE%B0%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">HTML5标记的语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.</span> <span class="toc-text">HTML5常用标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E5%88%97%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">HTML5列表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">3.1.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">3.2.</span> <span class="toc-text">有序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%97%E8%A1%A8"><span class="toc-number">3.3.</span> <span class="toc-text">自定义列表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E5%9B%BE%E5%83%8F"><span class="toc-number">4.</span> <span class="toc-text">HTML5超链接和图像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-number">4.1.</span> <span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F"><span class="toc-number">4.2.</span> <span class="toc-text">图像</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B8%8E%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">5.</span> <span class="toc-text">文件的相对路径与绝对路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">5.1.</span> <span class="toc-text">相对路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-number">5.2.</span> <span class="toc-text">绝对路径</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5%E5%B8%B8%E7%94%A8%E5%85%83%E7%B4%A0"><span class="toc-number">6.</span> <span class="toc-text">HTML5常用元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%A0%87%E7%AD%BE"><span class="toc-number">6.1.</span> <span class="toc-text">快标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">6.2.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E5%B1%9E%E6%80%A7"><span class="toc-number">6.3.</span> <span class="toc-text">表格属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">6.4.</span> <span class="toc-text">表单元素与属性</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&text=HTML5基础入门"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&is_video=false&description=HTML5基础入门"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HTML5基础入门&body=Check out this article: https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&title=HTML5基础入门"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&name=HTML5基础入门&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://luomit.github.io/2020/02/24/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BA%8C/HTML5/&t=HTML5基础入门"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    阿刚
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+<!-- search -->
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-86660611-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="利用PyQt的QMainWindow类创建一个应用程序，并添加菜单栏与工具栏；信号与信号槽的概念与案例练习。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyQt菜单与工具栏">
+<meta property="og:url" content="https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/index.html">
+<meta property="og:site_name" content="筆跡">
+<meta property="og:description" content="利用PyQt的QMainWindow类创建一个应用程序，并添加菜单栏与工具栏；信号与信号槽的概念与案例练习。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://goss.veer.com/creative/vcg/veer/1600water/veer-303345600.jpg">
+<meta property="article:published_time" content="2020-02-22T04:06:44.000Z">
+<meta property="article:modified_time" content="2021-05-07T19:21:05.743Z">
+<meta property="article:author" content="阿刚">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="PyQt5">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://goss.veer.com/creative/vcg/veer/1600water/veer-303345600.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>PyQt菜单与工具栏</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020/02/22/%E7%AD%86%E8%A8%98/nuke/Nuke%E6%8A%80%E8%83%BD(%E4%B8%80)/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020/02/22/%E7%AD%86%E8%A8%98/python/Python%E5%9F%BA%E7%A1%80(01)/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">回到頁首</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&text=PyQt菜单与工具栏"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&is_video=false&description=PyQt菜单与工具栏"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=PyQt菜单与工具栏&body=Check out this article: https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&name=PyQt菜单与工具栏&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&t=PyQt菜单与工具栏"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#QMainWindow%E5%88%9B%E5%BB%BA%E5%9F%BA%E6%9C%AC%E7%AA%97%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">QMainWindow创建基本窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E4%B8%8E%E4%BF%A1%E5%8F%B7%E6%A7%BD"><span class="toc-number">2.</span> <span class="toc-text">信号与信号槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E6%A7%BDSignal-amp-slots"><span class="toc-number">2.1.</span> <span class="toc-text">信号槽Signal&amp;slots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%AE%9E%E7%8E%B0%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">重写实现事件处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%A7%BD%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">链接槽函数</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        PyQt菜单与工具栏
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">luomit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-02-22T04:06:44.000Z" itemprop="datePublished">2020-02-22</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/PyQt5/" rel="tag">PyQt5</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+<div class="article-gallery">
+    
+    <a class="gallery-item" target="_blank" href="https://goss.veer.com/creative/vcg/veer/1600water/veer-303345600.jpg" rel="gallery_ckol9bhsj002i80u98ot05l8z noopener">
+        <img src="https://goss.veer.com/creative/vcg/veer/1600water/veer-303345600.jpg" itemprop="image" />
+    </a>
+    
+</div>
+
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="QMainWindow创建基本窗口"><a href="#QMainWindow创建基本窗口" class="headerlink" title="QMainWindow创建基本窗口"></a>QMainWindow创建基本窗口</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow,QApplication</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.statusBar().showMessage(<span class="string">&#x27;Ready&#x27;</span>)</span><br><span class="line">        <span class="comment">#QMainWindow类第一次调用ststusBar()方法创建一个状态栏，后续调用返回状态栏对象，showMassage()状态栏上显示一条消息</span></span><br><span class="line">          </span><br><span class="line">        self.setGeometry(<span class="number">300</span>,<span class="number">300</span>,<span class="number">250</span>,<span class="number">150</span>)    </span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Statusbar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line">````  </span><br><span class="line"></span><br><span class="line"><span class="comment">### 创建菜单栏</span></span><br><span class="line">````python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QAction, qApp, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIcon</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        exitAction = QAction(QIcon(<span class="string">&#x27;bi.svg&#x27;</span>), <span class="string">&#x27;&amp;Exit&#x27;</span>, self)    <span class="comment">#定义菜单控件图标与名字</span></span><br><span class="line">        exitAction.setShortcut(<span class="string">&#x27;Ctrl+Q&#x27;</span>)                <span class="comment">#定义控件快捷键</span></span><br><span class="line">        exitAction.setStatusTip(<span class="string">&#x27;Exit application&#x27;</span>)     <span class="comment">#定义控件提示</span></span><br><span class="line">        exitAction.triggered.connect(qApp.quit)</span><br><span class="line"></span><br><span class="line">        self.statusBar()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建一个菜单栏</span></span><br><span class="line">        menubar = self.menuBar()</span><br><span class="line">        <span class="comment"># 添加菜单</span></span><br><span class="line">        fileMenu = menubar.addMenu(<span class="string">&#x27;&amp;File&#x27;</span>)</span><br><span class="line">        <span class="comment"># 添加事件</span></span><br><span class="line">        fileMenu.addAction(exitAction)</span><br><span class="line">        <span class="comment">#点击菜单控件的时候，调用qApp.quit,终止应用程序</span></span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Menubar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QAction, QTextEdit, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIcon</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        textEdit = QTextEdit()</span><br><span class="line">        self.setCentralWidget(textEdit)</span><br><span class="line">        </span><br><span class="line">        exitAction = QAction(QIcon(<span class="string">&#x27;bi.svg&#x27;</span>), <span class="string">&#x27;Exit&#x27;</span>, self)</span><br><span class="line">        exitAction.setShortcut(<span class="string">&#x27;Ctrl+Q&#x27;</span>)</span><br><span class="line">        exitAction.setStatusTip(<span class="string">&#x27;Exit application&#x27;</span>)</span><br><span class="line">        exitAction.triggered.connect(self.close)</span><br><span class="line"></span><br><span class="line">        self.statusBar()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建一个菜单栏</span></span><br><span class="line">        menubar = self.menuBar()</span><br><span class="line">        <span class="comment"># 添加菜单</span></span><br><span class="line">        fileMenu = menubar.addMenu(<span class="string">&#x27;&amp;File&#x27;</span>)</span><br><span class="line">        <span class="comment"># 添加事件</span></span><br><span class="line">        fileMenu.addAction(exitAction)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#添加工具栏并命名为Tool，点击也是执行退出操作</span></span><br><span class="line">        toolbar = self.addToolBar(<span class="string">&#x27;Tool&#x27;</span>)</span><br><span class="line">        toolbar.addAction(exitAction)</span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Menubar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<h2 id="信号与信号槽"><a href="#信号与信号槽" class="headerlink" title="信号与信号槽"></a>信号与信号槽</h2><pre><code>所有的GUI程序都是事件驱动的。事件由用户出发，但也有可能是其他触发方式；例如网络连接、windows manager或定时器。当我们调用QApplication的exec_()方法时会使程序进入主循环，主循环会获取并分发时间。在事件模型中，有三个参与者；分别是事件源、事件对象、时间接收者。事件源是状态发生的对象，时间(对象)封装了事件中状态的变动，事件接收者是要接受事件源材料的对象，事件源对象将事件的处理工作交给事件接收者。
+
+PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用于对象间的通信；signal在某以特定事件发生时被触发，slot可以是任何callable对象；当signal触发时会调用与之相连的slot。
+</code></pre>
+<h3 id="信号槽Signal-amp-slots"><a href="#信号槽Signal-amp-slots" class="headerlink" title="信号槽Signal&amp;slots"></a>信号槽Signal&amp;slots</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (QWidget, QApplication,</span><br><span class="line">                             QVBoxLayout,QLCDNumber,QSlider)</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        lcd = QLCDNumber(self)</span><br><span class="line">        sld = QSlider(Qt.Horizontal, self)</span><br><span class="line"></span><br><span class="line">        vbox = QVBoxLayout()</span><br><span class="line">        vbox.addWidget(lcd)</span><br><span class="line">        vbox.addWidget(sld)</span><br><span class="line"></span><br><span class="line">        self.setLayout(vbox)</span><br><span class="line">        sld.valueChanged.connect(lcd.display)</span><br><span class="line">        <span class="comment">#calueChanged参数关联到lcd显示插槽上 </span></span><br><span class="line">        <span class="comment">#sender是发出信号的对象。receiver是接收信号的对象。slot(插槽)是对信号做出反应的方法。</span></span><br><span class="line">        </span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Signal &amp; slot&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="重写实现事件处理器"><a href="#重写实现事件处理器" class="headerlink" title="重写实现事件处理器"></a>重写实现事件处理器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QWidget, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.setGeometry(<span class="number">300</span>,<span class="number">300</span>,<span class="number">250</span>,<span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Event handler&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">keyPressEvent</span>(<span class="params">self,e</span>):</span></span><br><span class="line">        <span class="keyword">if</span> e.key() == Qt.Key_Escape:</span><br><span class="line">            self.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="链接槽函数"><a href="#链接槽函数" class="headerlink" title="链接槽函数"></a>链接槽函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="comment">#import pymel.core as pm        #maya的pyme模块提供了一种槽信号的链接方法，如需要使用需要导入此库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span>*</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">123</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">v</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(v)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    btn = QPushButton()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    btn.clicked.connect(fn)</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">    btn.clicked.connect(<span class="keyword">lambda</span> :fn())</span><br><span class="line">    <span class="comment"># 3</span></span><br><span class="line">    btn.clicked.connect(partial(fn))</span><br><span class="line">    <span class="comment"># 4</span></span><br><span class="line">    <span class="comment"># import pymel.core as pm</span></span><br><span class="line">    <span class="comment"># btn.clicked.connect(pm.Callback(fn))  #pymel的槽函数链接方法演示</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    btn.clicked.connect(<span class="keyword">lambda</span>:func(<span class="number">456</span>))</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">    btn.clicked.connect(partial(func,<span class="number">456</span>))</span><br><span class="line">    <span class="comment"># 3</span></span><br><span class="line">    <span class="comment"># btn.clicked.connect(pm.Callback(fn,456))  # maya pymel.core.Callback</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        btn.clicked.connect(<span class="keyword">lambda</span>:func(i))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        btn.clicked.connect(partial(func,i))</span><br><span class="line"></span><br><span class="line">    btn.show()</span><br><span class="line"></span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></table></figure>
+<p>以上代码演示了几种不带参数的槽函数的用法和几种带参数的用法，一般情况下不带参数建议使用lambda方法链接槽函数，其他情况建议使用partial方法不易出现错误的情况。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#QMainWindow%E5%88%9B%E5%BB%BA%E5%9F%BA%E6%9C%AC%E7%AA%97%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">QMainWindow创建基本窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E4%B8%8E%E4%BF%A1%E5%8F%B7%E6%A7%BD"><span class="toc-number">2.</span> <span class="toc-text">信号与信号槽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E6%A7%BDSignal-amp-slots"><span class="toc-number">2.1.</span> <span class="toc-text">信号槽Signal&amp;slots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%86%99%E5%AE%9E%E7%8E%B0%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">重写实现事件处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E6%A7%BD%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">链接槽函数</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&text=PyQt菜单与工具栏"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&is_video=false&description=PyQt菜单与工具栏"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=PyQt菜单与工具栏&body=Check out this article: https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&title=PyQt菜单与工具栏"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&name=PyQt菜单与工具栏&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://luomit.github.io/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/&t=PyQt菜单与工具栏"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 選單</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 文章目錄</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 頁首</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2021
+    阿刚
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首頁</a></li>
+         
+          <li><a href="/archives/">歸檔</a></li>
+         
+          <li><a href="/categories/%E7%AC%94%E8%AE%B0/">筆記</a></li>
+         
+          <li><a href="/categories/%E7%94%BB%E5%86%8C/">畫冊</a></li>
+         
+          <li><a href="/categories/%E6%97%A5%E8%AE%B0/">日記</a></li>
+         
+          <li><a href="/categories/%E9%A1%B9%E7%9B%AE/">項目</a></li>
+         
+          <li><a href="/about/">關於</a></li>
+         
+          <li><a href="/search/">搜尋</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+<!-- search -->
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-86660611-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
