@@ -69,13 +69,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -167,7 +163,7 @@
   
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2018053125,1922025372&fm=26&gp=0.jpg" rel="gallery_ckol9x3xu002c1gu9gu0080x4 noopener">
+    <a class="gallery-item" target="_blank" href="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2018053125,1922025372&fm=26&gp=0.jpg" rel="gallery_ckolb4u4t0029t0u99tygbqre noopener">
         <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2018053125,1922025372&fm=26&gp=0.jpg" itemprop="image" />
     </a>
     
@@ -211,13 +207,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -274,13 +266,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -318,7 +306,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -329,7 +317,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })

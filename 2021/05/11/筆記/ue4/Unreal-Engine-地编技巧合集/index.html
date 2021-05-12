@@ -19,8 +19,8 @@
 <meta property="article:author" content="阿刚">
 <meta property="article:tag" content="ue4">
 <meta property="article:tag" content="shader">
-<meta property="article:tag" content="材质">
 <meta property="article:tag" content="地编">
+<meta property="article:tag" content="材质">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://luomit.github.io/Image-assets/2021.5.12_DitherThresholdAA.jpg">
     
@@ -72,13 +72,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -201,13 +197,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -264,13 +256,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -308,7 +296,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -319,7 +307,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })

@@ -69,13 +69,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -167,7 +163,7 @@
   
 <div class="article-gallery">
     
-    <a class="gallery-item" target="_blank" href="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg" rel="gallery_ckol9x3x4000c1gu92d0i5gie noopener">
+    <a class="gallery-item" target="_blank" href="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg" rel="gallery_ckolb4u42000at0u96kstb5jz noopener">
         <img src="http://www.maxon.net/fileadmin/_processed_/7/3/csm_05_astro_toiletpaper_Incl_Cright_181bba046d.jpg" itemprop="image" />
     </a>
     
@@ -268,13 +264,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -331,13 +323,9 @@
          
           <li><a href="/archives/">歸檔</a></li>
          
+          <li><a href="/categories/">categories</a></li>
+         
           <li><a href="/categories/notes/">筆記</a></li>
-         
-          <li><a href="/categories/gallery/">畫冊</a></li>
-         
-          <li><a href="/categories/diary/">日記</a></li>
-         
-          <li><a href="/categories/projects/">項目</a></li>
          
           <li><a href="/categories/links/">鏈接</a></li>
          
@@ -375,7 +363,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"In die Zwischenablage kopiert!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -386,7 +374,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Kopiert!");
+      e.trigger.setAttribute('aria-label', "Copied!");
       e.clearSelection();
     })
   })
