@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 画册 </category>
+          <category> gallery </category>
           
       </categories>
       
@@ -188,7 +188,7 @@
       
       <categories>
           
-          <category> 资源 </category>
+          <category> links </category>
           
       </categories>
       
@@ -216,9 +216,9 @@
       
         <tags>
             
-            <tag> trail </tag>
-            
             <tag> houdini </tag>
+            
+            <tag> trail </tag>
             
             <tag> particle </tag>
             
@@ -413,9 +413,9 @@
       
         <tags>
             
-            <tag> houdini </tag>
-            
             <tag> sublime text </tag>
+            
+            <tag> houdini </tag>
             
             <tag> vscode </tag>
             
@@ -859,6 +859,12 @@
         <content type="html"><![CDATA[<hr><ul><li><a href="http://forums.cgsociety.org/">CGTalk</a><code>外网CG交流论坛</code></li><li><a href="https://www.artstation.com/">Artstation客栈</a><code>艺术家栖息地</code></li><li><a href="http://threedscans.com/">扫描模型下载</a><code>高精度扫描模型免费下载</code></li><li><a href="https://cgmeetup.com/">cgmeetup</a><code>国外CG艺术社区</code></li></ul><hr><ul><li><a href="https://500px.me/luomit">500px视觉中国</a><code>摄影作品分享社区</code></li><li><a href="https://www.pexels.com/search/">pexels外网高清图片</a><code>需要黑魔法</code></li><li><a href="https://pixabay.com/">pixabay</a><code>需要黑魔法</code></li><li><a href="https://www.textures.com/">textures每日免费限制</a><code>每天十张免费高清贴图，需要黑魔法</code></li><li><a href="https://www.pixiv.net/">Pixiv二次元站</a><code>优秀二次元绘画鉴赏</code></li></ul><hr><ul><li><a href="https://www.aboutcg.org/home">AboutCG</a><code>国内最正规最权威的CG教育社区</code></li><li><a href="https://www.vfxforce.cn/">vfxforce</a><code>国外优质CG特效资讯与教程分享</code></li><li><a href="https://cg.vfxer.me/">VFXinfo</a><code>丰富的CG导航网站</code></li><li><a href="https://www.newvfx.com/">Newvfx</a><code>CG交流、文档查阅</code></li><li><a href="http://www.tokeru.com/cgwiki/index.php?title=Houdini">HoudiniWiKi</a><code>经典教程，全是干货</code></li></ul><hr><ul><li><a href="http://www.lilsubs.com/">YouTube视频下载</a><code>复制视频连接粘贴，然后在刷新的页面选中要下载的分辨率，然后右键另存视频即可。</code></li><li><a href="https://www.clipconverter.cc/">YouTube字幕下载</a><code>粘贴视频连接，生成并下载字幕文件</code></li><li><a href="http://pianyuan.la/">Film resource network</a><code>高清电影资源下载</code></li><li><a href="https://www.zybuluo.com/mdeditor">Markdown</a><code>博客书写编辑器</code></li><li><a href="https://donghua.agefans.com/">Age动漫资源</a><code>最新动漫资源下载</code></li><li><a href="https://www.zhaicy.com/">宅次元站</a><code>你要的这里全有</code></li></ul><hr><ul><li><a href="https://blog.csdn.net/luomit">CSDN</a><code>我的csdn地址</code></li><li><a href="https://mp.csdn.net/mdeditor?not_checkout=1#">CSDN编辑器</a><code>CSDN博客书写超级好用</code></li></ul><hr><ul><li><a href="https://everypixel.com/">Everypixel</a></li><li><a href="https://freephotos.cc/">Freephotos</a></li><li><a href="http://librestock.com/">librestock</a></li><li><a href="https://www.sitebuilderreport.com/stock-up">Stock Up</a></li><li><a href="http://finda.photo/">Findaphoto</a></li><li><a href="https://www.stockio.com/">Stockio</a></li><li><a href="https://wallpaperhub.app/">wallpaperhub</a><code>高清大气简约的免费壁纸</code></li></ul><hr>]]></content>
       
       
+      <categories>
+          
+          <category> links </category>
+          
+      </categories>
+      
       
         <tags>
             
@@ -1010,9 +1016,9 @@
       
         <tags>
             
-            <tag> trail </tag>
-            
             <tag> houdini </tag>
+            
+            <tag> trail </tag>
             
             <tag> particle </tag>
             
