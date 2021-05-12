@@ -242,18 +242,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Houdini四元数(花开)</title>
-    <url>/2021/05/08/%E7%AD%86%E8%A8%98/houdini/Houdini%E5%9B%9B%E5%85%83%E6%95%B0-%E8%8A%B1%E5%BC%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>四元数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Houdini Particle Trail</title>
     <url>/2020/12/14/%E7%AD%86%E8%A8%98/houdini/Houdini-Particle-Trail/</url>
     <content><![CDATA[<h2 id="Houdini-粒子路徑運動"><a href="#Houdini-粒子路徑運動" class="headerlink" title="Houdini 粒子路徑運動"></a>Houdini 粒子路徑運動</h2>]]></content>
@@ -316,6 +304,18 @@
       <tags>
         <tag>houdini</tag>
         <tag>flip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini四元数(花开)</title>
+    <url>/2021/05/08/%E7%AD%86%E8%A8%98/houdini/Houdini%E5%9B%9B%E5%85%83%E6%95%B0-%E8%8A%B1%E5%BC%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>四元数</tag>
       </tags>
   </entry>
   <entry>
@@ -403,21 +403,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PythonPJManegement</title>
-    <url>/2020/03/17/%E7%AD%86%E8%A8%98/houdini/PythonPJMane/</url>
-    <content><![CDATA[<h2 id="创建基础框架"><a href="#创建基础框架" class="headerlink" title="创建基础框架"></a>创建基础框架</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> hutil.Qt <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">proj = hou.getenv(<span class="string">&#x27;JOB&#x27;</span>)+<span class="string">&#x27;/&#x27;</span></span><br><span class="line"><span class="comment">#使用hou.getenv获取当前工程的环境变量属性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openScene</span>(<span class="params">item</span>):</span></span><br><span class="line">    hipFile = proj + item.data()</span><br><span class="line">    hou.hipFile.load(hipFile)</span><br><span class="line">    <span class="comment">#print hipFile</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">onCreateInterface</span>():</span></span><br><span class="line">    widget = QtWidgets.QLabel(proj)</span><br><span class="line">    listwidget = QtWidgets.QListWidget()</span><br><span class="line">    <span class="comment">#print &#x27;\n&#x27; &quot;ProjectPath(&quot; + proj +&#x27;)&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(proj):</span><br><span class="line">        <span class="keyword">if</span> file.endswith(<span class="string">&quot;.hip&quot;</span>):</span><br><span class="line">            listwidget.addItem(file)</span><br><span class="line">            </span><br><span class="line">    <span class="comment">#将按钮链接到函数上执行打开文件的指令</span></span><br><span class="line">    listwidget.doubleClicked.connect(openScene)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> listwidget</span><br></pre></td></tr></table></figure>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>project</tag>
-        <tag>manage</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenColorIO</title>
     <url>/2020/03/28/%E7%AD%86%E8%A8%98/houdini/OpenColorIO-Configuration/</url>
     <content><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p><a href="https://www.bilibili.com/video/BV1Yb411E7fY">视频教程</a><br><a href="https://github.com/imageworks/OpenColorIO-Configs">下载</a></p>
@@ -449,9 +434,19 @@
       </tags>
   </entry>
   <entry>
-    <title>Smoke Pump</title>
-    <url>/2020/10/11/%E7%AD%86%E8%A8%98/houdini/Smoke-Pump/</url>
-    <content><![CDATA[]]></content>
+    <title>PythonPJManegement</title>
+    <url>/2020/03/17/%E7%AD%86%E8%A8%98/houdini/PythonPJMane/</url>
+    <content><![CDATA[<h2 id="创建基础框架"><a href="#创建基础框架" class="headerlink" title="创建基础框架"></a>创建基础框架</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> hutil.Qt <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">proj = hou.getenv(<span class="string">&#x27;JOB&#x27;</span>)+<span class="string">&#x27;/&#x27;</span></span><br><span class="line"><span class="comment">#使用hou.getenv获取当前工程的环境变量属性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openScene</span>(<span class="params">item</span>):</span></span><br><span class="line">    hipFile = proj + item.data()</span><br><span class="line">    hou.hipFile.load(hipFile)</span><br><span class="line">    <span class="comment">#print hipFile</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">onCreateInterface</span>():</span></span><br><span class="line">    widget = QtWidgets.QLabel(proj)</span><br><span class="line">    listwidget = QtWidgets.QListWidget()</span><br><span class="line">    <span class="comment">#print &#x27;\n&#x27; &quot;ProjectPath(&quot; + proj +&#x27;)&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(proj):</span><br><span class="line">        <span class="keyword">if</span> file.endswith(<span class="string">&quot;.hip&quot;</span>):</span><br><span class="line">            listwidget.addItem(file)</span><br><span class="line">            </span><br><span class="line">    <span class="comment">#将按钮链接到函数上执行打开文件的指令</span></span><br><span class="line">    listwidget.doubleClicked.connect(openScene)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> listwidget</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>project</tag>
+        <tag>manage</tag>
+      </tags>
   </entry>
   <entry>
     <title>Houdini Solaris 基础</title>
@@ -539,6 +534,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Smoke Pump</title>
+    <url>/2020/10/11/%E7%AD%86%E8%A8%98/houdini/Smoke-Pump/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Houdini python开发</title>
+    <url>/2020/03/30/%E7%AD%86%E8%A8%98/houdini/houdini%20python%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h4 id="节点创建"><a href="#节点创建" class="headerlink" title="节点创建"></a>节点创建</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.pwd().createNode(<span class="string">&quot;sphere&quot;</span>,name=<span class="string">&quot;球体&quot;</span>)  </span><br><span class="line"><span class="comment"># hou.pwd()表示当前窗口所在工作路径 creatNode(节点原名，name=“设置新的名字”)    </span></span><br><span class="line">hou.cd(<span class="string">&quot;/obj&quot;</span>) </span><br><span class="line"><span class="comment"># hou.cd() 移动当前窗口工作路径到指定的新路径上</span></span><br></pre></td></tr></table></figure>
+<h4 id="节点删除"><a href="#节点删除" class="headerlink" title="节点删除"></a>节点删除</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node = hou.node(<span class="string">&quot;/obj/man/box1&quot;</span>)</span><br><span class="line">node.destroy()</span><br><span class="line"><span class="comment"># 先指定node为一个节点，再使用.destroy()来删除这个节点</span></span><br><span class="line">hou.node(<span class="string">&quot;cname&quot;</span>).destroy()</span><br><span class="line"><span class="comment"># 可以直接指定，直接删除</span></span><br></pre></td></tr></table></figure>
+<h4 id="节点连线"><a href="#节点连线" class="headerlink" title="节点连线"></a>节点连线</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setFirstInput(hou.node(<span class="string">&quot;sphere1&quot;</span>))</span><br><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setNextInput(hou.node(<span class="string">&quot;box1&quot;</span>))</span><br><span class="line"><span class="comment"># 假如我在geo1节点内创建了merge1、box1、sphere1三个节点，想要连接这三个节点</span></span><br><span class="line"><span class="comment"># 首先确认当前窗口所在路径hou.pwd(),hou.cd(&quot;/geo1&quot;) 然后移动到geo1内</span></span><br><span class="line"><span class="comment"># 再使用上面两行代码进行依次连接节点</span></span><br><span class="line"><span class="comment"># setFirstInput设置地一个输入端接入连线，setNextInput设置下一个输入端连线</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">有一样隐隐约约</span><br></pre></td></tr></table></figure>
+<h4 id="断开节点"><a href="#断开节点" class="headerlink" title="断开节点"></a>断开节点</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mer</span> = hou.node(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="attribute">mer</span>.setInput(<span class="number">0</span>,None)</span><br><span class="line"><span class="comment"># 设置merge1节点第一号输入端为None(断开)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="父与子"><a href="#父与子" class="headerlink" title="父与子"></a>父与子</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.parent(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="comment"># 返回当前节点merge1的父级节点</span></span><br><span class="line">hou.node(<span class="string">&quot;.&quot;</span>).children()</span><br><span class="line"><span class="comment"># 返回当前节点下的所有节点</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用VEX</title>
     <url>/2019/10/23/%E7%AD%86%E8%A8%98/houdini/%E5%B8%B8%E7%94%A8VEX/</url>
     <content><![CDATA[<h1 id="findattribval-找同类"><a href="#findattribval-找同类" class="headerlink" title="findattribval 找同类"></a>findattribval 找同类</h1><p><a href="http://127.0.0.1:48626/vex/functions/findattribval">findattribval</a><br>用来查找指定层级(vertices、point、prim)上属性是否相同，相同则返回0，否则返回-1；然后再调取相同时的对象的某些属性来进行其他的操作。<br>示例：</p>
@@ -558,25 +577,6 @@
       </categories>
       <tags>
         <tag>vex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini python开发</title>
-    <url>/2020/03/30/%E7%AD%86%E8%A8%98/houdini/houdini%20python%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h4 id="节点创建"><a href="#节点创建" class="headerlink" title="节点创建"></a>节点创建</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.pwd().createNode(<span class="string">&quot;sphere&quot;</span>,name=<span class="string">&quot;球体&quot;</span>)  </span><br><span class="line"><span class="comment"># hou.pwd()表示当前窗口所在工作路径 creatNode(节点原名，name=“设置新的名字”)    </span></span><br><span class="line">hou.cd(<span class="string">&quot;/obj&quot;</span>) </span><br><span class="line"><span class="comment"># hou.cd() 移动当前窗口工作路径到指定的新路径上</span></span><br></pre></td></tr></table></figure>
-<h4 id="节点删除"><a href="#节点删除" class="headerlink" title="节点删除"></a>节点删除</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node = hou.node(<span class="string">&quot;/obj/man/box1&quot;</span>)</span><br><span class="line">node.destroy()</span><br><span class="line"><span class="comment"># 先指定node为一个节点，再使用.destroy()来删除这个节点</span></span><br><span class="line">hou.node(<span class="string">&quot;cname&quot;</span>).destroy()</span><br><span class="line"><span class="comment"># 可以直接指定，直接删除</span></span><br></pre></td></tr></table></figure>
-<h4 id="节点连线"><a href="#节点连线" class="headerlink" title="节点连线"></a>节点连线</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setFirstInput(hou.node(<span class="string">&quot;sphere1&quot;</span>))</span><br><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setNextInput(hou.node(<span class="string">&quot;box1&quot;</span>))</span><br><span class="line"><span class="comment"># 假如我在geo1节点内创建了merge1、box1、sphere1三个节点，想要连接这三个节点</span></span><br><span class="line"><span class="comment"># 首先确认当前窗口所在路径hou.pwd(),hou.cd(&quot;/geo1&quot;) 然后移动到geo1内</span></span><br><span class="line"><span class="comment"># 再使用上面两行代码进行依次连接节点</span></span><br><span class="line"><span class="comment"># setFirstInput设置地一个输入端接入连线，setNextInput设置下一个输入端连线</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">有一样隐隐约约</span><br></pre></td></tr></table></figure>
-<h4 id="断开节点"><a href="#断开节点" class="headerlink" title="断开节点"></a>断开节点</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mer</span> = hou.node(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="attribute">mer</span>.setInput(<span class="number">0</span>,None)</span><br><span class="line"><span class="comment"># 设置merge1节点第一号输入端为None(断开)</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="父与子"><a href="#父与子" class="headerlink" title="父与子"></a>父与子</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.parent(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="comment"># 返回当前节点merge1的父级节点</span></span><br><span class="line">hou.node(<span class="string">&quot;.&quot;</span>).children()</span><br><span class="line"><span class="comment"># 返回当前节点下的所有节点</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -679,6 +679,29 @@
     <title></title>
     <url>/2021/05/12/%E7%AD%86%E8%A8%98/linux/CentOS8.1%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h3 id="基本命令的使用"><a href="#基本命令的使用" class="headerlink" title="基本命令的使用"></a>基本命令的使用</h3><h3 id="文本编辑器使用"><a href="#文本编辑器使用" class="headerlink" title="文本编辑器使用"></a>文本编辑器使用</h3><h3 id="用户权限管理"><a href="#用户权限管理" class="headerlink" title="用户权限管理"></a>用户权限管理</h3><h3 id="Shell脚本入门"><a href="#Shell脚本入门" class="headerlink" title="Shell脚本入门"></a>Shell脚本入门</h3><h3 id="常见的服务器"><a href="#常见的服务器" class="headerlink" title="常见的服务器"></a>常见的服务器</h3><h3 id="Java-Tomcat运行环境的搭建"><a href="#Java-Tomcat运行环境的搭建" class="headerlink" title="Java/Tomcat运行环境的搭建"></a>Java/Tomcat运行环境的搭建</h3><h3 id="其他软件的编译与安装Redis"><a href="#其他软件的编译与安装Redis" class="headerlink" title="其他软件的编译与安装Redis"></a>其他软件的编译与安装Redis</h3>]]></content>
+  </entry>
+  <entry>
+    <title>Ubuntu</title>
+    <url>/2020/10/11/%E7%AD%86%E8%A8%98/linux/Ubuntu%E5%A3%81%E7%BA%B8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%8D%A2/</url>
+    <content><![CDATA[<h3 id="Ubuntu下批量壁纸自动更新的方法"><a href="#Ubuntu下批量壁纸自动更新的方法" class="headerlink" title="Ubuntu下批量壁纸自动更新的方法"></a>Ubuntu下批量壁纸自动更新的方法</h3><p>要在ubuntu上实现壁纸的动态更换，首先要记住两个路径下的文件<br><code>/usr/share/backgrounds</code> 这里是系统存放壁纸和壁纸动态更换脚本的地方,脚本在contest下，以.xml结尾的就是控制播放的脚本了;</p>
+<p><code>/usr/share/gnome-background-properties</code> 这里的.xml和/usr/share/backgrounds/contest/下的mxl不同;这里的.xml文件是实现壁纸在系统设置中呈现，并加载动态更换脚本的;</p>
+<p>/usr/share/backgrounds/contest/groovy.xml文件原始内容如下(仅用做参考和备份)，不对这个文件做修改</p>
+<h3 id="下载壁纸"><a href="#下载壁纸" class="headerlink" title="下载壁纸"></a>下载壁纸</h3><p>直接贴<a href="https://www.zhihu.com/question/32762402">大佬分享的帖子</a>🐶</p>
+<h3 id="Python批量下载壁纸"><a href="#Python批量下载壁纸" class="headerlink" title="Python批量下载壁纸"></a>Python批量下载壁纸</h3><p>待续….</p>
+<h3 id="生成控制更换xml文件脚本"><a href="#生成控制更换xml文件脚本" class="headerlink" title="生成控制更换xml文件脚本"></a>生成控制更换xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path=/mnt/User/Users/Administrator/Pictures/wallpaper-01</span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`</span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;background&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;year&gt;2020&lt;/year&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;month&gt;11&lt;/month&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;day&gt;4&lt;/day&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;hour&gt;00&lt;/hour&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;minute&gt;00&lt;/minute&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;second&gt;00&lt;/second&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;/starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;!-- This animation will start at midnight. --&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;5.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;from&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/from&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;to&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/to&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/background&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法说明</span></span><br><span class="line"><span class="comment"># 新建一个文件.xml在图片目录下</span></span><br><span class="line"><span class="comment"># 执行这个脚本 ./backgrounds.sh&gt;xxx.xml 完整图片目录的填写</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="生成系统壁纸显示列表xml文件脚本"><a href="#生成系统壁纸显示列表xml文件脚本" class="headerlink" title="生成系统壁纸显示列表xml文件脚本"></a>生成系统壁纸显示列表xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path = `<span class="built_in">pwd</span>`     <span class="comment"># 设置操作文件的目录地址，这里将图片放在了/usr/share/backgrounds下的Black文件夹里</span></span><br><span class="line"></span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`                <span class="comment"># 匹配以pg和ng结尾的文件</span></span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;!DOCTYPE wallpapers SYSTEM &quot;gnome-wp-list.dtd&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;wallpapers&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;wallpaper deleted=&quot;false&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;name&gt;Ubuntu 20.10 Community Wallpapers&lt;/name&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;filename&gt;&#x27;</span>`<span class="built_in">pwd</span>`<span class="string">&#x27;/xxx.xml&lt;/filename&gt;&#x27;</span>  <span class="comment"># 这个文件指向控制文件xml</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span>]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        file_name=<span class="variable">$&#123;last_file##*/&#125;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;wallpaper&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;name&gt;<span class="variable">$&#123;last_file%.*&#125;</span>&lt;/name&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;name xml:lang=&quot;zh_CN&quot;&gt;Ubuntu&lt;/name&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;filename&gt;`pwd`/<span class="variable">$last_file</span>&lt;/filename&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;pcolor&gt;#000000&lt;/pcolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;scolor&gt;#000000&lt;/scolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;shade_type&gt;solid&lt;/shade_type&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/wallpapers&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法 `sudo ./test.sh&gt;test.xml` 格式: sudo 脚本路径 &gt; 生成xml路径</span></span><br><span class="line"><span class="comment"># sudo ./black-wallpapers.sh&gt;/usr/share/gnome-background-properties/black-wallpapers.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>[参考]</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>壁纸</tag>
+      </tags>
   </entry>
   <entry>
     <title>Ubuntu20.04 Linux初识</title>
@@ -894,29 +917,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu</title>
-    <url>/2020/10/11/%E7%AD%86%E8%A8%98/linux/Ubuntu%E5%A3%81%E7%BA%B8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%8D%A2/</url>
-    <content><![CDATA[<h3 id="Ubuntu下批量壁纸自动更新的方法"><a href="#Ubuntu下批量壁纸自动更新的方法" class="headerlink" title="Ubuntu下批量壁纸自动更新的方法"></a>Ubuntu下批量壁纸自动更新的方法</h3><p>要在ubuntu上实现壁纸的动态更换，首先要记住两个路径下的文件<br><code>/usr/share/backgrounds</code> 这里是系统存放壁纸和壁纸动态更换脚本的地方,脚本在contest下，以.xml结尾的就是控制播放的脚本了;</p>
-<p><code>/usr/share/gnome-background-properties</code> 这里的.xml和/usr/share/backgrounds/contest/下的mxl不同;这里的.xml文件是实现壁纸在系统设置中呈现，并加载动态更换脚本的;</p>
-<p>/usr/share/backgrounds/contest/groovy.xml文件原始内容如下(仅用做参考和备份)，不对这个文件做修改</p>
-<h3 id="下载壁纸"><a href="#下载壁纸" class="headerlink" title="下载壁纸"></a>下载壁纸</h3><p>直接贴<a href="https://www.zhihu.com/question/32762402">大佬分享的帖子</a>🐶</p>
-<h3 id="Python批量下载壁纸"><a href="#Python批量下载壁纸" class="headerlink" title="Python批量下载壁纸"></a>Python批量下载壁纸</h3><p>待续….</p>
-<h3 id="生成控制更换xml文件脚本"><a href="#生成控制更换xml文件脚本" class="headerlink" title="生成控制更换xml文件脚本"></a>生成控制更换xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path=/mnt/User/Users/Administrator/Pictures/wallpaper-01</span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`</span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;background&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;year&gt;2020&lt;/year&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;month&gt;11&lt;/month&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;day&gt;4&lt;/day&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;hour&gt;00&lt;/hour&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;minute&gt;00&lt;/minute&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;second&gt;00&lt;/second&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;/starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;!-- This animation will start at midnight. --&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;5.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;from&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/from&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;to&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/to&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/background&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法说明</span></span><br><span class="line"><span class="comment"># 新建一个文件.xml在图片目录下</span></span><br><span class="line"><span class="comment"># 执行这个脚本 ./backgrounds.sh&gt;xxx.xml 完整图片目录的填写</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="生成系统壁纸显示列表xml文件脚本"><a href="#生成系统壁纸显示列表xml文件脚本" class="headerlink" title="生成系统壁纸显示列表xml文件脚本"></a>生成系统壁纸显示列表xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path = `<span class="built_in">pwd</span>`     <span class="comment"># 设置操作文件的目录地址，这里将图片放在了/usr/share/backgrounds下的Black文件夹里</span></span><br><span class="line"></span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`                <span class="comment"># 匹配以pg和ng结尾的文件</span></span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;!DOCTYPE wallpapers SYSTEM &quot;gnome-wp-list.dtd&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;wallpapers&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;wallpaper deleted=&quot;false&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;name&gt;Ubuntu 20.10 Community Wallpapers&lt;/name&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;filename&gt;&#x27;</span>`<span class="built_in">pwd</span>`<span class="string">&#x27;/xxx.xml&lt;/filename&gt;&#x27;</span>  <span class="comment"># 这个文件指向控制文件xml</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span>]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        file_name=<span class="variable">$&#123;last_file##*/&#125;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;wallpaper&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;name&gt;<span class="variable">$&#123;last_file%.*&#125;</span>&lt;/name&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;name xml:lang=&quot;zh_CN&quot;&gt;Ubuntu&lt;/name&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;filename&gt;`pwd`/<span class="variable">$last_file</span>&lt;/filename&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;pcolor&gt;#000000&lt;/pcolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;scolor&gt;#000000&lt;/scolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;shade_type&gt;solid&lt;/shade_type&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/wallpapers&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法 `sudo ./test.sh&gt;test.xml` 格式: sudo 脚本路径 &gt; 生成xml路径</span></span><br><span class="line"><span class="comment"># sudo ./black-wallpapers.sh&gt;/usr/share/gnome-background-properties/black-wallpapers.xml</span></span><br></pre></td></tr></table></figure>
-
-<p>[参考]</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>壁纸</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim 配置</title>
     <url>/2020/10/05/%E7%AD%86%E8%A8%98/linux/Vim%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="vim基础"><a href="#vim基础" class="headerlink" title="vim基础"></a>vim基础</h2><p>Vim 是一个优秀的终端文本编辑器，可以不使用鼠标，完全键盘操作；对新手不太友好，一旦适应了键盘操作的习惯，可以极大的提高工作效率；且系统占用较小，打开较大的文件也不会有任何压力；</p>
@@ -992,75 +992,6 @@
       <tags>
         <tag>nuke</tag>
         <tag>function</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PyQt菜单与工具栏</title>
-    <url>/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/</url>
-    <content><![CDATA[<h2 id="QMainWindow创建基本窗口"><a href="#QMainWindow创建基本窗口" class="headerlink" title="QMainWindow创建基本窗口"></a>QMainWindow创建基本窗口</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow,QApplication</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.statusBar().showMessage(<span class="string">&#x27;Ready&#x27;</span>)</span><br><span class="line">        <span class="comment">#QMainWindow类第一次调用ststusBar()方法创建一个状态栏，后续调用返回状态栏对象，showMassage()状态栏上显示一条消息</span></span><br><span class="line">          </span><br><span class="line">        self.setGeometry(<span class="number">300</span>,<span class="number">300</span>,<span class="number">250</span>,<span class="number">150</span>)    </span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Statusbar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line">````  </span><br><span class="line"></span><br><span class="line"><span class="comment">### 创建菜单栏</span></span><br><span class="line">````python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QAction, qApp, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIcon</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        exitAction = QAction(QIcon(<span class="string">&#x27;bi.svg&#x27;</span>), <span class="string">&#x27;&amp;Exit&#x27;</span>, self)    <span class="comment">#定义菜单控件图标与名字</span></span><br><span class="line">        exitAction.setShortcut(<span class="string">&#x27;Ctrl+Q&#x27;</span>)                <span class="comment">#定义控件快捷键</span></span><br><span class="line">        exitAction.setStatusTip(<span class="string">&#x27;Exit application&#x27;</span>)     <span class="comment">#定义控件提示</span></span><br><span class="line">        exitAction.triggered.connect(qApp.quit)</span><br><span class="line"></span><br><span class="line">        self.statusBar()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建一个菜单栏</span></span><br><span class="line">        menubar = self.menuBar()</span><br><span class="line">        <span class="comment"># 添加菜单</span></span><br><span class="line">        fileMenu = menubar.addMenu(<span class="string">&#x27;&amp;File&#x27;</span>)</span><br><span class="line">        <span class="comment"># 添加事件</span></span><br><span class="line">        fileMenu.addAction(exitAction)</span><br><span class="line">        <span class="comment">#点击菜单控件的时候，调用qApp.quit,终止应用程序</span></span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Menubar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QAction, QTextEdit, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIcon</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        textEdit = QTextEdit()</span><br><span class="line">        self.setCentralWidget(textEdit)</span><br><span class="line">        </span><br><span class="line">        exitAction = QAction(QIcon(<span class="string">&#x27;bi.svg&#x27;</span>), <span class="string">&#x27;Exit&#x27;</span>, self)</span><br><span class="line">        exitAction.setShortcut(<span class="string">&#x27;Ctrl+Q&#x27;</span>)</span><br><span class="line">        exitAction.setStatusTip(<span class="string">&#x27;Exit application&#x27;</span>)</span><br><span class="line">        exitAction.triggered.connect(self.close)</span><br><span class="line"></span><br><span class="line">        self.statusBar()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建一个菜单栏</span></span><br><span class="line">        menubar = self.menuBar()</span><br><span class="line">        <span class="comment"># 添加菜单</span></span><br><span class="line">        fileMenu = menubar.addMenu(<span class="string">&#x27;&amp;File&#x27;</span>)</span><br><span class="line">        <span class="comment"># 添加事件</span></span><br><span class="line">        fileMenu.addAction(exitAction)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#添加工具栏并命名为Tool，点击也是执行退出操作</span></span><br><span class="line">        toolbar = self.addToolBar(<span class="string">&#x27;Tool&#x27;</span>)</span><br><span class="line">        toolbar.addAction(exitAction)</span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Menubar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
-<h2 id="信号与信号槽"><a href="#信号与信号槽" class="headerlink" title="信号与信号槽"></a>信号与信号槽</h2><pre><code>所有的GUI程序都是事件驱动的。事件由用户出发，但也有可能是其他触发方式；例如网络连接、windows manager或定时器。当我们调用QApplication的exec_()方法时会使程序进入主循环，主循环会获取并分发时间。在事件模型中，有三个参与者；分别是事件源、事件对象、时间接收者。事件源是状态发生的对象，时间(对象)封装了事件中状态的变动，事件接收者是要接受事件源材料的对象，事件源对象将事件的处理工作交给事件接收者。
-
-PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用于对象间的通信；signal在某以特定事件发生时被触发，slot可以是任何callable对象；当signal触发时会调用与之相连的slot。
-</code></pre>
-<h3 id="信号槽Signal-amp-slots"><a href="#信号槽Signal-amp-slots" class="headerlink" title="信号槽Signal&amp;slots"></a>信号槽Signal&amp;slots</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (QWidget, QApplication,</span><br><span class="line">                             QVBoxLayout,QLCDNumber,QSlider)</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        lcd = QLCDNumber(self)</span><br><span class="line">        sld = QSlider(Qt.Horizontal, self)</span><br><span class="line"></span><br><span class="line">        vbox = QVBoxLayout()</span><br><span class="line">        vbox.addWidget(lcd)</span><br><span class="line">        vbox.addWidget(sld)</span><br><span class="line"></span><br><span class="line">        self.setLayout(vbox)</span><br><span class="line">        sld.valueChanged.connect(lcd.display)</span><br><span class="line">        <span class="comment">#calueChanged参数关联到lcd显示插槽上 </span></span><br><span class="line">        <span class="comment">#sender是发出信号的对象。receiver是接收信号的对象。slot(插槽)是对信号做出反应的方法。</span></span><br><span class="line">        </span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Signal &amp; slot&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="重写实现事件处理器"><a href="#重写实现事件处理器" class="headerlink" title="重写实现事件处理器"></a>重写实现事件处理器</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QWidget, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.setGeometry(<span class="number">300</span>,<span class="number">300</span>,<span class="number">250</span>,<span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Event handler&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">keyPressEvent</span>(<span class="params">self,e</span>):</span></span><br><span class="line">        <span class="keyword">if</span> e.key() == Qt.Key_Escape:</span><br><span class="line">            self.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
-
-<h3 id="链接槽函数"><a href="#链接槽函数" class="headerlink" title="链接槽函数"></a>链接槽函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="comment">#import pymel.core as pm        #maya的pyme模块提供了一种槽信号的链接方法，如需要使用需要导入此库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span>*</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">123</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">v</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(v)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    btn = QPushButton()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    btn.clicked.connect(fn)</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">    btn.clicked.connect(<span class="keyword">lambda</span> :fn())</span><br><span class="line">    <span class="comment"># 3</span></span><br><span class="line">    btn.clicked.connect(partial(fn))</span><br><span class="line">    <span class="comment"># 4</span></span><br><span class="line">    <span class="comment"># import pymel.core as pm</span></span><br><span class="line">    <span class="comment"># btn.clicked.connect(pm.Callback(fn))  #pymel的槽函数链接方法演示</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    btn.clicked.connect(<span class="keyword">lambda</span>:func(<span class="number">456</span>))</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">    btn.clicked.connect(partial(func,<span class="number">456</span>))</span><br><span class="line">    <span class="comment"># 3</span></span><br><span class="line">    <span class="comment"># btn.clicked.connect(pm.Callback(fn,456))  # maya pymel.core.Callback</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        btn.clicked.connect(<span class="keyword">lambda</span>:func(i))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        btn.clicked.connect(partial(func,i))</span><br><span class="line"></span><br><span class="line">    btn.show()</span><br><span class="line"></span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></table></figure>
-<p>以上代码演示了几种不带参数的槽函数的用法和几种带参数的用法，一般情况下不带参数建议使用lambda方法链接槽函数，其他情况建议使用partial方法不易出现错误的情况。</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>PyQt5</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python在HDA中使用</title>
-    <url>/2019/09/05/%E7%AD%86%E8%A8%98/python/Python%E5%9C%A8HDA%E4%B8%AD%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="Event-Handler"><a href="#Event-Handler" class="headerlink" title="Event Handler"></a>Event Handler</h1><p>在HDA中，要创建Python脚本，需要先选择一个事件处理器(EventHandle),他表示你要在什么时候执行你现在所创建的脚本命令</p>
-<ul>
-<li>On Created (在节点创建时，执行脚本)</li>
-</ul>
-<p>如选择此项编辑Python脚本，Python将会在节点创建时执行Python中的命令</p>
-<ul>
-<li>Python Model (Python模式)</li>
-</ul>
-<p>这一项会使创建的脚本在使用过程中根据用户设置执行</p>
-<p>可以使用这一项给节点设置参数提示等功能</p>
-<ul>
-<li>On Delete(在节点创建时执行脚本)</li>
-</ul>
-<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190905001141356-588229623.png"></p>
-<h1 id="Python在Houdini节点上的常用方法"><a href="#Python在Houdini节点上的常用方法" class="headerlink" title="Python在Houdini节点上的常用方法"></a>Python在Houdini节点上的常用方法</h1><ul>
-<li>Set Color 设置颜色</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node = kwargs[<span class="string">&#x27;node&#x27;</span>]　　<span class="comment">#获取当前节点</span></span><br><span class="line">context = hou.pwd()　　<span class="comment">#当前节点的父对象</span></span><br><span class="line">node.setColor(hou.Color((<span class="number">0.584</span>,<span class="number">0.776</span>,<span class="number">1</span>)))　　<span class="comment">#设置当前节点颜色</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li> Node 创建节点</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    out = context.createNode(<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;OUT_render&#x27;</span>)　　<span class="comment">#从当前节点的父对象创建节点</span></span><br><span class="line">    out.setInput(<span class="number">0</span>,node)　　<span class="comment">#设置out节点输入端为当前节点node</span></span><br><span class="line">    out.setColor(hou.Color(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))　　<span class="comment">#设置out节点的颜色</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Print and Button feedback 打印字符和按钮反馈</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CacheGeo</span>():</span>　　<span class="comment">#在OnCreate创建一些自定的方法，然后可以在节点参数中调用</span></span><br><span class="line">    this = hou.pwd()　　<span class="comment">#获取当前节点</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;\nCaching......!&quot;</span>　　</span><br><span class="line">    filecache = hou.node(this.path() + <span class="string">&#x27;/cache_geo&#x27;</span>)　　<span class="comment">#获取设置当前节点内cache_geo的路径为filecache</span></span><br><span class="line">    filecache.parm(<span class="string">&#x27;execute&#x27;</span>).pressButton()　　<span class="comment">#获取filecache节点上execute的状态</span></span><br><span class="line">    this.setColor(hou.Color((<span class="number">0.584</span>,<span class="number">0.776</span>,<span class="number">1</span>)))　　<span class="comment">#设置节点颜色</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReloadGeo</span>():</span></span><br><span class="line">    this = hou.pwd()</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;\nLoaded successfully&quot;</span></span><br><span class="line">    filecache = hou.node(this.path() + <span class="string">&#x27;/report_geo&#x27;</span>)</span><br><span class="line">    filecache.parm(<span class="string">&#x27;reload&#x27;</span>).pressButton()</span><br><span class="line">    this.setColor(hou.Color((<span class="number">0.475</span>,<span class="number">0.812</span>,<span class="number">0.204</span>)))</span><br><span class="line"></span><br><span class="line">    output = hou.node(this.path() + <span class="string">&#x27;/output0&#x27;</span>)    <span class="comment">#设置当前节点内output0节点的路径为output</span></span><br><span class="line">    geo = output.geometry()    <span class="comment">#获取output的geometry并赋予到geo(要求出geometry才可以求这个节点上的geometry属性)</span></span><br><span class="line">    <span class="built_in">print</span> <span class="built_in">len</span>(geo.points())    <span class="comment">#打印geo的点数</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>设置这两个按钮(cache_geo、report_geo)执行时调用不同的方法，执行不同的操作</p>
-</blockquote>
-<h1 id="参数调用PythonScripts"><a href="#参数调用PythonScripts" class="headerlink" title="参数调用PythonScripts"></a>参数调用PythonScripts</h1><p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190905002846358-1195152512.png"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.pwd().hdaModule().CacheGeo()</span><br></pre></td></tr></table></figure>
-<p><a href="%5BCameraBack_FileIO%5D%5B1%5Dhttps://files.cnblogs.com/files/mlcg/Cameraback_fileIO.rar">Download CameraBack and FileIO HDA</a></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1154,6 +1085,126 @@ if __name__ == &#39;__main__&#39;:
       <tags>
         <tag>python</tag>
         <tag>PyQt5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PyQt菜单与工具栏</title>
+    <url>/2020/02/22/%E7%AD%86%E8%A8%98/python/PyQt%E8%8F%9C%E5%8D%95%E4%B8%8E%E5%B7%A5%E5%85%B7%E6%A0%8F/</url>
+    <content><![CDATA[<h2 id="QMainWindow创建基本窗口"><a href="#QMainWindow创建基本窗口" class="headerlink" title="QMainWindow创建基本窗口"></a>QMainWindow创建基本窗口</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow,QApplication</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.statusBar().showMessage(<span class="string">&#x27;Ready&#x27;</span>)</span><br><span class="line">        <span class="comment">#QMainWindow类第一次调用ststusBar()方法创建一个状态栏，后续调用返回状态栏对象，showMassage()状态栏上显示一条消息</span></span><br><span class="line">          </span><br><span class="line">        self.setGeometry(<span class="number">300</span>,<span class="number">300</span>,<span class="number">250</span>,<span class="number">150</span>)    </span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Statusbar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line">````  </span><br><span class="line"></span><br><span class="line"><span class="comment">### 创建菜单栏</span></span><br><span class="line">````python</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QAction, qApp, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIcon</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        exitAction = QAction(QIcon(<span class="string">&#x27;bi.svg&#x27;</span>), <span class="string">&#x27;&amp;Exit&#x27;</span>, self)    <span class="comment">#定义菜单控件图标与名字</span></span><br><span class="line">        exitAction.setShortcut(<span class="string">&#x27;Ctrl+Q&#x27;</span>)                <span class="comment">#定义控件快捷键</span></span><br><span class="line">        exitAction.setStatusTip(<span class="string">&#x27;Exit application&#x27;</span>)     <span class="comment">#定义控件提示</span></span><br><span class="line">        exitAction.triggered.connect(qApp.quit)</span><br><span class="line"></span><br><span class="line">        self.statusBar()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建一个菜单栏</span></span><br><span class="line">        menubar = self.menuBar()</span><br><span class="line">        <span class="comment"># 添加菜单</span></span><br><span class="line">        fileMenu = menubar.addMenu(<span class="string">&#x27;&amp;File&#x27;</span>)</span><br><span class="line">        <span class="comment"># 添加事件</span></span><br><span class="line">        fileMenu.addAction(exitAction)</span><br><span class="line">        <span class="comment">#点击菜单控件的时候，调用qApp.quit,终止应用程序</span></span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Menubar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QAction, QTextEdit, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QIcon</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QMainWindow</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        textEdit = QTextEdit()</span><br><span class="line">        self.setCentralWidget(textEdit)</span><br><span class="line">        </span><br><span class="line">        exitAction = QAction(QIcon(<span class="string">&#x27;bi.svg&#x27;</span>), <span class="string">&#x27;Exit&#x27;</span>, self)</span><br><span class="line">        exitAction.setShortcut(<span class="string">&#x27;Ctrl+Q&#x27;</span>)</span><br><span class="line">        exitAction.setStatusTip(<span class="string">&#x27;Exit application&#x27;</span>)</span><br><span class="line">        exitAction.triggered.connect(self.close)</span><br><span class="line"></span><br><span class="line">        self.statusBar()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建一个菜单栏</span></span><br><span class="line">        menubar = self.menuBar()</span><br><span class="line">        <span class="comment"># 添加菜单</span></span><br><span class="line">        fileMenu = menubar.addMenu(<span class="string">&#x27;&amp;File&#x27;</span>)</span><br><span class="line">        <span class="comment"># 添加事件</span></span><br><span class="line">        fileMenu.addAction(exitAction)</span><br><span class="line"></span><br><span class="line">        <span class="comment">#添加工具栏并命名为Tool，点击也是执行退出操作</span></span><br><span class="line">        toolbar = self.addToolBar(<span class="string">&#x27;Tool&#x27;</span>)</span><br><span class="line">        toolbar.addAction(exitAction)</span><br><span class="line"></span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Menubar&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+<h2 id="信号与信号槽"><a href="#信号与信号槽" class="headerlink" title="信号与信号槽"></a>信号与信号槽</h2><pre><code>所有的GUI程序都是事件驱动的。事件由用户出发，但也有可能是其他触发方式；例如网络连接、windows manager或定时器。当我们调用QApplication的exec_()方法时会使程序进入主循环，主循环会获取并分发时间。在事件模型中，有三个参与者；分别是事件源、事件对象、时间接收者。事件源是状态发生的对象，时间(对象)封装了事件中状态的变动，事件接收者是要接受事件源材料的对象，事件源对象将事件的处理工作交给事件接收者。
+
+PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用于对象间的通信；signal在某以特定事件发生时被触发，slot可以是任何callable对象；当signal触发时会调用与之相连的slot。
+</code></pre>
+<h3 id="信号槽Signal-amp-slots"><a href="#信号槽Signal-amp-slots" class="headerlink" title="信号槽Signal&amp;slots"></a>信号槽Signal&amp;slots</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> (QWidget, QApplication,</span><br><span class="line">                             QVBoxLayout,QLCDNumber,QSlider)</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        lcd = QLCDNumber(self)</span><br><span class="line">        sld = QSlider(Qt.Horizontal, self)</span><br><span class="line"></span><br><span class="line">        vbox = QVBoxLayout()</span><br><span class="line">        vbox.addWidget(lcd)</span><br><span class="line">        vbox.addWidget(sld)</span><br><span class="line"></span><br><span class="line">        self.setLayout(vbox)</span><br><span class="line">        sld.valueChanged.connect(lcd.display)</span><br><span class="line">        <span class="comment">#calueChanged参数关联到lcd显示插槽上 </span></span><br><span class="line">        <span class="comment">#sender是发出信号的对象。receiver是接收信号的对象。slot(插槽)是对信号做出反应的方法。</span></span><br><span class="line">        </span><br><span class="line">        self.setGeometry(<span class="number">300</span>, <span class="number">300</span>, <span class="number">250</span>, <span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Signal &amp; slot&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="重写实现事件处理器"><a href="#重写实现事件处理器" class="headerlink" title="重写实现事件处理器"></a>重写实现事件处理器</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QWidget, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">QWidget</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.initUI()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">initUI</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.setGeometry(<span class="number">300</span>,<span class="number">300</span>,<span class="number">250</span>,<span class="number">150</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&#x27;Event handler&#x27;</span>)</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">keyPressEvent</span>(<span class="params">self,e</span>):</span></span><br><span class="line">        <span class="keyword">if</span> e.key() == Qt.Key_Escape:</span><br><span class="line">            self.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    ex = Example()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<h3 id="链接槽函数"><a href="#链接槽函数" class="headerlink" title="链接槽函数"></a>链接槽函数</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="comment">#import pymel.core as pm        #maya的pyme模块提供了一种槽信号的链接方法，如需要使用需要导入此库</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span>*</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">123</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">v</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(v)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    btn = QPushButton()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    btn.clicked.connect(fn)</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">    btn.clicked.connect(<span class="keyword">lambda</span> :fn())</span><br><span class="line">    <span class="comment"># 3</span></span><br><span class="line">    btn.clicked.connect(partial(fn))</span><br><span class="line">    <span class="comment"># 4</span></span><br><span class="line">    <span class="comment"># import pymel.core as pm</span></span><br><span class="line">    <span class="comment"># btn.clicked.connect(pm.Callback(fn))  #pymel的槽函数链接方法演示</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    btn.clicked.connect(<span class="keyword">lambda</span>:func(<span class="number">456</span>))</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">    btn.clicked.connect(partial(func,<span class="number">456</span>))</span><br><span class="line">    <span class="comment"># 3</span></span><br><span class="line">    <span class="comment"># btn.clicked.connect(pm.Callback(fn,456))  # maya pymel.core.Callback</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        btn.clicked.connect(<span class="keyword">lambda</span>:func(i))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        btn.clicked.connect(partial(func,i))</span><br><span class="line"></span><br><span class="line">    btn.show()</span><br><span class="line"></span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></table></figure>
+<p>以上代码演示了几种不带参数的槽函数的用法和几种带参数的用法，一般情况下不带参数建议使用lambda方法链接槽函数，其他情况建议使用partial方法不易出现错误的情况。</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>PyQt5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python在HDA中使用</title>
+    <url>/2019/09/05/%E7%AD%86%E8%A8%98/python/Python%E5%9C%A8HDA%E4%B8%AD%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Event-Handler"><a href="#Event-Handler" class="headerlink" title="Event Handler"></a>Event Handler</h1><p>在HDA中，要创建Python脚本，需要先选择一个事件处理器(EventHandle),他表示你要在什么时候执行你现在所创建的脚本命令</p>
+<ul>
+<li>On Created (在节点创建时，执行脚本)</li>
+</ul>
+<p>如选择此项编辑Python脚本，Python将会在节点创建时执行Python中的命令</p>
+<ul>
+<li>Python Model (Python模式)</li>
+</ul>
+<p>这一项会使创建的脚本在使用过程中根据用户设置执行</p>
+<p>可以使用这一项给节点设置参数提示等功能</p>
+<ul>
+<li>On Delete(在节点创建时执行脚本)</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190905001141356-588229623.png"></p>
+<h1 id="Python在Houdini节点上的常用方法"><a href="#Python在Houdini节点上的常用方法" class="headerlink" title="Python在Houdini节点上的常用方法"></a>Python在Houdini节点上的常用方法</h1><ul>
+<li>Set Color 设置颜色</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node = kwargs[<span class="string">&#x27;node&#x27;</span>]　　<span class="comment">#获取当前节点</span></span><br><span class="line">context = hou.pwd()　　<span class="comment">#当前节点的父对象</span></span><br><span class="line">node.setColor(hou.Color((<span class="number">0.584</span>,<span class="number">0.776</span>,<span class="number">1</span>)))　　<span class="comment">#设置当前节点颜色</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li> Node 创建节点</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    out = context.createNode(<span class="string">&#x27;null&#x27;</span>,<span class="string">&#x27;OUT_render&#x27;</span>)　　<span class="comment">#从当前节点的父对象创建节点</span></span><br><span class="line">    out.setInput(<span class="number">0</span>,node)　　<span class="comment">#设置out节点输入端为当前节点node</span></span><br><span class="line">    out.setColor(hou.Color(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>))　　<span class="comment">#设置out节点的颜色</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Print and Button feedback 打印字符和按钮反馈</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CacheGeo</span>():</span>　　<span class="comment">#在OnCreate创建一些自定的方法，然后可以在节点参数中调用</span></span><br><span class="line">    this = hou.pwd()　　<span class="comment">#获取当前节点</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;\nCaching......!&quot;</span>　　</span><br><span class="line">    filecache = hou.node(this.path() + <span class="string">&#x27;/cache_geo&#x27;</span>)　　<span class="comment">#获取设置当前节点内cache_geo的路径为filecache</span></span><br><span class="line">    filecache.parm(<span class="string">&#x27;execute&#x27;</span>).pressButton()　　<span class="comment">#获取filecache节点上execute的状态</span></span><br><span class="line">    this.setColor(hou.Color((<span class="number">0.584</span>,<span class="number">0.776</span>,<span class="number">1</span>)))　　<span class="comment">#设置节点颜色</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReloadGeo</span>():</span></span><br><span class="line">    this = hou.pwd()</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;\nLoaded successfully&quot;</span></span><br><span class="line">    filecache = hou.node(this.path() + <span class="string">&#x27;/report_geo&#x27;</span>)</span><br><span class="line">    filecache.parm(<span class="string">&#x27;reload&#x27;</span>).pressButton()</span><br><span class="line">    this.setColor(hou.Color((<span class="number">0.475</span>,<span class="number">0.812</span>,<span class="number">0.204</span>)))</span><br><span class="line"></span><br><span class="line">    output = hou.node(this.path() + <span class="string">&#x27;/output0&#x27;</span>)    <span class="comment">#设置当前节点内output0节点的路径为output</span></span><br><span class="line">    geo = output.geometry()    <span class="comment">#获取output的geometry并赋予到geo(要求出geometry才可以求这个节点上的geometry属性)</span></span><br><span class="line">    <span class="built_in">print</span> <span class="built_in">len</span>(geo.points())    <span class="comment">#打印geo的点数</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置这两个按钮(cache_geo、report_geo)执行时调用不同的方法，执行不同的操作</p>
+</blockquote>
+<h1 id="参数调用PythonScripts"><a href="#参数调用PythonScripts" class="headerlink" title="参数调用PythonScripts"></a>参数调用PythonScripts</h1><p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190905002846358-1195152512.png"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.pwd().hdaModule().CacheGeo()</span><br></pre></td></tr></table></figure>
+<p><a href="%5BCameraBack_FileIO%5D%5B1%5Dhttps://files.cnblogs.com/files/mlcg/Cameraback_fileIO.rar">Download CameraBack and FileIO HDA</a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unreal Engine 地编技巧合集</title>
+    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E5%9C%B0%E7%BC%96%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h3 id="Unreal-Engine-使用距离场解决地表贴图重复问题"><a href="#Unreal-Engine-使用距离场解决地表贴图重复问题" class="headerlink" title="Unreal Engine 使用距离场解决地表贴图重复问题"></a>Unreal Engine 使用距离场解决地表贴图重复问题</h3><ol>
+<li>PixelDepth在UE4中关于深度Depth的函数，PixelDepth像素景深既屏幕像素场景中的深度信息，就是该像素到摄像机的距离。</li>
+<li>在游戏场景的制作中，常常需要使用到贴图的高重复度来使得贴图在场景表上有足够的细节；但是由于游戏场景是比较庞大的一个空间，在使用高重复的图时，就无法满足近处与远处的重复值，给得过低无法表现近处贴图材质的节，过高会使得远处有过于明显的贴出重复。</li>
+<li>在制作材质时，可以使用PixelDepth获得场景到摄像机的距离，然后使用ler函数将混合两种重复度的贴图，来达到细节表现上贴图重复的平衡。</li>
+</ol>
+<p>[练习封装的材质函数]</p>
+<p><img src="/Image-assets/2021.5.12_DitherThresholdAA.jpg"></p>
+<h3 id="Unreal-Engine高效无缝材质衔接"><a href="#Unreal-Engine高效无缝材质衔接" class="headerlink" title="Unreal Engine高效无缝材质衔接"></a>Unreal Engine高效无缝材质衔接</h3><p>场景中模型与模型的交界融合</p>
+<ol>
+<li><p>在材质主节点下有一个Pixel Depth Offset像素深度便宜，创建一个DitherThresholdAA阈值抖动，创建一个常量来与DitherThresholdAA相乘，就可以用这个常量来控制交融的强度范围。</p>
+</li>
+<li></li>
+</ol>
+<h3 id="Unreal-Engine-RVT虚拟纹理使用"><a href="#Unreal-Engine-RVT虚拟纹理使用" class="headerlink" title="Unreal Engine RVT虚拟纹理使用"></a>Unreal Engine RVT虚拟纹理使用</h3><p><a href="https://www.bilibili.com/video/BV1ni4y1A74g">地表重复纹理</a><br><a href="https://www.bilibili.com/video/BV1EA411K79z">物体穿插无缝材质</a><br><a href="https://www.bilibili.com/video/BV1Sf4y1D7KU/?spm_id_from=333.788.recommend_more_video.1">RVT虚拟纹理</a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>ue4</tag>
+        <tag>shader</tag>
+        <tag>地编</tag>
+        <tag>材质</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unreal Engine 特效小技巧合集</title>
+    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E7%89%B9%E6%95%88%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h3 id="透明材质的折射"><a href="#透明材质的折射" class="headerlink" title="透明材质的折射"></a>透明材质的折射</h3><ol>
+<li>当要实现折射效果的对象是透明材质对象时，需要取消该对象的的材质属性下的Translucency下的 Render After DOF 选项。</li>
+<li>当材质取消Render After DOF 后，镜头远近将影响透明对象的显示，在材质属性Refraction下切换Mode；Index Of Refraction可以等到真实漂亮的折射，Pixel Normal Offset可以纠正相机远近导致材质效果变化较大的问题，但是无法获得折射效果(可能需要配合其他参数实现)。</li>
+</ol>
+<h3 id="MeshDeta-amp-GPU粒子类型"><a href="#MeshDeta-amp-GPU粒子类型" class="headerlink" title="MeshDeta &amp; GPU粒子类型"></a>MeshDeta &amp; GPU粒子类型</h3><ol>
+<li>使用MeshDeta粒子发射类型时，需要将Mesh下的OverrideMaterial勾选，这样才能给发射的Mesh赋予材质。</li>
+<li>当只需要发射一个粒子时，出来需要修改发射率还需要讲Duration的EmitterLoops设置为1，让粒子发射停止循环。</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>ue4</tag>
+        <tag>shader</tag>
+        <tag>材质</tag>
+        <tag>vfx</tag>
+        <tag>特效</tag>
       </tags>
   </entry>
   <entry>
@@ -1409,6 +1460,109 @@ if __name__ == &#39;__main__&#39;:
       </tags>
   </entry>
   <entry>
+    <title>Ureal Engine 小技巧合集</title>
+    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Ureal-Engine-%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="Ureal-Engine-项目缓存"><a href="#Ureal-Engine-项目缓存" class="headerlink" title="Ureal Engine 项目缓存"></a>Ureal Engine 项目缓存</h2><ol>
+<li>有unreal engine在项目构建过程中会产生大量的cache文件，这些文件对于项目工程来说很重要，适当的安排cache文件夹的位置可以避免项目在迁移时的麻烦；</li>
+<li>cache默认存储在C盘，这样长时间后将会给C盘带来很大的负担，所以可以不定期清理cache文件夹”C:\Users\Administrator\AppData\Local\UnrealEngine\Common\DerivedDataCache”;cache被清理后会导致正在进行的项目已构建的材质灯光等需要重新构建和烘焙；</li>
+</ol>
+<h3 id="更改项目缓存位置为当前项目文件夹"><a href="#更改项目缓存位置为当前项目文件夹" class="headerlink" title="更改项目缓存位置为当前项目文件夹"></a>更改项目缓存位置为当前项目文件夹</h3><ol>
+<li>找到对应引擎版本路径”D:\Program Files\Epic Games\UE_4.24\Engine\Config”下的”BaseEngine.ini”文件；</li>
+<li>使用记事本打开，在编辑栏搜索”[InstalledDerivedDataBackendGraph]”找到这一块中的”</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Local=(<span class="type">Type</span>=FileSystem, ReadOnly=false, Clean=false,Flush=false, PurgeTransient=true, DeleteUnused=true,UnusedFileAge=<span class="number">34</span>, FoldersToClean=-<span class="number">1</span>,Path=<span class="string">&quot;%ENGINEVERSIONAGNOSTICUSERDIR%DerivedDataCache&quot;</span>,EditorOverrideSetting=LocalDerivedDataCache)</span><br></pre></td></tr></table></figure>
+
+<p>然后将Path=<code>&quot;&quot;</code>引号内容改成<code>&quot;%GAMEDIR%DerivedDataCache&quot;</code>；</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Local=(<span class="type">Type</span>=FileSystem, ReadOnly=false, Clean=false,Flush=false, PurgeTransient=true, DeleteUnused=true,UnusedFileAge=<span class="number">34</span>, FoldersToClean=-<span class="number">1</span>,Path=<span class="string">&quot;%GAMEDIR%DerivedDataCache&quot;</span>,EditorOverrideSetting=LocalDerivedDataCache)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>关掉引擎重新打开即可；此时再次构建项目时，会在项目文件夹根目录多一个名为”DerivedDataCache”的文件夹。</li>
+</ol>
+<blockquote>
+<p>默认变量Path=”%ENGINEVERSIONAGNOSTICUSERDIR%DerivedDataCache”；新变量Path=”%GAMEDIR%DerivedDataCache”。</p>
+</blockquote>
+<h2 id="Unreal-Engine-项目迁移"><a href="#Unreal-Engine-项目迁移" class="headerlink" title="Unreal Engine 项目迁移"></a>Unreal Engine 项目迁移</h2><ol>
+<li>临时拷贝：<br>需要将项目临时带到别的电脑上作业时，可以将工程文件夹中除了Intermediate和Saved文件夹外整体打包进行压缩后拷贝到移动硬盘。</li>
+<li>文件迁移：<br>首先在UE4资源管理其中选中要迁移的目标，右键选择迁移；然后选择迁移目标工程的Content文件夹即可。</li>
+</ol>
+<h2 id="UE4程序闪退常见的几大原因"><a href="#UE4程序闪退常见的几大原因" class="headerlink" title="UE4程序闪退常见的几大原因"></a>UE4程序闪退常见的几大原因</h2><ol>
+<li>系统版本老旧</li>
+<li>显卡驱动老旧</li>
+<li>缺失游戏运行库</li>
+<li>硬件不兼容(老硬件)</li>
+<li>检查工程代码、素材</li>
+<li>关闭全屏</li>
+</ol>
+<h2 id="Unreal-Engine-工程文件结构"><a href="#Unreal-Engine-工程文件结构" class="headerlink" title="Unreal Engine 工程文件结构"></a>Unreal Engine 工程文件结构</h2><p>工程文件夹结构:</p>
+<ol>
+<li><code>Config</code> 包含了项目设置，键盘输入子类的配置文件</li>
+<li><code>Content</code> 存放工程文件的内容，包括模型、材质、代码、蓝图等</li>
+<li><code>Intermediate</code> 包含了在编译引擎或游戏时生成的临时文件</li>
+<li><code>Saved</code> 包含自动保存的内容、配置文件以及日志文件</li>
+<li><code>xxx.uproject</code> 项目启动程序，用来打开工程项目</li>
+<li><code>DerivedDataCache</code> 如果引擎的缓存变量修改成”%GAMEDIR%DerivedDataCache”那么就会在项目文件夹下生成该文件夹</li>
+</ol>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>ue4</tag>
+        <tag>cache</tag>
+        <tag>迁移</tag>
+        <tag>缓存</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ShellScript III</title>
+    <url>/2020/10/07/%E7%AD%86%E8%A8%98/shell/ShellScript-III/</url>
+    <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>shell函数的本质是一段可以反复使用的脚本代码，这段代码被提前编写好了，放在指定的位置，当用户需要使用时直接调用即可</p>
+<h3 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h3><p>函数定义的格式如下:</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 带参数函数定义</span></span><br><span class="line"><span class="attribute">function</span> funname[()]</span><br><span class="line">&#123;</span><br><span class="line">    commands</span><br><span class="line">    [retun value]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不带参数函数定义</span></span><br><span class="line">funname[()]</span><br><span class="line">&#123;</span><br><span class="line">    commands</span><br><span class="line">    [retun value]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li>function 是shell的关键字，专门用来定义函数；</li>
+<li>name 是函数名；</li>
+<li>commands 是函数执行代码，可以是一行或者多行；</li>
+<li>return value 表示函数的返回值，其中return是shell的关键字，专门用在函数中返回一个值；这一部分可写可不写；</li>
+<li>由{}包含的部分称为函数体，调用一个函数实际上就是执行这个函数的函数体中的代码；</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">first</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;my first function!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">first</span><br><span class="line"><span class="comment"># 直接调用 返回 &quot;my first function!&quot;</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">firstReturn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">&quot;请输入第一个数值: &quot;</span> num1</span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">&quot;请输入第二个数值: &quot;</span> num2</span><br><span class="line">    <span class="built_in">return</span> $((<span class="variable">$num1</span>*<span class="variable">$num2</span>))</span><br><span class="line">&#125;</span><br><span class="line">firsRetun</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;两数的乘积为 $? &quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>函数的优势</p>
+<ul>
+<li>方便多次调用，减少代码量使脚本更加简洁轻量；</li>
+<li>方便修改，当需要对脚本进行维护时，调用函数的部分只需要修改函数脚本即可；</li>
+<li>将函数写进文本，在写其他脚本时可直接调用已经写过的脚本；</li>
+</ul>
+<h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><h4 id="不带参数的函数"><a href="#不带参数的函数" class="headerlink" title="不带参数的函数"></a>不带参数的函数</h4><p>在调用不带参数的函数时，直接输入函数名即可调用函数；<br>执行函数时，函数名前的关键字function和函数名后面的()均不需要带；<br>函数的定义必须要在执行的程序前定义和加载；</p>
+<h4 id="带参数的函数"><a href="#带参数的函数" class="headerlink" title="带参数的函数"></a>带参数的函数</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">functionName</span> arg<span class="number">1</span> agr<span class="number">2</span></span><br><span class="line"><span class="comment"># 函数名 参数1 参数2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>shell 中的位置参数(1/2/3/….？/$@)均可以作为函数的参数进行传递；</li>
+<li>$0比较特殊，仍然是代表父脚本的名称；</li>
+<li>此时父脚本的参数会临时被函数的参数所掩盖或隐藏</li>
+<li>函数的参数变量是在函数内进行定义的</li>
+</ul>
+<h4 id="执行函数总结"><a href="#执行函数总结" class="headerlink" title="执行函数总结"></a>执行函数总结</h4><ul>
+<li>shell各种程序的执行顺序为: 系统别名&gt;&gt;函数&gt;&gt;系统命名&gt;&gt;可执行文件等；</li>
+<li>函数执行时，会和调用它的脚本共享变量，也可以为函数设定局部变量及特殊位置参数；</li>
+<li>在shell函数里面，return和exit功能类似，区别时return是退出函数，exit是退出脚本；</li>
+<li>return语句会返回一个值给调用函数的程序，exit则会返回一个值给执行当前脚本的shell；</li>
+<li>如果将函数单独存放为一个文件，在加载时需要使用source或.进行加载；</li>
+<li>在函数内部一般使用local定义局部变量，仅在函数体内有效</li>
+</ul>
+<h4 id="调用函数-1"><a href="#调用函数-1" class="headerlink" title="调用函数"></a>调用函数</h4><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><h2 id="until循环"><a href="#until循环" class="headerlink" title="until循环"></a>until循环</h2>]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ShellScript II</title>
     <url>/2020/10/06/%E7%AD%86%E8%A8%98/shell/ShellScript-II/</url>
     <content><![CDATA[<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>shell的通配符(元字符)表示的不是本意。</p>
@@ -1608,160 +1762,6 @@ if __name__ == &#39;__main__&#39;:
       <tags>
         <tag>linux</tag>
         <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Unreal Engine 地编技巧合集</title>
-    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E5%9C%B0%E7%BC%96%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<h3 id="Unreal-Engine-使用距离场解决地表贴图重复问题"><a href="#Unreal-Engine-使用距离场解决地表贴图重复问题" class="headerlink" title="Unreal Engine 使用距离场解决地表贴图重复问题"></a>Unreal Engine 使用距离场解决地表贴图重复问题</h3><ol>
-<li>PixelDepth在UE4中关于深度Depth的函数，PixelDepth像素景深既屏幕像素场景中的深度信息，就是该像素到摄像机的距离。</li>
-<li>在游戏场景的制作中，常常需要使用到贴图的高重复度来使得贴图在场景表上有足够的细节；但是由于游戏场景是比较庞大的一个空间，在使用高重复的图时，就无法满足近处与远处的重复值，给得过低无法表现近处贴图材质的节，过高会使得远处有过于明显的贴出重复。</li>
-<li>在制作材质时，可以使用PixelDepth获得场景到摄像机的距离，然后使用ler函数将混合两种重复度的贴图，来达到细节表现上贴图重复的平衡。</li>
-</ol>
-<p>[练习封装的材质函数]</p>
-<p><img src="/Image-assets/2021.5.12_DitherThresholdAA.jpg"></p>
-<h3 id="Unreal-Engine高效无缝材质衔接"><a href="#Unreal-Engine高效无缝材质衔接" class="headerlink" title="Unreal Engine高效无缝材质衔接"></a>Unreal Engine高效无缝材质衔接</h3><p>场景中模型与模型的交界融合</p>
-<ol>
-<li><p>在材质主节点下有一个Pixel Depth Offset像素深度便宜，创建一个DitherThresholdAA阈值抖动，创建一个常量来与DitherThresholdAA相乘，就可以用这个常量来控制交融的强度范围。</p>
-</li>
-<li></li>
-</ol>
-<h3 id="Unreal-Engine-RVT虚拟纹理使用"><a href="#Unreal-Engine-RVT虚拟纹理使用" class="headerlink" title="Unreal Engine RVT虚拟纹理使用"></a>Unreal Engine RVT虚拟纹理使用</h3><p><a href="https://www.bilibili.com/video/BV1ni4y1A74g">地表重复纹理</a><br><a href="https://www.bilibili.com/video/BV1EA411K79z">物体穿插无缝材质</a><br><a href="https://www.bilibili.com/video/BV1Sf4y1D7KU/?spm_id_from=333.788.recommend_more_video.1">RVT虚拟纹理</a></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>ue4</tag>
-        <tag>shader</tag>
-        <tag>地编</tag>
-        <tag>材质</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ShellScript III</title>
-    <url>/2020/10/07/%E7%AD%86%E8%A8%98/shell/ShellScript-III/</url>
-    <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>shell函数的本质是一段可以反复使用的脚本代码，这段代码被提前编写好了，放在指定的位置，当用户需要使用时直接调用即可</p>
-<h3 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h3><p>函数定义的格式如下:</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 带参数函数定义</span></span><br><span class="line"><span class="attribute">function</span> funname[()]</span><br><span class="line">&#123;</span><br><span class="line">    commands</span><br><span class="line">    [retun value]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不带参数函数定义</span></span><br><span class="line">funname[()]</span><br><span class="line">&#123;</span><br><span class="line">    commands</span><br><span class="line">    [retun value]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<ul>
-<li>function 是shell的关键字，专门用来定义函数；</li>
-<li>name 是函数名；</li>
-<li>commands 是函数执行代码，可以是一行或者多行；</li>
-<li>return value 表示函数的返回值，其中return是shell的关键字，专门用在函数中返回一个值；这一部分可写可不写；</li>
-<li>由{}包含的部分称为函数体，调用一个函数实际上就是执行这个函数的函数体中的代码；</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">first</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;my first function!&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">first</span><br><span class="line"><span class="comment"># 直接调用 返回 &quot;my first function!&quot;</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">firstReturn</span></span>()&#123;</span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">&quot;请输入第一个数值: &quot;</span> num1</span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">&quot;请输入第二个数值: &quot;</span> num2</span><br><span class="line">    <span class="built_in">return</span> $((<span class="variable">$num1</span>*<span class="variable">$num2</span>))</span><br><span class="line">&#125;</span><br><span class="line">firsRetun</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;两数的乘积为 $? &quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>函数的优势</p>
-<ul>
-<li>方便多次调用，减少代码量使脚本更加简洁轻量；</li>
-<li>方便修改，当需要对脚本进行维护时，调用函数的部分只需要修改函数脚本即可；</li>
-<li>将函数写进文本，在写其他脚本时可直接调用已经写过的脚本；</li>
-</ul>
-<h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><h4 id="不带参数的函数"><a href="#不带参数的函数" class="headerlink" title="不带参数的函数"></a>不带参数的函数</h4><p>在调用不带参数的函数时，直接输入函数名即可调用函数；<br>执行函数时，函数名前的关键字function和函数名后面的()均不需要带；<br>函数的定义必须要在执行的程序前定义和加载；</p>
-<h4 id="带参数的函数"><a href="#带参数的函数" class="headerlink" title="带参数的函数"></a>带参数的函数</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">functionName</span> arg<span class="number">1</span> agr<span class="number">2</span></span><br><span class="line"><span class="comment"># 函数名 参数1 参数2</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>shell 中的位置参数(1/2/3/….？/$@)均可以作为函数的参数进行传递；</li>
-<li>$0比较特殊，仍然是代表父脚本的名称；</li>
-<li>此时父脚本的参数会临时被函数的参数所掩盖或隐藏</li>
-<li>函数的参数变量是在函数内进行定义的</li>
-</ul>
-<h4 id="执行函数总结"><a href="#执行函数总结" class="headerlink" title="执行函数总结"></a>执行函数总结</h4><ul>
-<li>shell各种程序的执行顺序为: 系统别名&gt;&gt;函数&gt;&gt;系统命名&gt;&gt;可执行文件等；</li>
-<li>函数执行时，会和调用它的脚本共享变量，也可以为函数设定局部变量及特殊位置参数；</li>
-<li>在shell函数里面，return和exit功能类似，区别时return是退出函数，exit是退出脚本；</li>
-<li>return语句会返回一个值给调用函数的程序，exit则会返回一个值给执行当前脚本的shell；</li>
-<li>如果将函数单独存放为一个文件，在加载时需要使用source或.进行加载；</li>
-<li>在函数内部一般使用local定义局部变量，仅在函数体内有效</li>
-</ul>
-<h4 id="调用函数-1"><a href="#调用函数-1" class="headerlink" title="调用函数"></a>调用函数</h4><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><h2 id="until循环"><a href="#until循环" class="headerlink" title="until循环"></a>until循环</h2>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Unreal Engine 特效小技巧合集</title>
-    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E7%89%B9%E6%95%88%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<h3 id="透明材质的折射"><a href="#透明材质的折射" class="headerlink" title="透明材质的折射"></a>透明材质的折射</h3><ol>
-<li>当要实现折射效果的对象是透明材质对象时，需要取消该对象的的材质属性下的Translucency下的 Render After DOF 选项。</li>
-<li>当材质取消Render After DOF 后，镜头远近将影响透明对象的显示，在材质属性Refraction下切换Mode；Index Of Refraction可以等到真实漂亮的折射，Pixel Normal Offset可以纠正相机远近导致材质效果变化较大的问题，但是无法获得折射效果(可能需要配合其他参数实现)。</li>
-</ol>
-<h3 id="MeshDeta-amp-GPU粒子类型"><a href="#MeshDeta-amp-GPU粒子类型" class="headerlink" title="MeshDeta &amp; GPU粒子类型"></a>MeshDeta &amp; GPU粒子类型</h3><ol>
-<li>使用MeshDeta粒子发射类型时，需要将Mesh下的OverrideMaterial勾选，这样才能给发射的Mesh赋予材质。</li>
-<li>当只需要发射一个粒子时，出来需要修改发射率还需要讲Duration的EmitterLoops设置为1，让粒子发射停止循环。</li>
-</ol>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>ue4</tag>
-        <tag>shader</tag>
-        <tag>材质</tag>
-        <tag>vfx</tag>
-        <tag>特效</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ureal Engine 小技巧合集</title>
-    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Ureal-Engine-%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="Ureal-Engine-项目缓存"><a href="#Ureal-Engine-项目缓存" class="headerlink" title="Ureal Engine 项目缓存"></a>Ureal Engine 项目缓存</h2><ol>
-<li>有unreal engine在项目构建过程中会产生大量的cache文件，这些文件对于项目工程来说很重要，适当的安排cache文件夹的位置可以避免项目在迁移时的麻烦；</li>
-<li>cache默认存储在C盘，这样长时间后将会给C盘带来很大的负担，所以可以不定期清理cache文件夹”C:\Users\Administrator\AppData\Local\UnrealEngine\Common\DerivedDataCache”;cache被清理后会导致正在进行的项目已构建的材质灯光等需要重新构建和烘焙；</li>
-</ol>
-<h3 id="更改项目缓存位置为当前项目文件夹"><a href="#更改项目缓存位置为当前项目文件夹" class="headerlink" title="更改项目缓存位置为当前项目文件夹"></a>更改项目缓存位置为当前项目文件夹</h3><ol>
-<li>找到对应引擎版本路径”D:\Program Files\Epic Games\UE_4.24\Engine\Config”下的”BaseEngine.ini”文件；</li>
-<li>使用记事本打开，在编辑栏搜索”[InstalledDerivedDataBackendGraph]”找到这一块中的”</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Local=(<span class="type">Type</span>=FileSystem, ReadOnly=false, Clean=false,Flush=false, PurgeTransient=true, DeleteUnused=true,UnusedFileAge=<span class="number">34</span>, FoldersToClean=-<span class="number">1</span>,Path=<span class="string">&quot;%ENGINEVERSIONAGNOSTICUSERDIR%DerivedDataCache&quot;</span>,EditorOverrideSetting=LocalDerivedDataCache)</span><br></pre></td></tr></table></figure>
-
-<p>然后将Path=<code>&quot;&quot;</code>引号内容改成<code>&quot;%GAMEDIR%DerivedDataCache&quot;</code>；</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">Local=(<span class="type">Type</span>=FileSystem, ReadOnly=false, Clean=false,Flush=false, PurgeTransient=true, DeleteUnused=true,UnusedFileAge=<span class="number">34</span>, FoldersToClean=-<span class="number">1</span>,Path=<span class="string">&quot;%GAMEDIR%DerivedDataCache&quot;</span>,EditorOverrideSetting=LocalDerivedDataCache)</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>关掉引擎重新打开即可；此时再次构建项目时，会在项目文件夹根目录多一个名为”DerivedDataCache”的文件夹。</li>
-</ol>
-<blockquote>
-<p>默认变量Path=”%ENGINEVERSIONAGNOSTICUSERDIR%DerivedDataCache”；新变量Path=”%GAMEDIR%DerivedDataCache”。</p>
-</blockquote>
-<h2 id="Unreal-Engine-项目迁移"><a href="#Unreal-Engine-项目迁移" class="headerlink" title="Unreal Engine 项目迁移"></a>Unreal Engine 项目迁移</h2><ol>
-<li>临时拷贝：<br>需要将项目临时带到别的电脑上作业时，可以将工程文件夹中除了Intermediate和Saved文件夹外整体打包进行压缩后拷贝到移动硬盘。</li>
-<li>文件迁移：<br>首先在UE4资源管理其中选中要迁移的目标，右键选择迁移；然后选择迁移目标工程的Content文件夹即可。</li>
-</ol>
-<h2 id="UE4程序闪退常见的几大原因"><a href="#UE4程序闪退常见的几大原因" class="headerlink" title="UE4程序闪退常见的几大原因"></a>UE4程序闪退常见的几大原因</h2><ol>
-<li>系统版本老旧</li>
-<li>显卡驱动老旧</li>
-<li>缺失游戏运行库</li>
-<li>硬件不兼容(老硬件)</li>
-<li>检查工程代码、素材</li>
-<li>关闭全屏</li>
-</ol>
-<h2 id="Unreal-Engine-工程文件结构"><a href="#Unreal-Engine-工程文件结构" class="headerlink" title="Unreal Engine 工程文件结构"></a>Unreal Engine 工程文件结构</h2><p>工程文件夹结构:</p>
-<ol>
-<li><code>Config</code> 包含了项目设置，键盘输入子类的配置文件</li>
-<li><code>Content</code> 存放工程文件的内容，包括模型、材质、代码、蓝图等</li>
-<li><code>Intermediate</code> 包含了在编译引擎或游戏时生成的临时文件</li>
-<li><code>Saved</code> 包含自动保存的内容、配置文件以及日志文件</li>
-<li><code>xxx.uproject</code> 项目启动程序，用来打开工程项目</li>
-<li><code>DerivedDataCache</code> 如果引擎的缓存变量修改成”%GAMEDIR%DerivedDataCache”那么就会在项目文件夹下生成该文件夹</li>
-</ol>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>ue4</tag>
-        <tag>cache</tag>
-        <tag>迁移</tag>
-        <tag>缓存</tag>
       </tags>
   </entry>
   <entry>
