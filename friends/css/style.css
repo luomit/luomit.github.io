@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'xingcao';
+    src: url("../fonts/xindexingcao57.ttf");
+}
+.main{
+    justify-content: space-between;
+    display: flex;
+}
+.title{
+    font-family: "xingcao";
+    font-weight: lighter;
+    font-style: inherit;
+    font-size: 35px;
+    text-align: center;
+}
+.tx1 {
+    font-size: 15px;
+    color: rgb(109, 109, 109);
+}
+
+.box li {
+    list-style: none;
+    color: rgb(255, 254, 254);
+    font-size: 15px;
+}
+
+.box li i {
+    /* margin-left: 25%; */
+    color: rgb(255, 254, 254);
+}
+
+.box text {
+    text-decoration: underline;
+    color: rgb(109, 109, 109);
+}
+
+.link{
+    height: 100px;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+}
+.link-left{
+    height: 100%;
+    width: 49.5%;
+    /* background-color: rgb(110, 86, 71); */
+    justify-content: space-between;
+    display: flex;
+    border-radius: 8px;
+}
+.link-right {
+    height: 100%;
+    width: 49.5%;
+    /* background-color: rgb(226, 183, 43); */
+    justify-content: space-between;
+    display: flex;
+    border-radius: 8px;
+}
+.img-box{
+    padding: 0;
+    margin: 3px;
+    min-width: 94px;
+    background-color: cornsilk;
+    border-radius: 100%;
+    align-items: left;
+    position: relative;
+}
+.message{
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    /* background-color: crimson; */
+}
+.text{
+    text-decoration: underline;
+    color: darkgrey;
+}
+.message li a{
+    transition: all ease-in-out 300ms;
+}
+.message li a:hover{
+    color: rgb(11, 188, 138);
+}
+.link img{
+    margin: 0;
+    padding: 2px;
+    min-width: 94px;
+    max-height: 94px;
+    max-width: 94px;
+    min-height: 94px;
+    border-radius: 100%;
+    position:absolute;
+    transition: all ease-in-out 600ms;
+}
+.link img:hover{
+    transform: rotate(360deg);
+}

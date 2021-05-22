@@ -22,7 +22,7 @@
 // Pieter Robberechts <http://github.com/probberechts>
 
 /*exported searchFunc*/
-var searchFunc = function(path, searchId, contentId) {
+var searchFunc = function(path, searchid, contentid) {
 
   function stripHtml(html) {
     html = html.replace(/<style([\s\S]*?)<\/style>/gi, "");
@@ -62,9 +62,9 @@ var searchFunc = function(path, searchId, contentId) {
         };
       }).get();
 
-      var $input = document.getElementById(searchId);
+      var $input = document.getElementById(searchid);
       if (!$input) { return; }
-      var $resultContent = document.getElementById(contentId);
+      var $resultContent = document.getElementById(contentid);
 
       $input.addEventListener("input", function(){
         var resultList = [];
