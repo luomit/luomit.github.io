@@ -246,6 +246,324 @@
       </tags>
   </entry>
   <entry>
+    <title>Houdini 外部编辑器安装配置</title>
+    <url>/2020/03/30/%E7%AD%86%E8%A8%98/houdini/Houdini%20Python%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="Python环境配置"><a href="#Python环境配置" class="headerlink" title="Python环境配置"></a>Python环境配置</h1><h2 id="Houdini-Expr-Editor"><a href="#Houdini-Expr-Editor" class="headerlink" title="Houdini Expr Editor"></a>Houdini Expr Editor</h2><p><a href="http://cgtoolbox.com/">http://cgtoolbox.com/</a> 下载并安装Houdini Expr Editor</p>
+<p><strong>安装方法</strong></br><br>将下载文件解压到houdini plugins文件内，然后在env环境变量中添加</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">HOUDINI_PATH</span> = <span class="string">&quot;/home/luomit/Sidefx_plugins/HoudiniExprEditor_v1_3_3/;&amp;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h2><p><a href="https://code.visualstudio.com/">下载</a><br>安装vscode编辑器</p>
+<p><strong>配置插件</strong></br><br><strong>vscode-icons</strong>    #在vscode中的文件会根据不同格式显示为不同的文件图标</br><br><strong>Bracket Pair Colorizer</strong>  #括号会根据对来分配随即颜色用于区分括号</br><br><strong>Highlight Matching Tag</strong>  #高亮选中括号的另一端</br><br><strong>Auto Rename Tag</strong> #HTML自动匹配标签</br><br><strong>Path Intellisense</strong>   #智能路径提示</br><br><strong>Material Theme</strong>  #vscode皮肤主题</br><br><strong>Auto Import</strong> #代码补全</br><br><strong>Indent-Rainbow</strong>  #对其颜色背景，根据缩进不同赋予不同颜色背景</br><br><strong>Prettier</strong>    #代码格式化，美化你的代码书写格式</br><br><strong>Sublime Text Keymap and Settings Importer</strong>   #sublime text 快捷键</br><br><strong>WakaTime</strong>    #记录的的代码时光</br><br><strong>Code Runner</strong> #代码运行</p>
+<h2 id="Sublime-Text-3"><a href="#Sublime-Text-3" class="headerlink" title="Sublime Text 3"></a>Sublime Text 3</h2><p><a href="https://www.sublimetext.com/3">下载</a> 安装Sublime Text 3编辑器</p>
+<ul>
+<li><p>安装包管理</br><br>安装完成后Ctrl +Shift + P 键入Install Package Control安装包管理器</p>
+</li>
+<li><p>安装软件</br><br>等待安装完毕后Ctrl +Shift + P 键入Install 就会有一项Package Control:Install Package的选项点击它，等待它再次弹出窗口时键入想要安装的插件名即可</p>
+</li>
+<li><p>常用插件</br></p>
+</li>
+</ul>
+<p><strong>ConvertToUTF8</strong></br><br><strong>SublimeTmpl</strong></br><br><strong>A File Icon</strong></br><br><strong>Localization</strong></br><br><strong>SublimeTmpl</strong></br><br><strong>VEX</strong></br><br><strong>BracketHighlighter</strong></br><br><strong>Material Theme</strong></br><br><strong>Alignment</strong></br><br><strong>AutoFileName</strong></br><br><strong>SideBar</strong></br><br><strong>WakaTime</strong></br></p>
+<h2 id="Houdini-Python"><a href="#Houdini-Python" class="headerlink" title="Houdini Python"></a>Houdini Python</h2><p>Edit &gt; Preferences &gt; Set External Experssions Editor &gt; Double Click(双击)<br>选择vscode程序;</br>Ubuntu19使用<code>whereis &quot;软件名&quot;</code>查找软件安装路径如下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">luomit@luomit&gt;&gt;&gt; whereis code      </span><br><span class="line">code: &#x2F;snap&#x2F;bin&#x2F;code.url-handler &#x2F;snap&#x2F;bin&#x2F;code</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pyqt5-安装与配置"><a href="#Pyqt5-安装与配置" class="headerlink" title="Pyqt5 安装与配置"></a>Pyqt5 安装与配置</h1><h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><p>查看pip3的版本</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pip3</span> -v</span><br></pre></td></tr></table></figure>
+<p>若是返回<br>command not found: pip<br>则执行下面一行代码安装pip3</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install python3-pip</span><br></pre></td></tr></table></figure>
+
+<h2 id="pyqt5"><a href="#pyqt5" class="headerlink" title="pyqt5"></a>pyqt5</h2><p>使用pip3安装pyqt5</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip3 install pyqt5</span><br></pre></td></tr></table></figure>
+<p>安装其他的工具</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sudo apt-get install python3-pyqt5  </span><br><span class="line">sudo apt-get install pyqt5-dev-tools</span><br><span class="line">sudo apt-get install qttools5-dev-tools</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>使用终端运行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">qtchooser -run-tool=designer -qt=<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>或者修改配置文件/usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">/usr/lib/x86_64-linux-gnu/qt5/<span class="built_in">bin</span></span><br><span class="line">/usr/lib/x86_64-linux-gnu</span><br></pre></td></tr></table></figure>
+
+<h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>检验是否正确安装,创建一个uic.py的文件，内容如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">child = subprocess.Popen([<span class="string">&#x27;pyuic5&#x27;</span> ,<span class="string">&#x27;-x&#x27;</span>,sys.argv[<span class="number">1</span>]],stdout=subprocess.PIPE)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(child.communicate()[<span class="number">0</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p><a href="https://stackoverflow.com/questions/36757752/how-to-install-pyqt5-in-python-3-ubuntu-14-04"><strong>参考</strong></a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>sublime text</tag>
+        <tag>houdini</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini Particle Trail</title>
+    <url>/2020/12/14/%E7%AD%86%E8%A8%98/houdini/Houdini-Particle-Trail/</url>
+    <content><![CDATA[<h2 id="Houdini-粒子路徑運動"><a href="#Houdini-粒子路徑運動" class="headerlink" title="Houdini 粒子路徑運動"></a>Houdini 粒子路徑運動</h2>]]></content>
+      <tags>
+        <tag>houdini</tag>
+        <tag>trail</tag>
+        <tag>particle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini流体水花I</title>
+    <url>/2019/09/03/%E7%AD%86%E8%A8%98/houdini/HoudiniFlip/</url>
+    <content><![CDATA[<h2 id="Flip的大体结构"><a href="#Flip的大体结构" class="headerlink" title="Flip的大体结构"></a>Flip的大体结构</h2><p><img src="https://img-blog.csdnimg.cn/20190806010624110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="Flip"></p>
+<h2 id="fliptank-initial"><a href="#fliptank-initial" class="headerlink" title="fliptank_initial"></a>fliptank_initial</h2><p><img src="https://img-blog.csdnimg.cn/2019080602274844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="fliptank_initial"></p>
+<ul>
+<li><strong>wavetank</strong><br>  用于设置水池的初始大小、位置、粒子间距以及其他一些动力学属性</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20190805013243102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="Boundary Layer"></p>
+<p><font color=red type='楷体' size=3 > <code>BoundaryLayer边界层：用于限制流体运动的边界，将位于边界的流体运动状态减弱，方便后期将流体嵌入到更大的流体系统中 ，又可称其为边界缓冲层</code></font></p>
+<ul>
+<li><strong>Narrow Band</strong> 这是一种流体结算的一种类型<br>  特点：只在流体的表面生成一层粒子用于flip结算，这样大大节省了流体模拟对计算机内存的消耗；但是这样只并不会减少对结算的时间。</li>
+</ul>
+<p><a href="https://v.youku.com/v_show/id_XMTU1NjUxNjU0MA==.html?spm=a1z3jc.11711052.0.0&isextonly=1">Narrow Band FLIP</a><br>视频介绍要使用这种方式创建并模拟Flip需要在创建<code>水箱(OceanSource)</code>时将Particle下的Narrow Band Particle启用(图一)，并且在<code>Dop</code>的Flip Object中(图二)设置Input Type为NarrowBand才可以</p>
+<p><img src="https://img-blog.csdnimg.cn/20190806021810698.png" alt="图一，OceanSource的NarrowBand"></p>
+<p><img src="https://img-blog.csdnimg.cn/2019080602185141.png" alt="图二，Dop中的NarrowBand"></p>
+<h2 id="DopNetwork"><a href="#DopNetwork" class="headerlink" title="DopNetwork"></a>DopNetwork</h2><p><img src="https://img-blog.csdnimg.cn/20190806023632791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="DopNetwock"></p>
+<ul>
+<li><strong>flipsolver</strong><br>  Narrow Band 默认情况与flipObject关联，Bandwidth控制粒子层的厚度，Attribute-Field Pairs则可以将粒子上的属性转移到Field(场)中，避免属性的丢失；<br>  ParticleMotion-Reseeding 控制粒子再运动时的分布，在粒子分布较多的地方杀掉部分，在粒子稀疏的地方后新增一些以达到粒子在流体表面的平衡状态<br>  ParticleMotion-Vorticity 流体涡旋，在启用流体的涡旋时，能够增加流体模拟的真实度<br>  ParticleMotion-Rest<br>  VolumeMotion-VelosityTransfer这个就是表面粒子运动和底层网格之间相互传递速度属性(指定用于在每一帧结算之前将粒子的速度传递到底层网格，然后返回粒子的方法)。<a href="https://docs.newvfx.com/docs/8630.html">FlipSolverahHelp</a></li>
+<li><strong>collisionsource</strong><br>  用于将polygons对象转为VDB碰撞对象，可以对碰撞网格精度VoxelSize调节，还可以设置碰撞速度的计算Geometry下的Velocity；<br>  通过设置碰撞对象的速度属性可以影响产生碰撞时所受碰撞的力度大小；<br>  <code>如果在collisionsource之前已经设置好了碰撞物体的速度，开启这里的Velocity时collisionsource会 重新根据物体的运动状态来计算速度属性覆盖原有的属性</code></li>
+</ul>
+<h1 id="Fluid-Mesh"><a href="#Fluid-Mesh" class="headerlink" title="Fluid Mesh"></a>Fluid Mesh</h1><p>在流体制作中，将流体粒子转换成mesh模型才可以给fluid赋予材质进行渲染；并且水的形态细节最终也是由这一步决定；</p>
+<h2 id="particlefluid-mesh流程"><a href="#particlefluid-mesh流程" class="headerlink" title="particlefluid mesh流程"></a>particlefluid mesh流程</h2><p><img src="https://img-blog.csdnimg.cn/20190811152718922.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"></p>
+<blockquote>
+<p>流体粒子转mesh，首先需要将particle转为vdb，然后对vdb进行膨胀操作，再将膨胀后的vdb进行smooth，最后对vdb进行收缩；(particle to mesh 的大概流程)</p>
+</blockquote>
+<p><code>在Houdini中使用</code><a href="http://127.0.0.1:48626/nodes/sop/particlefluidsurface">particlefluidsurface</a><code>节点来调节和实现particlefluid mesh的所有操作</code><br><img src="https://img-blog.csdnimg.cn/2019081115274963.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"><br><img src="https://img-blog.csdnimg.cn/20190811152801946.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"></p>
+<blockquote>
+<p>在实际制作particlefulid mesh时，会出现上图的情况，由于以上的操作默认是对整体粒子做相同操作且强度相同，这就导致粒子在高速飞溅的部分完全的smooth掉了，丢失掉水的细节；这是我们需要根据某种属性mask来控制mesh的范围强度，从而保留更多的模拟细节。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20190811152830629.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"></p>
+<blockquote>
+<p>最后通过优化polymesh拓扑节省mesh对内存的占用</p>
+</blockquote>
+<h2 id="fluid-mesh-实践技巧"><a href="#fluid-mesh-实践技巧" class="headerlink" title="fluid mesh 实践技巧"></a>fluid mesh 实践技巧</h2><p><img src="https://img-blog.csdnimg.cn/20190811165657149.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>复制两个particlefluidsurface节点，用作mesh调节的参考(如果对原始的粒子量做调整，每次计算需要耗费大量的时间，所以对particlefluidsurface做一定的裁切，调节出合适的mesh参数后再应用的原始的particlefluidsurface上就可以节省大量的时间，提升工作效率)</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20190811171034712.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>上图红色部分纠正’无线’应为’无限’</p>
+</blockquote>
+<ul>
+<li>使用Regions的BoundingBox对水箱进行裁切，尽量保留既有运动剧烈的流体粒子，有保留相对运动平缓的粒子，这样在mesh时有个参考比较</li>
+</ul>
+<style>
+.font1{text-align:center;color:#D2691E}
+</style>
+<div class="font1">初学Flip笔记，希望大家给点评论，指出错误和不足.</br></div>
+<div class="font1"> **\\ ( >O< ) / ** </div>]]></content>
+      <tags>
+        <tag>houdini</tag>
+        <tag>flip</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini安装与配置</title>
+    <url>/2020/03/06/%E7%AD%86%E8%A8%98/houdini/Houdini%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网<a href="https://www.sidefx.com/download/">下载</a><br>也可以从国内各大CG论坛及素材网站下载如：<br><a href="https://filecr.com/windows/houdini-fx/">filecr.com</a>不科学上网不度盘直接下载速度快<br><a href="https://www.vfxforce.cn/">VFXFORCE</a><br><a href="http://qny.ccvfx.cn/">CCVFX</a><br><a href="https://c4dsky.com/">书生CG资源站</a><br>…<br>官网下载流程演示<a href="https://www.sidefx.com/download/">https://www.sidefx.com/download/</a> 选这一种登录方式登录，如果你一种账号都没有就注册一个也是很快的。<br>登录以后选择Get下的Downlode如下图<br><img src="/img/H_downlode.jpg"><br>然后直接点击Downlode下载，网页会根据你当前所使用的系统来下载当前最新稳定版本的软件；如果要下载指定版本可以滑到最下方可看见PRODUCTION BUILDSD点击选择你要下载的版本即可。<br><img src="/img/H_downlode1.jpg"><br><img src="/img/H_downlode2.jpg"></p>
+<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>windous的安装网上很多也很简单<br>[百度]<a href="https://jingyan.baidu.com/article/495ba841f5d02738b30ede23.html">https://jingyan.baidu.com/article/495ba841f5d02738b30ede23.html</a></p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>根据上面的方法下载好后应该是以tag.gz结尾的压缩包如houdini-17.5.460-linux_x86_64_gcc6.3.tga.gz;<br>解压到一个位置得到的文件如下所示<br><img src="/img/H_linux.png"><br>然后使用终端</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /下载/houdini-17.5.460-linux_x86_64_gcc6.3/</span><br><span class="line">sudo ./houdini.install</span><br></pre></td></tr></table></figure>
+<p>终端会出现一系列的提示默认yes即可<br>待续….</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="外部编辑器配置"><a href="#外部编辑器配置" class="headerlink" title="外部编辑器配置"></a>外部编辑器配置</h2><p>参考本博客”<a href="https://luomit.xyz/2020/03/30/Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">Python环境配置</a>“</p>
+<h2 id="houdini文档的配置-Windows"><a href="#houdini文档的配置-Windows" class="headerlink" title="houdini文档的配置(Windows)"></a>houdini文档的配置(Windows)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ---------------- &amp;&amp; Plug-ni PATH &amp;&amp; -------------------</span><br><span class="line">#自定义插件目录</span><br><span class="line">MEHOU &#x3D; D:\Users\luomit\Documents\houdini18.0\plug-in</span><br><span class="line"></span><br><span class="line">MOPS &#x3D; $MEHOU&#x2F;MOPS-master</span><br><span class="line">DM &#x3D; $MEHOU&#x2F;DM-v1.5.25</span><br><span class="line">HDRI &#x3D; $MEHOU&#x2F;Hdri-Link-for-Houdini-master</span><br><span class="line">OPX &#x3D; $MEHOU&#x2F;optix</span><br><span class="line"></span><br><span class="line">ARNOLD &#x3D; C:\arnold\htoa\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;</span><br><span class="line">GAMETOOL &#x3D; $MEHOU&#x2F;SideFX_GameDevToolset_Houdini17.5_1.232</span><br><span class="line">EDITOR &#x3D; &quot;C:\Users\luomit\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;</span><br><span class="line"></span><br><span class="line">#PDG_IMAGEMAGICK &#x3D; &quot;C:\luomitPC\ImageMagick-7.0.9-Q16\magick.exe&quot;</span><br><span class="line">#PDG_FFMPEG &#x3D; &quot;C:\Program Files\ffmpeg-20200227-9b22254-win64-static\bin\ffmpeg.exe&quot;</span><br><span class="line">---------------- &amp;&amp; Plug-ni PATH &amp;&amp; -------------------</span><br><span class="line"></span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;$HOUDINI_PATH;$GAMETOOL;$ARNOLD;$REDSHIFT;$MOPS;&amp;&quot;</span><br><span class="line">PATH &#x3D; &quot;$PATH;$EDITOR;$GAMETOOL&#x2F;bin;$ARNOLD&#x2F;scripts&#x2F;bin;$REDSHIFTPATH&quot;</span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line"></span><br><span class="line">HOUDINI_BUFFERDSAVE&#x3D;1</span><br><span class="line">HOUDINI_UISCALE&#x3D;120</span><br><span class="line">HOUDINI_EXTERNAL_HELP_BROWSER&#x3D;1</span><br><span class="line">HOUDINI_USE_HFS_PYTHON&#x3D;1</span><br><span class="line">HOUDINI_DOS_ERROR&#x3D;2</span><br></pre></td></tr></table></figure>
+
+<h2 id="houdini文档的配置-Linux"><a href="#houdini文档的配置-Linux" class="headerlink" title="houdini文档的配置(Linux)"></a>houdini文档的配置(Linux)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ---------------- &amp;&amp; Plug-ni PATH &amp;&amp; -------------------</span><br><span class="line">#自定义插件目录</span><br><span class="line">MEHOU &#x3D; D:\Users\luomit\Documents\houdini18.0\plug-in</span><br><span class="line"></span><br><span class="line">MOPS &#x3D; $MEHOU&#x2F;MOPS-master</span><br><span class="line">DM &#x3D; $MEHOU&#x2F;DM-v1.5.25</span><br><span class="line">HDRI &#x3D; $MEHOU&#x2F;Hdri-Link-for-Houdini-master</span><br><span class="line">OPX &#x3D; $MEHOU&#x2F;optix</span><br><span class="line"></span><br><span class="line">ARNOLD &#x3D; C:\arnold\htoa\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;</span><br><span class="line"></span><br><span class="line">GAMETOOL &#x3D; $MEHOU&#x2F;SideFX_GameDevToolset_Houdini17.5_1.232</span><br><span class="line"></span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;$HOUDINI_PATH:$GAMETOOL:$ARNOLD:$REDSHIFT:$MOPS:&amp;&quot;</span><br><span class="line">PATH &#x3D; &quot;$PATH:$EDITOR:$GAMETOOL&#x2F;bin:$ARNOLD&#x2F;scripts&#x2F;bin:$REDSHIFTPATH&quot;</span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line"></span><br><span class="line">HOUDINI_BUFFERDSAVE&#x3D;1</span><br><span class="line">HOUDINI_UISCALE&#x3D;120</span><br><span class="line">HOUDINI_EXTERNAL_HELP_BROWSER&#x3D;1</span><br><span class="line">HOUDINI_USE_HFS_PYTHON&#x3D;1</span><br><span class="line">HOUDINI_DOS_ERROR&#x3D;2</span><br></pre></td></tr></table></figure>
+<h2 id="常用插件的配置"><a href="#常用插件的配置" class="headerlink" title="常用插件的配置"></a>常用插件的配置</h2><p><code>Arnold</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PATH &#x3D; &quot;Arnold目录&#x2F;scripts&#x2F;bin;$PATH&quot;</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;Arnold目录;&amp;</span><br></pre></td></tr></table></figure>
+<p><code>Redshift</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HOUDINI_DSO_ERROR &#x3D; 2</span><br><span class="line">PATH &#x3D; &quot;C:&#x2F;ProgramData&#x2F;Redshift&#x2F;bin;$PATH&quot;</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;C:&#x2F;ProgramData&#x2F;Redshift&#x2F;Plugins&#x2F;Houdini&#x2F;16.5.268;&amp;&quot;</span><br></pre></td></tr></table></figure>
+<p><code>Deadline</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HOUDINI_PATH &#x3D; &quot;$HOUDINI_PATH;C:&#x2F;Users&#x2F;Administrator&#x2F;AppData&#x2F;Local&#x2F;Thinkbox&#x2F;Deadline10&#x2F;submitters&#x2F;HoudiniSubmitter;&amp;&quot;</span><br><span class="line">HOUDINI_MENU_PATH &#x3D; &quot;$HOUDINI_MENU_PATH;C:&#x2F;Users&#x2F;Administrator&#x2F;AppData&#x2F;Local&#x2F;Thinkbox&#x2F;Deadline10&#x2F;submitters&#x2F;HoudiniSubmitter;&amp;&quot;</span><br></pre></td></tr></table></figure>
+<p><code>Qlib</code><br>下载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/qLab/qLib.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QLIB &#x3D; &quot;$MEHOU\qLib-master\&quot;</span><br><span class="line">QOTL&#x3D; &quot;$QLIB&#x2F;otls&quot;</span><br><span class="line">HOUDINI_OTLSCAN_PATH &#x3D; &quot;$QOTL&#x2F;base;$QOTL&#x2F;future;$QOTL&#x2F;experimental;$HOUDINI_OTLSCAN_PATH;&amp;&quot;</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;$QLIB;&amp;&quot;</span><br></pre></td></tr></table></figure>
+<p><code>GameDevelopment</code><br>下载</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/sideeffects/GameDevelopmentToolset.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HOUDINI_PATH &#x3D; C:\Users\Luiz\Documents\GameDevelopmentToolset;&amp;</span><br><span class="line">PATH &#x3D; C:\Users\Luiz\Documents\GameDevelopmentToolset\bin;$PATH</span><br></pre></td></tr></table></figure>
+
+<h2 id="关于h18复制粘贴报错"><a href="#关于h18复制粘贴报错" class="headerlink" title="关于h18复制粘贴报错"></a>关于h18复制粘贴报错</h2><p>在某群有群友上传这里做个备份，需要的朋友自取</br><br><a href="https://luomit.lanzous.com/ic5g78d">文件下载</a><br>将两个dll复制到安装目录下替换即可</p>
+<p>未完…</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini四元数(花开)</title>
+    <url>/2021/05/08/%E7%AD%86%E8%A8%98/houdini/Houdini%E5%9B%9B%E5%85%83%E6%95%B0-%E8%8A%B1%E5%BC%80/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>四元数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini湖边小屋</title>
+    <url>/2021/05/10/%E7%AD%86%E8%A8%98/houdini/Houdini%E6%B9%96%E8%BE%B9%E5%B0%8F%E5%B1%8B/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Houdini 粒子渲染拖尾 I</title>
+    <url>/2019/09/01/%E7%AD%86%E8%A8%98/houdini/Houdini%E7%B2%92%E5%AD%90%E6%8B%96%E5%B0%BE%20%E2%85%A0/</url>
+    <content><![CDATA[<h1 id="实现路径运动"><a href="#实现路径运动" class="headerlink" title="实现路径运动"></a>实现路径运动</h1><h2 id="节点网络"><a href="#节点网络" class="headerlink" title="节点网络"></a>节点网络</h2><p><img src="https://img-blog.csdnimg.cn/20190831021017911.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="节点概述"><a href="#节点概述" class="headerlink" title="节点概述"></a>节点概述</h2><ul>
+<li>创建一个不规则的发射源用于发射粒子，不规则的形状可以使粒子在发射开始时便获得一个随机的初始位置；</li>
+<li>以粒子发射源位置为起点绘制创建一条曲线(曲线间点和点的位置均分布，不宜过于靠近，否则力会相互间影响)，计算线的切线向量，并转为速度场；</li>
+<li>在粒子系统中使用popadvectbyvolume将速度场引入**(重点：advection type 平流类型使用Update velocity)**，Velocity Blend 速度混合为1，让引入的速度场完全影响粒子；</li>
+<li>通过控制速度场来获得粒子在跟随路径运动过程中飘散出来的效果；</li>
+<li><strong>（重点：粒子在结束模拟之前不允许有粒子死亡，也就是粒子的寿命需要给一个足够高的值来确保在结束模拟时没有粒子死亡）</strong></li>
+</ul>
+<h1 id="拖尾的渲染要点和设置"><a href="#拖尾的渲染要点和设置" class="headerlink" title="拖尾的渲染要点和设置"></a>拖尾的渲染要点和设置</h1><h2 id="要实现粒子在摄像机空间位移路径模糊的需要注意以下几点："><a href="#要实现粒子在摄像机空间位移路径模糊的需要注意以下几点：" class="headerlink" title="要实现粒子在摄像机空间位移路径模糊的需要注意以下几点："></a>要实现粒子在摄像机空间位移路径模糊的需要注意以下几点：</h2><ol>
+<li><font color=red><strong>粒子不能是缓存在磁盘上的粒子，不需使用pop解算完成，暂时缓存在内存上的粒子</strong>；</font></li>
+<li><font color=red><strong>需要创建一套粒子数量恒定不变的粒子系统来替换模拟好的动态</strong>；</font></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(i@id &#x3D; point(1,&quot;id&quot;,i@id))</span><br><span class="line">&#123;</span><br><span class="line">    v@P &#x3D; point(1,&quot;P&quot;,i@id);</span><br><span class="line">&#125;</span><br><span class="line">f@age &#x3D; point(1,&quot;age&quot;,i@id);</span><br><span class="line">f@life &#x3D; point(1,&quot;life&quot;,i@id);</span><br><span class="line">#根据id来匹配位置、生命&#x2F;寿命、年龄等需要的属性</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><font color=red><strong>在节点属性上<font color=blue>不要</font>启用几何体运动动属性</strong></font></li>
+<li>提高渲染相机上的ShutterTime值</li>
+<li>Mantra渲染器使用PBR渲染引擎，然后提高XformTimeSamples、GeoTimeSamples来得到模糊效果</li>
+<li>在Mantra渲染器的Sampling里，需要将PixelSamples提高到20左右才可以得到较清晰的运动模糊</li>
+</ol>
+<h2 id="关于替换粒子"><a href="#关于替换粒子" class="headerlink" title="关于替换粒子"></a>关于替换粒子</h2><p>未来避免麻烦，我将教程中的步骤简化制作了一个HDA，方便日后制作时调用</p>
+<p><img src="https://img-blog.csdnimg.cn/2019090112351688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector rest &#x3D; point(2,&quot;P&quot;,0);</span><br><span class="line">int pt &#x3D; addpoint(0,rest);</span><br><span class="line">setpointattrib(0,&quot;id&quot;,pt,0,&quot;set&quot;);</span><br><span class="line">setpointattrib(0,&quot;rest&quot;,pt,rest,&quot;set&quot;);</span><br><span class="line"></span><br><span class="line">int off &#x3D; chi(&quot;on_off&quot;);</span><br><span class="line">int num &#x3D; detail(1,&quot;nextid&quot;,0);</span><br><span class="line">int ptnum &#x3D; num*off  + chi(&quot;point_constant&quot;)*off + num*(chf(&quot;point_multi&quot;)*(1-off));</span><br><span class="line">&#x2F;&#x2F;printf(&quot;%d\n&quot;,ptnum);</span><br><span class="line">&#x2F;&#x2F;setpointattrib(0,&quot;ptnum&quot;,pt,ptnum,&quot;set&quot;);</span><br><span class="line"></span><br><span class="line">for (int i &#x3D; 0; i &lt; ptnum-1; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;* code *&#x2F;</span><br><span class="line">	int a &#x3D; addpoint(0,rest);</span><br><span class="line">	setpointattrib(0,&quot;id&quot;,a,i+1,&quot;set&quot;);</span><br><span class="line">	setpointattrib(0,&quot;rest&quot;,a,rest,&quot;set&quot;);</span><br><span class="line">&#125;</span><br><span class="line">#创建恒定粒子数的粒子系统</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(i@id &#x3D; point(1,&quot;id&quot;,i@ptnum))</span><br><span class="line">&#123;</span><br><span class="line">    	v@P &#x3D; point(1,&quot;P&quot;,i@id);</span><br><span class="line">&#125;</span><br><span class="line">f@age &#x3D; point(1,&quot;age&quot;,i@id);</span><br><span class="line">f@life &#x3D; point(1,&quot;life&quot;,i@id);</span><br><span class="line"></span><br><span class="line">if(@P &#x3D;&#x3D; @rest)</span><br><span class="line">&#123;</span><br><span class="line">   	f@Alpha &#x3D; 0;</span><br><span class="line">&#125;</span><br><span class="line">	#根据id传递需要保留的粒子属性</span><br></pre></td></tr></table></figure>
+
+<h2 id="关于粒子死亡"><a href="#关于粒子死亡" class="headerlink" title="关于粒子死亡"></a>关于粒子死亡</h2><p>因为粒子的整个过程需要保持粒子量的恒定不变，所以粒子会一直存在，需要通过控制粒子的Alpha的使粒子消失这就使用到age和life这两个属性了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f@Alpha &#x3D; 1.0;</span><br><span class="line"></span><br><span class="line">f@pscale &#x3D; fit01(rand(@id),chf(&quot;min&quot;),chf(&quot;max&quot;));</span><br><span class="line"></span><br><span class="line">v@Cd &#x3D; chramp(&quot;Cd&quot;,@age&#x2F;(@life+rand(@id)*5));</span><br><span class="line"></span><br><span class="line">f@Alpha &#x3D; chramp(&quot;Alpha&quot;,@age&#x2F;@life);</span><br><span class="line">#设置Alpha粒子的透明</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这种方式可以快速得到很棒的粒子曲线模糊的效果，但是也存在很大局限性；比如我感觉最麻烦的就是不能读取磁盘粒子来实现，这在模拟大量粒子时就需要机器拥有足够的内存来存储这些粒子，否则无法实现；如果需要对存盘粒子进行缓存建议阅读<a href="https://www.dxxnvfx.com/article-14938.html">大象小牛</a>的相关文章，他有讲到这种方式的实现；总之第一种方式出来的效果更加完美，第二种则更加实用；<br><font color=red> 以上均为个人学习理解的观点笔记，仅供参考；不足之处还望评论指出！！</font></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>trail</tag>
+        <tag>particle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenColorIO</title>
+    <url>/2020/03/28/%E7%AD%86%E8%A8%98/houdini/OpenColorIO-Configuration/</url>
+    <content><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p><a href="https://www.bilibili.com/video/BV1Yb411E7fY">视频教程</a><br><a href="https://github.com/imageworks/OpenColorIO-Configs">下载</a></p>
+<h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h1><h2 id="Houdini"><a href="#Houdini" class="headerlink" title="Houdini"></a>Houdini</h2><p>在文档中添加config.ocio的路径</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OCIO &#x3D; &quot;D:\User\luomit\Documets\OpenColorIO-Configs-master\aces_1.0.3\config.ocio&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Maya"><a href="#Maya" class="headerlink" title="Maya"></a>Maya</h2><p>在</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows &gt; Setting&#x2F;Preferences &gt; Preferences &gt; ColorManagement &gt; OCIO Config Path</span><br></pre></td></tr></table></figure>
+<p>指定config.ocio的路径并启用Use OCIO Configuration</p>
+<h2 id="Nuke"><a href="#Nuke" class="headerlink" title="Nuke"></a>Nuke</h2><ul>
+<li><p>临时设置<br>S键调出工程设置，在Color栏设置Color Management为OCIO<br>就可以在项目中使用opencolorio</p>
+</li>
+<li><p>永久设置<br>Edit &gt; Preferences &gt; Project Defaults &gt; Color Managment<br>选择aces色彩空间点击OK保存即可</p>
+</li>
+</ul>
+<h1 id="OpenColor基本工作流程"><a href="#OpenColor基本工作流程" class="headerlink" title="OpenColor基本工作流程"></a>OpenColor基本工作流程</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s&#x3D;&gt;start: 基础素材色彩空间处理</span><br><span class="line">o&#x3D;&gt;output: 输出到CG工作流程中</span><br><span class="line">i&#x3D;&gt;input: 导入CG渲染图像合成处理</span><br><span class="line">c&#x3D;&gt;convert: 转换为SRGB或其他适用的色彩空间格式</span><br><span class="line">e&#x3D;&gt;end: 转换为SRGB或其他适用的色彩空间格式</span><br><span class="line"></span><br><span class="line">s-&gt;o-&gt;i-&gt;c-&gt;e</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nuke中的基础节点流"><a href="#Nuke中的基础节点流" class="headerlink" title="Nuke中的基础节点流"></a>Nuke中的基础节点流</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set cut_paste_input [stack 0]</span><br><span class="line">version 11.3 v5</span><br><span class="line">Read &#123;</span><br><span class="line"> inputs 0</span><br><span class="line"> file_type png</span><br><span class="line"> file F:&#x2F;Houdini&#x2F;Tree_Cloud&#x2F;model&#x2F;tree&#x2F;palm&#x2F;Sample_Palm&#x2F;Bark&#x2F;Palmetto_bark_2.png</span><br><span class="line"> format &quot;1024 4096 0 0 1024 4096 1 &quot;</span><br><span class="line"> origset true</span><br><span class="line"> name Read7</span><br><span class="line"> label 渲染素材</span><br><span class="line"> selected true</span><br><span class="line"> xpos 586</span><br><span class="line"> ypos 325</span><br><span class="line">&#125;</span><br><span class="line">OCIOColorSpace &#123;</span><br><span class="line"> in_colorspace &quot;ACES - ACEScg&quot;</span><br><span class="line"> out_colorspace &quot;Utility - sRGB - Texture&quot;</span><br><span class="line"> name OCIOColorSpace3</span><br><span class="line"> selected true</span><br><span class="line"> xpos 748</span><br><span class="line"> ypos 361</span><br><span class="line">&#125;</span><br><span class="line">Write &#123;</span><br><span class="line"> file_type png</span><br><span class="line"> checkHashOnRead false</span><br><span class="line"> name Write2</span><br><span class="line"> label 渲染输出</span><br><span class="line"> selected true</span><br><span class="line"> xpos 906</span><br><span class="line"> ypos 355</span><br><span class="line">&#125;</span><br><span class="line">Read &#123;</span><br><span class="line"> inputs 0</span><br><span class="line"> file_type png</span><br><span class="line"> file F:&#x2F;Houdini&#x2F;Tree_Cloud&#x2F;model&#x2F;tree&#x2F;palm&#x2F;Sample_Palm&#x2F;Bark&#x2F;Palmetto_bark_2.png</span><br><span class="line"> format &quot;1024 4096 0 0 1024 4096 1 &quot;</span><br><span class="line"> origset true</span><br><span class="line"> colorspace sRGB</span><br><span class="line"> name Read2</span><br><span class="line"> label 普通纹理</span><br><span class="line"> selected true</span><br><span class="line"> xpos 65</span><br><span class="line"> ypos 312</span><br><span class="line">&#125;</span><br><span class="line">OCIOColorSpace &#123;</span><br><span class="line"> in_colorspace &quot;Utility - sRGB - Texture&quot;</span><br><span class="line"> out_colorspace &quot;ACES - ACEScg&quot;</span><br><span class="line"> name OCIOColorSpace2</span><br><span class="line"> selected true</span><br><span class="line"> xpos 222</span><br><span class="line"> ypos 355</span><br><span class="line">&#125;</span><br><span class="line">Write &#123;</span><br><span class="line"> file_type exr</span><br><span class="line"> first_part none</span><br><span class="line"> name Write1</span><br><span class="line"> label 输出纹理到制作</span><br><span class="line"> selected true</span><br><span class="line"> xpos 384</span><br><span class="line"> ypos 349</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Houdini-amp-Maya"><a href="#Houdini-amp-Maya" class="headerlink" title="Houdini&amp;Maya"></a>Houdini&amp;Maya</h2><p>从Nuke中导入处理好的原始素材；纹理贴图、HDRI等进行CG创作输出ACES色彩空间的图像文件；</p>
+<p><a href="https://blog.csdn.net/qq_31001889/article/details/86625317">Hexo流程图</a><br>hexo使用流程图需要安装插件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-filter-flowchart</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>opencolorio</tag>
+        <tag>color</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Smoke Pump</title>
+    <url>/2020/10/11/%E7%AD%86%E8%A8%98/houdini/Smoke-Pump/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>PythonPJManegement</title>
+    <url>/2020/03/17/%E7%AD%86%E8%A8%98/houdini/PythonPJMane/</url>
+    <content><![CDATA[<h2 id="创建基础框架"><a href="#创建基础框架" class="headerlink" title="创建基础框架"></a>创建基础框架</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> hutil.Qt <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">proj = hou.getenv(<span class="string">&#x27;JOB&#x27;</span>)+<span class="string">&#x27;/&#x27;</span></span><br><span class="line"><span class="comment">#使用hou.getenv获取当前工程的环境变量属性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openScene</span>(<span class="params">item</span>):</span></span><br><span class="line">    hipFile = proj + item.data()</span><br><span class="line">    hou.hipFile.load(hipFile)</span><br><span class="line">    <span class="comment">#print hipFile</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">onCreateInterface</span>():</span></span><br><span class="line">    widget = QtWidgets.QLabel(proj)</span><br><span class="line">    listwidget = QtWidgets.QListWidget()</span><br><span class="line">    <span class="comment">#print &#x27;\n&#x27; &quot;ProjectPath(&quot; + proj +&#x27;)&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(proj):</span><br><span class="line">        <span class="keyword">if</span> file.endswith(<span class="string">&quot;.hip&quot;</span>):</span><br><span class="line">            listwidget.addItem(file)</span><br><span class="line">            </span><br><span class="line">    <span class="comment">#将按钮链接到函数上执行打开文件的指令</span></span><br><span class="line">    listwidget.doubleClicked.connect(openScene)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> listwidget</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>project</tag>
+        <tag>manage</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vex随机切割四边面</title>
+    <url>/2021/05/20/%E7%AD%86%E8%A8%98/houdini/vex%E9%9A%8F%E6%9C%BA%E5%88%87%E5%89%B2%E5%9B%9B%E8%BE%B9%E9%9D%A2/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>vex</tag>
+        <tag>四边面</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Houdini python开发</title>
+    <url>/2020/03/30/%E7%AD%86%E8%A8%98/houdini/houdini%20python%E5%BC%80%E5%8F%91/</url>
+    <content><![CDATA[<h4 id="节点创建"><a href="#节点创建" class="headerlink" title="节点创建"></a>节点创建</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.pwd().createNode(<span class="string">&quot;sphere&quot;</span>,name=<span class="string">&quot;球体&quot;</span>)  </span><br><span class="line"><span class="comment"># hou.pwd()表示当前窗口所在工作路径 creatNode(节点原名，name=“设置新的名字”)    </span></span><br><span class="line">hou.cd(<span class="string">&quot;/obj&quot;</span>) </span><br><span class="line"><span class="comment"># hou.cd() 移动当前窗口工作路径到指定的新路径上</span></span><br></pre></td></tr></table></figure>
+<h4 id="节点删除"><a href="#节点删除" class="headerlink" title="节点删除"></a>节点删除</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node = hou.node(<span class="string">&quot;/obj/man/box1&quot;</span>)</span><br><span class="line">node.destroy()</span><br><span class="line"><span class="comment"># 先指定node为一个节点，再使用.destroy()来删除这个节点</span></span><br><span class="line">hou.node(<span class="string">&quot;cname&quot;</span>).destroy()</span><br><span class="line"><span class="comment"># 可以直接指定，直接删除</span></span><br></pre></td></tr></table></figure>
+<h4 id="节点连线"><a href="#节点连线" class="headerlink" title="节点连线"></a>节点连线</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setFirstInput(hou.node(<span class="string">&quot;sphere1&quot;</span>))</span><br><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setNextInput(hou.node(<span class="string">&quot;box1&quot;</span>))</span><br><span class="line"><span class="comment"># 假如我在geo1节点内创建了merge1、box1、sphere1三个节点，想要连接这三个节点</span></span><br><span class="line"><span class="comment"># 首先确认当前窗口所在路径hou.pwd(),hou.cd(&quot;/geo1&quot;) 然后移动到geo1内</span></span><br><span class="line"><span class="comment"># 再使用上面两行代码进行依次连接节点</span></span><br><span class="line"><span class="comment"># setFirstInput设置地一个输入端接入连线，setNextInput设置下一个输入端连线</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">有一样隐隐约约</span><br></pre></td></tr></table></figure>
+<h4 id="断开节点"><a href="#断开节点" class="headerlink" title="断开节点"></a>断开节点</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mer</span> = hou.node(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="attribute">mer</span>.setInput(<span class="number">0</span>,None)</span><br><span class="line"><span class="comment"># 设置merge1节点第一号输入端为None(断开)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="父与子"><a href="#父与子" class="headerlink" title="父与子"></a>父与子</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.parent(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="comment"># 返回当前节点merge1的父级节点</span></span><br><span class="line">hou.node(<span class="string">&quot;.&quot;</span>).children()</span><br><span class="line"><span class="comment"># 返回当前节点下的所有节点</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>houdini</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用VEX</title>
+    <url>/2019/10/23/%E7%AD%86%E8%A8%98/houdini/%E5%B8%B8%E7%94%A8VEX/</url>
+    <content><![CDATA[<h3 id="findattribval-找同类"><a href="#findattribval-找同类" class="headerlink" title="findattribval 找同类"></a>findattribval 找同类</h3><p><a href="http://127.0.0.1:48626/vex/functions/findattribval">findattribval</a><br>用来查找指定层级(vertices、point、prim)上属性是否相同，相同则返回0，否则返回-1；然后再调取相同时的对象的某些属性来进行其他的操作。<br>示例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> result = findattribval(<span class="number">1</span>,<span class="string">&quot;point&quot;</span>,<span class="string">&quot;name&quot;</span>,s@name,<span class="number">0</span>);</span><br><span class="line">v@v = point(<span class="number">1</span>,<span class="string">&quot;v&quot;</span>,result);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如在刚体中查找对比0和1两个输入端刚体的那么属性，如果左右相同，则将1号对象上相同name的元素的某个属性赋予到0号对象对应元素上；</p>
+</blockquote>
+<h3 id="addvariablename-自定义全局变量"><a href="#addvariablename-自定义全局变量" class="headerlink" title="addvariablename 自定义全局变量"></a>addvariablename 自定义全局变量</h3><p><a href="http://127.0.0.1:48626/vex/functions/addvariablename">addvariablename</a><br>在属性调用过程中，有时候使用全局变量的方式会非常的方便；这时候我们可以使用这个方法将自定义属性定义为一个houdini的全局变量来调用；</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">float</span> a = @numpt%<span class="number">2</span>；</span><br><span class="line">f@b = a；</span><br><span class="line">addvariablename(<span class="number">0</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;B&quot;</span>)；</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>addvariablename(数据端口，属性，全局变量名)；</p>
+</blockquote>
+<p>未完…</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>vex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Arch安装</title>
     <url>/2020/10/11/%E7%AD%86%E8%A8%98/linux/Arch/</url>
     <content><![CDATA[<h2 id="ArchLinux-系统安装"><a href="#ArchLinux-系统安装" class="headerlink" title="ArchLinux 系统安装"></a>ArchLinux 系统安装</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>开启电脑EFI启动支持(根据电脑情况选择系统启动方式)<br>ArchLinux系统U盘</p>
@@ -339,6 +657,29 @@
         <tag>Arch</tag>
         <tag>i3</tag>
         <tag>安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu</title>
+    <url>/2020/10/11/%E7%AD%86%E8%A8%98/linux/Ubuntu%E5%A3%81%E7%BA%B8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%8D%A2/</url>
+    <content><![CDATA[<h3 id="Ubuntu下批量壁纸自动更新的方法"><a href="#Ubuntu下批量壁纸自动更新的方法" class="headerlink" title="Ubuntu下批量壁纸自动更新的方法"></a>Ubuntu下批量壁纸自动更新的方法</h3><p>要在ubuntu上实现壁纸的动态更换，首先要记住两个路径下的文件<br><code>/usr/share/backgrounds</code> 这里是系统存放壁纸和壁纸动态更换脚本的地方,脚本在contest下，以.xml结尾的就是控制播放的脚本了;</p>
+<p><code>/usr/share/gnome-background-properties</code> 这里的.xml和/usr/share/backgrounds/contest/下的mxl不同;这里的.xml文件是实现壁纸在系统设置中呈现，并加载动态更换脚本的;</p>
+<p>/usr/share/backgrounds/contest/groovy.xml文件原始内容如下(仅用做参考和备份)，不对这个文件做修改</p>
+<h3 id="下载壁纸"><a href="#下载壁纸" class="headerlink" title="下载壁纸"></a>下载壁纸</h3><p>直接贴<a href="https://www.zhihu.com/question/32762402">大佬分享的帖子</a>🐶</p>
+<h3 id="Python批量下载壁纸"><a href="#Python批量下载壁纸" class="headerlink" title="Python批量下载壁纸"></a>Python批量下载壁纸</h3><p>待续….</p>
+<h3 id="生成控制更换xml文件脚本"><a href="#生成控制更换xml文件脚本" class="headerlink" title="生成控制更换xml文件脚本"></a>生成控制更换xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path=/mnt/User/Users/Administrator/Pictures/wallpaper-01</span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`</span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;background&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;year&gt;2020&lt;/year&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;month&gt;11&lt;/month&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;day&gt;4&lt;/day&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;hour&gt;00&lt;/hour&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;minute&gt;00&lt;/minute&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;second&gt;00&lt;/second&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;/starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;!-- This animation will start at midnight. --&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;5.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;from&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/from&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;to&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/to&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/background&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法说明</span></span><br><span class="line"><span class="comment"># 新建一个文件.xml在图片目录下</span></span><br><span class="line"><span class="comment"># 执行这个脚本 ./backgrounds.sh&gt;xxx.xml 完整图片目录的填写</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="生成系统壁纸显示列表xml文件脚本"><a href="#生成系统壁纸显示列表xml文件脚本" class="headerlink" title="生成系统壁纸显示列表xml文件脚本"></a>生成系统壁纸显示列表xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path = `<span class="built_in">pwd</span>`     <span class="comment"># 设置操作文件的目录地址，这里将图片放在了/usr/share/backgrounds下的Black文件夹里</span></span><br><span class="line"></span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`                <span class="comment"># 匹配以pg和ng结尾的文件</span></span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;!DOCTYPE wallpapers SYSTEM &quot;gnome-wp-list.dtd&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;wallpapers&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;wallpaper deleted=&quot;false&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;name&gt;Ubuntu 20.10 Community Wallpapers&lt;/name&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;filename&gt;&#x27;</span>`<span class="built_in">pwd</span>`<span class="string">&#x27;/xxx.xml&lt;/filename&gt;&#x27;</span>  <span class="comment"># 这个文件指向控制文件xml</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span>]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        file_name=<span class="variable">$&#123;last_file##*/&#125;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;wallpaper&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;name&gt;<span class="variable">$&#123;last_file%.*&#125;</span>&lt;/name&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;name xml:lang=&quot;zh_CN&quot;&gt;Ubuntu&lt;/name&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;filename&gt;`pwd`/<span class="variable">$last_file</span>&lt;/filename&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;pcolor&gt;#000000&lt;/pcolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;scolor&gt;#000000&lt;/scolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;shade_type&gt;solid&lt;/shade_type&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/wallpapers&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法 `sudo ./test.sh&gt;test.xml` 格式: sudo 脚本路径 &gt; 生成xml路径</span></span><br><span class="line"><span class="comment"># sudo ./black-wallpapers.sh&gt;/usr/share/gnome-background-properties/black-wallpapers.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>[参考]</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>Ubuntu</tag>
+        <tag>壁纸</tag>
       </tags>
   </entry>
   <entry>
@@ -525,26 +866,33 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu</title>
-    <url>/2020/10/11/%E7%AD%86%E8%A8%98/linux/Ubuntu%E5%A3%81%E7%BA%B8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%8D%A2/</url>
-    <content><![CDATA[<h3 id="Ubuntu下批量壁纸自动更新的方法"><a href="#Ubuntu下批量壁纸自动更新的方法" class="headerlink" title="Ubuntu下批量壁纸自动更新的方法"></a>Ubuntu下批量壁纸自动更新的方法</h3><p>要在ubuntu上实现壁纸的动态更换，首先要记住两个路径下的文件<br><code>/usr/share/backgrounds</code> 这里是系统存放壁纸和壁纸动态更换脚本的地方,脚本在contest下，以.xml结尾的就是控制播放的脚本了;</p>
-<p><code>/usr/share/gnome-background-properties</code> 这里的.xml和/usr/share/backgrounds/contest/下的mxl不同;这里的.xml文件是实现壁纸在系统设置中呈现，并加载动态更换脚本的;</p>
-<p>/usr/share/backgrounds/contest/groovy.xml文件原始内容如下(仅用做参考和备份)，不对这个文件做修改</p>
-<h3 id="下载壁纸"><a href="#下载壁纸" class="headerlink" title="下载壁纸"></a>下载壁纸</h3><p>直接贴<a href="https://www.zhihu.com/question/32762402">大佬分享的帖子</a>🐶</p>
-<h3 id="Python批量下载壁纸"><a href="#Python批量下载壁纸" class="headerlink" title="Python批量下载壁纸"></a>Python批量下载壁纸</h3><p>待续….</p>
-<h3 id="生成控制更换xml文件脚本"><a href="#生成控制更换xml文件脚本" class="headerlink" title="生成控制更换xml文件脚本"></a>生成控制更换xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path=/mnt/User/Users/Administrator/Pictures/wallpaper-01</span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`</span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;background&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;year&gt;2020&lt;/year&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;month&gt;11&lt;/month&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;day&gt;4&lt;/day&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;hour&gt;00&lt;/hour&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;minute&gt;00&lt;/minute&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;    &lt;second&gt;00&lt;/second&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;/starttime&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;  &lt;!-- This animation will start at midnight. --&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span> ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;5.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;from&gt;<span class="variable">$path</span>/<span class="variable">$last_file</span>&lt;/from&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;to&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/to&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/transition&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;static&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;    &lt;duration&gt;600.0&lt;/duration&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;    &lt;file&gt;<span class="variable">$path</span>/<span class="variable">$current_file</span>&lt;/file&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;  &lt;/static&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/background&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法说明</span></span><br><span class="line"><span class="comment"># 新建一个文件.xml在图片目录下</span></span><br><span class="line"><span class="comment"># 执行这个脚本 ./backgrounds.sh&gt;xxx.xml 完整图片目录的填写</span></span><br></pre></td></tr></table></figure>
+    <title>Ubuntu安装配置Pycharm</title>
+    <url>/2019/10/01/%E7%AD%86%E8%A8%98/linux/Ubuntu%E9%85%8D%E7%BD%AEPycharm/</url>
+    <content><![CDATA[<h1 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h1><p>下载<a href="http://www.jetbrains.com/pycharm/download/#section=linux">PyCharm</a></p>
+<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011801613-777117996.png"></p>
+<p>Ubuntu可以直接在终端执行以下代码进行安装：</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">sudo snap install [pycharm-professional <span class="string">| pycharm-community] --classic</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011831142-373801934.png"></p>
+<p>如果使用代码安装失败，可以使用上面的链接下载对应的PyCharm版本，如”pycharm-professional-2019.2.3.tar.gz”;<br>然后将”pycharm-professional-2019.2.3.tar.gz”解压到 /opt 路径下 </p>
+<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011918299-518563904.png"></p>
+<p>然后打开终端</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/pycharm-2019.2.3/bin</span></span><br><span class="line"><span class="string">./pycharm.sh</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="生成系统壁纸显示列表xml文件脚本"><a href="#生成系统壁纸显示列表xml文件脚本" class="headerlink" title="生成系统壁纸显示列表xml文件脚本"></a>生成系统壁纸显示列表xml文件脚本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">path = `<span class="built_in">pwd</span>`     <span class="comment"># 设置操作文件的目录地址，这里将图片放在了/usr/share/backgrounds下的Black文件夹里</span></span><br><span class="line"></span><br><span class="line">files=`ls -U ./ | grep <span class="string">&#x27;[np]g$&#x27;</span>`                <span class="comment"># 匹配以pg和ng结尾的文件</span></span><br><span class="line">last_file=<span class="string">&#x27;empty&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;!DOCTYPE wallpapers SYSTEM &quot;gnome-wp-list.dtd&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;wallpapers&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;wallpaper deleted=&quot;false&quot;&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;name&gt;Ubuntu 20.10 Community Wallpapers&lt;/name&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;filename&gt;&#x27;</span>`<span class="built_in">pwd</span>`<span class="string">&#x27;/xxx.xml&lt;/filename&gt;&#x27;</span>  <span class="comment"># 这个文件指向控制文件xml</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> current_file <span class="keyword">in</span> <span class="variable">$files</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$last_file</span> == <span class="string">&#x27;empty&#x27;</span>]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">        file_name=<span class="variable">$&#123;last_file##*/&#125;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;wallpaper&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;name&gt;<span class="variable">$&#123;last_file%.*&#125;</span>&lt;/name&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;name xml:lang=&quot;zh_CN&quot;&gt;Ubuntu&lt;/name&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&quot;   &lt;filename&gt;`pwd`/<span class="variable">$last_file</span>&lt;/filename&gt;&quot;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;options&gt;zoom&lt;/options&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;pcolor&gt;#000000&lt;/pcolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;scolor&gt;#000000&lt;/scolor&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27;   &lt;shade_type&gt;solid&lt;/shade_type&gt;&#x27;</span></span><br><span class="line">        <span class="built_in">echo</span>    <span class="string">&#x27; &lt;/wallpaper&gt;&#x27;</span></span><br><span class="line">        last_file=<span class="variable">$current_file</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;/wallpapers&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用方法 `sudo ./test.sh&gt;test.xml` 格式: sudo 脚本路径 &gt; 生成xml路径</span></span><br><span class="line"><span class="comment"># sudo ./black-wallpapers.sh&gt;/usr/share/gnome-background-properties/black-wallpapers.xml</span></span><br></pre></td></tr></table></figure>
+<h1 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h1><p>然后就是一顿设置，最后输入激活码时，将下面的<a href="https://blog.csdn.net/qq_42914528/article/details/90511045">激活码</a>复制进去就可以了</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">MTW881U3Z5</span>-eyJsaWNlbnNlSWQiOiJNVFc<span class="number">4</span>ODFVM<span class="number">1</span>o<span class="number">1</span>IiwibGljZW<span class="number">5</span>zZWVOYW<span class="number">1</span>lIjoiTnNzIEltIiwiYXNzaWduZWVOYW<span class="number">1</span>lIjoiIiwiYXNzaWduZWVFbWFpbCI<span class="number">6</span>IiIsImxpY<span class="number">2</span>Vuc<span class="number">2</span>VSZXN<span class="number">0</span>cmljdGlvbiI<span class="number">6</span>IkZvciBlZHVjYXRpb<span class="number">25</span>hbCB<span class="number">1</span>c<span class="number">2</span>Ugb<span class="number">25</span>seSIsImNoZWNrQ<span class="number">29</span>uY<span class="number">3</span>VycmVudFVzZSI<span class="number">6</span>ZmFsc<span class="number">2</span>UsInByb<span class="number">2</span>R<span class="number">1</span>Y<span class="number">3</span>RzIjpbeyJjb<span class="number">2</span>RlIjoiSUkiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IkRQTiIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IlBTIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiR<span class="number">08</span>iLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IkNMIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiUlMwIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiUkMiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJSRCIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IlBDIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiUk<span class="number">0</span>iLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IkRCIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiREMiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJSU<span class="number">1</span>UiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifV<span class="number">0</span>sImhhc<span class="number">2</span>giOiIxMDgyODE<span class="number">0</span>Ni<span class="number">8</span>wIiwiZ<span class="number">3</span>JhY<span class="number">2</span>VQZXJpb<span class="number">2</span>REYXlzIjowLCJhdXRvUHJvbG<span class="number">9</span>uZ<span class="number">2</span>F<span class="number">0</span>ZWQiOmZhbHNlLCJpc<span class="number">0</span>F<span class="number">1</span>dG<span class="number">9</span>Qcm<span class="number">9</span>sb<span class="number">25</span>nYXRlZCI<span class="number">6</span>ZmFsc<span class="number">2</span>V<span class="number">9</span>-aKyalfjUfiV<span class="number">5</span>UXfhaMGgOqrMzTYy<span class="number">2</span>rnsmobL<span class="number">47</span>k<span class="number">8</span>tTpR/jvG<span class="number">6</span>HeL<span class="number">3</span>FxxleetI+W+Anw<span class="number">3</span>ZSe<span class="number">8</span>QAMsSxqVS<span class="number">4</span>podwlQgIe<span class="number">7</span>f+<span class="number">3</span>w<span class="number">7</span>zyAT<span class="number">1</span>j<span class="number">8</span>HMVlfl<span class="number">2</span>h<span class="number">96</span>KzygdGpDSbwTbwOkJ<span class="number">6</span>/<span class="number">5</span>TQOPgAP<span class="number">86</span>mkaSiM<span class="number">97</span>KgvkZV/<span class="number">2</span>nXQHRz<span class="number">1</span>yhm+MT+OsioTwxDhd/<span class="number">22</span>sSGq<span class="number">6</span>KuIztZ<span class="number">03</span>UvSciEmyrPdl<span class="number">2</span>ueJw<span class="number">1</span>WuT<span class="number">9</span>YmFjdtTm<span class="number">9</span>G<span class="number">7</span>LuXvCM<span class="number">6</span>eav+BgCRm+wwtUeDfoQqigbp<span class="number">0</span>t<span class="number">6</span>FQgkdQrcjoWvLSB<span class="number">0</span>IUgp/f<span class="number">4</span>qGf<span class="number">254</span>fA<span class="number">7</span>lXskT<span class="number">2</span>VCFdDvi<span class="number">0</span>jgxLyMVct<span class="number">1</span>cKnPdM<span class="number">6</span>fkHnbdSXKYDWw==-MIIElTCCAn<span class="number">2</span>gAwIBAgIBCTANBgkqhkiG<span class="number">9</span>w<span class="number">0</span>BAQsFADAYMRYwFAYDVQQDDA<span class="number">1</span>KZXRQcm<span class="number">9</span>maWxlIENBMB<span class="number">4</span>XDTE<span class="number">4</span>MTEwMTEyMjk<span class="number">0</span>NloXDTIwMTEwMjEyMjk<span class="number">0</span>NlowaDELMAkGA<span class="number">1</span>UEBhMCQ<span class="number">1</span>oxDjAMBgNVBAgMBU<span class="number">51</span>c<span class="number">2</span>xlMQ<span class="number">8</span>wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby<span class="number">4</span>xHTAbBgNVBAMMFHByb<span class="number">2</span>QzeS<span class="number">1</span>mcm<span class="number">9</span>tLTIwMTgxMTAxMIIBIjANBgkqhkiG<span class="number">9</span>w<span class="number">0</span>BAQEFAAOCAQ<span class="number">8</span>AMIIBCgKCAQEAxcQkq+zdxlR<span class="number">2</span>mmRYBPzGbUNdMN<span class="number">6</span>OaXiXzxIWtMEkrJMO/<span class="number">5</span>oUfQJbLLuMSMK<span class="number">0</span>QHFmaI<span class="number">37</span>WShyxZcfRCidwXjot<span class="number">4</span>zmNBKnlyHodDij/<span class="number">78</span>TmVqFl<span class="number">8</span>nOeD<span class="number">5</span>+<span class="number">07</span>B<span class="number">8</span>VEaIu<span class="number">7</span>c<span class="number">3</span>E<span class="number">1</span>N+e<span class="number">1</span>doC<span class="number">6</span>wht<span class="number">4</span>I<span class="number">4</span>+IEmtsPAdoaj<span class="number">5</span>WCQVQbrI<span class="number">8</span>KeT<span class="number">8</span>M<span class="number">9</span>VcBIWX<span class="number">7</span>fD<span class="number">0</span>fhexfg<span class="number">3</span>ZRt<span class="number">0</span>xqwMcXGNp<span class="number">3</span>DdJHiO<span class="number">0</span>rCdU+Itv<span class="number">7</span>EmtnSVq<span class="number">9</span>jBG<span class="number">1</span>usMSFvMowR<span class="number">25</span>mju<span class="number">2</span>JcPFp<span class="number">1</span>+I<span class="number">4</span>ZI+FqgR<span class="number">8</span>gyG<span class="number">8</span>oiNDyNEoAbsR<span class="number">3</span>lOpI<span class="number">7</span>grUYSvkB/xVy/VoklPCK<span class="number">2</span>h<span class="number">0</span>f<span class="number">0</span>GJxFjnye<span class="number">8</span>NT<span class="number">1</span>PAywoyl<span class="number">7</span>RmiAVRE/EKwIDAQABo<span class="number">4</span>GZMIGWMAkGA<span class="number">1</span>UdEwQCMAAwHQYDVR<span class="number">0</span>OBBYEFGEpG<span class="number">9</span>oZGcfLMGNBkY<span class="number">7</span>SgHiMGgTcMEgGA<span class="number">1</span>UdIwRBMD+AFKOetkhnQhI<span class="number">2</span>Qb<span class="number">1</span>t<span class="number">4</span>Lm<span class="number">0</span>oFKLl/GzoRykGjAYMRYwFAYDVQQDDA<span class="number">1</span>KZXRQcm<span class="number">9</span>maWxlIENBggkA<span class="number">0</span>myxg<span class="number">7</span>KDeeEwEwYDVR<span class="number">0</span>lBAwwCgYIKwYBBQUHAwEwCwYDVR<span class="number">0</span>PBAQDAgWgMA<span class="number">0</span>GCSqGSIb<span class="number">3</span>DQEBCwUAA<span class="number">4</span>ICAQAF<span class="number">8</span>uc+YJOHHwOFcPzmbjcxNDuGoOUIP+<span class="number">2</span>h<span class="number">1</span>R<span class="number">75</span>Lecswb<span class="number">7</span>ru<span class="number">2</span>LWWSUMtXVKQzChLNPn/<span class="number">72</span>W<span class="number">0</span>k+oI<span class="number">056</span>tgiwuG<span class="number">7</span>M<span class="number">49</span>LXp<span class="number">4</span>zQVlQnFmWU<span class="number">1</span>wwGvVhq<span class="number">5</span>R<span class="number">63</span>Rpjx<span class="number">1</span>zjGUhcXgayu<span class="number">7</span>+<span class="number">9</span>zMUW<span class="number">596</span>Lbomsg<span class="number">8</span>qVve<span class="number">6</span>euqsrFicYkIIuUu<span class="number">4</span>zYPndJwfe<span class="number">0</span>YkS<span class="number">5</span>nY<span class="number">72</span>SHnNdbPhEnN<span class="number">8</span>wcB<span class="number">2</span>Kz+OIG<span class="number">0</span>lih<span class="number">3</span>yz<span class="number">5</span>EqFhld<span class="number">03</span>bGp<span class="number">222</span>ZQCIghCTVL<span class="number">6</span>QBNadGsiN/lWLl<span class="number">4</span>JdR<span class="number">3</span>lJkZzlpFdiHijoVRdWeSWqM<span class="number">4</span>y<span class="number">0</span>t<span class="number">23</span>c<span class="number">92</span>HXKrgppoSV<span class="number">18</span>XMxrWVdoSM<span class="number">3</span>nuMHwxGhFyde<span class="number">05</span>OdDtLpCv+jlWf<span class="number">5</span>REAHHA<span class="number">201</span>pAU<span class="number">6</span>bJSZINyHDUTB+Beo<span class="number">28</span>rRXSwSh<span class="number">3</span>OUIvYwKNVeoBY+KwOJ<span class="number">7</span>WnuTCUq<span class="number">1</span>meE<span class="number">6</span>GkKc<span class="number">4</span>D/cXmgpOyW/<span class="number">1</span>SmBz<span class="number">3</span>XjVIi/zprZ<span class="number">0</span>zf<span class="number">3</span>qH<span class="number">5</span>mkphtg<span class="number">6</span>ksjKgKjmx<span class="number">1</span>cXfZAAX<span class="number">6</span>wcDBNaCL+Ortep<span class="number">1</span>Dh<span class="number">8</span>xDUbqbBVNBL<span class="number">4</span>jbiL<span class="number">3</span>i<span class="number">3</span>xsfNiyJgaZ<span class="number">5</span>sX<span class="number">7</span>i<span class="number">8</span>tmStEpLbPwvHcByuf<span class="number">59</span>qJhV/bZOl<span class="number">8</span>KqJBETCDJcY<span class="number">6</span>O<span class="number">2</span>aqhTUy+<span class="number">9</span>x<span class="number">93</span>ThKs<span class="number">1</span>GKrRPePrWPluud<span class="number">7</span>ttlgtRveit/pcBrnQcXOl<span class="number">1</span>rHq<span class="number">7</span>ByB<span class="number">8</span>CFAxNotRUYL<span class="number">9</span>IF<span class="number">5</span>n<span class="number">3</span>wJOgkPojMy<span class="number">6</span>jetQA<span class="number">5</span>Ogc<span class="number">8</span>Sm<span class="number">7</span>RG<span class="number">6</span>vg<span class="number">1</span>yow==</span><br></pre></td></tr></table></figure>
 
-<p>[参考]</p>
-]]></content>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011952238-1098822669.png"></p>
+<p>最后是设置PyChram的启动图标<br>使用文本编辑器新建一个名字为<code>PyChram.desktop</code>的文件内容为</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Desktop Entry]</span></span><br><span class="line"><span class="attr">Name</span> = PyCharm</span><br><span class="line"><span class="attr">Type</span> = Application</span><br><span class="line"><span class="attr">Exec</span> = /opt/pycharm-<span class="number">2019.2</span>.<span class="number">3</span>/bin/pycharm.sh    <span class="comment">#pycharm.sh文件的绝对路径，一般就在软件安装目录bin文件夹下</span></span><br><span class="line"><span class="attr">Icon</span> = /opt/pycharm-<span class="number">2019.2</span>.<span class="number">3</span>/bin/pycharm.svg    <span class="comment">#图标图片文件路径</span></span><br><span class="line"><span class="attr">Terminal</span> = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>现将PyChram.desktop保存在桌面上，然后使用</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp PyChram.desktop <span class="regexp">/usr/</span>share/applications</span><br></pre></td></tr></table></figure>
+<p>完成PyCharm的安装激活</p>
+<h1 id="。。。"><a href="#。。。" class="headerlink" title="。。。"></a>。。。</h1>]]></content>
       <categories>
         <category>notes</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>Ubuntu</tag>
-        <tag>壁纸</tag>
+        <tag>pchram</tag>
       </tags>
   </entry>
   <entry>
@@ -601,33 +949,28 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu安装配置Pycharm</title>
-    <url>/2019/10/01/%E7%AD%86%E8%A8%98/linux/Ubuntu%E9%85%8D%E7%BD%AEPycharm/</url>
-    <content><![CDATA[<h1 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h1><p>下载<a href="http://www.jetbrains.com/pycharm/download/#section=linux">PyCharm</a></p>
-<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011801613-777117996.png"></p>
-<p>Ubuntu可以直接在终端执行以下代码进行安装：</p>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">sudo snap install [pycharm-professional <span class="string">| pycharm-community] --classic</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011831142-373801934.png"></p>
-<p>如果使用代码安装失败，可以使用上面的链接下载对应的PyCharm版本，如”pycharm-professional-2019.2.3.tar.gz”;<br>然后将”pycharm-professional-2019.2.3.tar.gz”解压到 /opt 路径下 </p>
-<p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011918299-518563904.png"></p>
-<p>然后打开终端</p>
-<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/pycharm-2019.2.3/bin</span></span><br><span class="line"><span class="string">./pycharm.sh</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h1><p>然后就是一顿设置，最后输入激活码时，将下面的<a href="https://blog.csdn.net/qq_42914528/article/details/90511045">激活码</a>复制进去就可以了</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">MTW881U3Z5</span>-eyJsaWNlbnNlSWQiOiJNVFc<span class="number">4</span>ODFVM<span class="number">1</span>o<span class="number">1</span>IiwibGljZW<span class="number">5</span>zZWVOYW<span class="number">1</span>lIjoiTnNzIEltIiwiYXNzaWduZWVOYW<span class="number">1</span>lIjoiIiwiYXNzaWduZWVFbWFpbCI<span class="number">6</span>IiIsImxpY<span class="number">2</span>Vuc<span class="number">2</span>VSZXN<span class="number">0</span>cmljdGlvbiI<span class="number">6</span>IkZvciBlZHVjYXRpb<span class="number">25</span>hbCB<span class="number">1</span>c<span class="number">2</span>Ugb<span class="number">25</span>seSIsImNoZWNrQ<span class="number">29</span>uY<span class="number">3</span>VycmVudFVzZSI<span class="number">6</span>ZmFsc<span class="number">2</span>UsInByb<span class="number">2</span>R<span class="number">1</span>Y<span class="number">3</span>RzIjpbeyJjb<span class="number">2</span>RlIjoiSUkiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IkRQTiIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IlBTIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiR<span class="number">08</span>iLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IkNMIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiUlMwIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiUkMiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJSRCIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IlBDIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiUk<span class="number">0</span>iLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOS<span class="number">0</span>xMS<span class="number">0</span>wNiJ<span class="number">9</span>LHsiY<span class="number">29</span>kZSI<span class="number">6</span>IkRCIiwicGFpZFVwVG<span class="number">8</span>iOiIyMDE<span class="number">5</span>LTExLTA<span class="number">2</span>In<span class="number">0</span>seyJjb<span class="number">2</span>RlIjoiREMiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifSx<span class="number">7</span>ImNvZGUiOiJSU<span class="number">1</span>UiLCJwYWlkVXBUbyI<span class="number">6</span>IjIwMTktMTEtMDYifV<span class="number">0</span>sImhhc<span class="number">2</span>giOiIxMDgyODE<span class="number">0</span>Ni<span class="number">8</span>wIiwiZ<span class="number">3</span>JhY<span class="number">2</span>VQZXJpb<span class="number">2</span>REYXlzIjowLCJhdXRvUHJvbG<span class="number">9</span>uZ<span class="number">2</span>F<span class="number">0</span>ZWQiOmZhbHNlLCJpc<span class="number">0</span>F<span class="number">1</span>dG<span class="number">9</span>Qcm<span class="number">9</span>sb<span class="number">25</span>nYXRlZCI<span class="number">6</span>ZmFsc<span class="number">2</span>V<span class="number">9</span>-aKyalfjUfiV<span class="number">5</span>UXfhaMGgOqrMzTYy<span class="number">2</span>rnsmobL<span class="number">47</span>k<span class="number">8</span>tTpR/jvG<span class="number">6</span>HeL<span class="number">3</span>FxxleetI+W+Anw<span class="number">3</span>ZSe<span class="number">8</span>QAMsSxqVS<span class="number">4</span>podwlQgIe<span class="number">7</span>f+<span class="number">3</span>w<span class="number">7</span>zyAT<span class="number">1</span>j<span class="number">8</span>HMVlfl<span class="number">2</span>h<span class="number">96</span>KzygdGpDSbwTbwOkJ<span class="number">6</span>/<span class="number">5</span>TQOPgAP<span class="number">86</span>mkaSiM<span class="number">97</span>KgvkZV/<span class="number">2</span>nXQHRz<span class="number">1</span>yhm+MT+OsioTwxDhd/<span class="number">22</span>sSGq<span class="number">6</span>KuIztZ<span class="number">03</span>UvSciEmyrPdl<span class="number">2</span>ueJw<span class="number">1</span>WuT<span class="number">9</span>YmFjdtTm<span class="number">9</span>G<span class="number">7</span>LuXvCM<span class="number">6</span>eav+BgCRm+wwtUeDfoQqigbp<span class="number">0</span>t<span class="number">6</span>FQgkdQrcjoWvLSB<span class="number">0</span>IUgp/f<span class="number">4</span>qGf<span class="number">254</span>fA<span class="number">7</span>lXskT<span class="number">2</span>VCFdDvi<span class="number">0</span>jgxLyMVct<span class="number">1</span>cKnPdM<span class="number">6</span>fkHnbdSXKYDWw==-MIIElTCCAn<span class="number">2</span>gAwIBAgIBCTANBgkqhkiG<span class="number">9</span>w<span class="number">0</span>BAQsFADAYMRYwFAYDVQQDDA<span class="number">1</span>KZXRQcm<span class="number">9</span>maWxlIENBMB<span class="number">4</span>XDTE<span class="number">4</span>MTEwMTEyMjk<span class="number">0</span>NloXDTIwMTEwMjEyMjk<span class="number">0</span>NlowaDELMAkGA<span class="number">1</span>UEBhMCQ<span class="number">1</span>oxDjAMBgNVBAgMBU<span class="number">51</span>c<span class="number">2</span>xlMQ<span class="number">8</span>wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby<span class="number">4</span>xHTAbBgNVBAMMFHByb<span class="number">2</span>QzeS<span class="number">1</span>mcm<span class="number">9</span>tLTIwMTgxMTAxMIIBIjANBgkqhkiG<span class="number">9</span>w<span class="number">0</span>BAQEFAAOCAQ<span class="number">8</span>AMIIBCgKCAQEAxcQkq+zdxlR<span class="number">2</span>mmRYBPzGbUNdMN<span class="number">6</span>OaXiXzxIWtMEkrJMO/<span class="number">5</span>oUfQJbLLuMSMK<span class="number">0</span>QHFmaI<span class="number">37</span>WShyxZcfRCidwXjot<span class="number">4</span>zmNBKnlyHodDij/<span class="number">78</span>TmVqFl<span class="number">8</span>nOeD<span class="number">5</span>+<span class="number">07</span>B<span class="number">8</span>VEaIu<span class="number">7</span>c<span class="number">3</span>E<span class="number">1</span>N+e<span class="number">1</span>doC<span class="number">6</span>wht<span class="number">4</span>I<span class="number">4</span>+IEmtsPAdoaj<span class="number">5</span>WCQVQbrI<span class="number">8</span>KeT<span class="number">8</span>M<span class="number">9</span>VcBIWX<span class="number">7</span>fD<span class="number">0</span>fhexfg<span class="number">3</span>ZRt<span class="number">0</span>xqwMcXGNp<span class="number">3</span>DdJHiO<span class="number">0</span>rCdU+Itv<span class="number">7</span>EmtnSVq<span class="number">9</span>jBG<span class="number">1</span>usMSFvMowR<span class="number">25</span>mju<span class="number">2</span>JcPFp<span class="number">1</span>+I<span class="number">4</span>ZI+FqgR<span class="number">8</span>gyG<span class="number">8</span>oiNDyNEoAbsR<span class="number">3</span>lOpI<span class="number">7</span>grUYSvkB/xVy/VoklPCK<span class="number">2</span>h<span class="number">0</span>f<span class="number">0</span>GJxFjnye<span class="number">8</span>NT<span class="number">1</span>PAywoyl<span class="number">7</span>RmiAVRE/EKwIDAQABo<span class="number">4</span>GZMIGWMAkGA<span class="number">1</span>UdEwQCMAAwHQYDVR<span class="number">0</span>OBBYEFGEpG<span class="number">9</span>oZGcfLMGNBkY<span class="number">7</span>SgHiMGgTcMEgGA<span class="number">1</span>UdIwRBMD+AFKOetkhnQhI<span class="number">2</span>Qb<span class="number">1</span>t<span class="number">4</span>Lm<span class="number">0</span>oFKLl/GzoRykGjAYMRYwFAYDVQQDDA<span class="number">1</span>KZXRQcm<span class="number">9</span>maWxlIENBggkA<span class="number">0</span>myxg<span class="number">7</span>KDeeEwEwYDVR<span class="number">0</span>lBAwwCgYIKwYBBQUHAwEwCwYDVR<span class="number">0</span>PBAQDAgWgMA<span class="number">0</span>GCSqGSIb<span class="number">3</span>DQEBCwUAA<span class="number">4</span>ICAQAF<span class="number">8</span>uc+YJOHHwOFcPzmbjcxNDuGoOUIP+<span class="number">2</span>h<span class="number">1</span>R<span class="number">75</span>Lecswb<span class="number">7</span>ru<span class="number">2</span>LWWSUMtXVKQzChLNPn/<span class="number">72</span>W<span class="number">0</span>k+oI<span class="number">056</span>tgiwuG<span class="number">7</span>M<span class="number">49</span>LXp<span class="number">4</span>zQVlQnFmWU<span class="number">1</span>wwGvVhq<span class="number">5</span>R<span class="number">63</span>Rpjx<span class="number">1</span>zjGUhcXgayu<span class="number">7</span>+<span class="number">9</span>zMUW<span class="number">596</span>Lbomsg<span class="number">8</span>qVve<span class="number">6</span>euqsrFicYkIIuUu<span class="number">4</span>zYPndJwfe<span class="number">0</span>YkS<span class="number">5</span>nY<span class="number">72</span>SHnNdbPhEnN<span class="number">8</span>wcB<span class="number">2</span>Kz+OIG<span class="number">0</span>lih<span class="number">3</span>yz<span class="number">5</span>EqFhld<span class="number">03</span>bGp<span class="number">222</span>ZQCIghCTVL<span class="number">6</span>QBNadGsiN/lWLl<span class="number">4</span>JdR<span class="number">3</span>lJkZzlpFdiHijoVRdWeSWqM<span class="number">4</span>y<span class="number">0</span>t<span class="number">23</span>c<span class="number">92</span>HXKrgppoSV<span class="number">18</span>XMxrWVdoSM<span class="number">3</span>nuMHwxGhFyde<span class="number">05</span>OdDtLpCv+jlWf<span class="number">5</span>REAHHA<span class="number">201</span>pAU<span class="number">6</span>bJSZINyHDUTB+Beo<span class="number">28</span>rRXSwSh<span class="number">3</span>OUIvYwKNVeoBY+KwOJ<span class="number">7</span>WnuTCUq<span class="number">1</span>meE<span class="number">6</span>GkKc<span class="number">4</span>D/cXmgpOyW/<span class="number">1</span>SmBz<span class="number">3</span>XjVIi/zprZ<span class="number">0</span>zf<span class="number">3</span>qH<span class="number">5</span>mkphtg<span class="number">6</span>ksjKgKjmx<span class="number">1</span>cXfZAAX<span class="number">6</span>wcDBNaCL+Ortep<span class="number">1</span>Dh<span class="number">8</span>xDUbqbBVNBL<span class="number">4</span>jbiL<span class="number">3</span>i<span class="number">3</span>xsfNiyJgaZ<span class="number">5</span>sX<span class="number">7</span>i<span class="number">8</span>tmStEpLbPwvHcByuf<span class="number">59</span>qJhV/bZOl<span class="number">8</span>KqJBETCDJcY<span class="number">6</span>O<span class="number">2</span>aqhTUy+<span class="number">9</span>x<span class="number">93</span>ThKs<span class="number">1</span>GKrRPePrWPluud<span class="number">7</span>ttlgtRveit/pcBrnQcXOl<span class="number">1</span>rHq<span class="number">7</span>ByB<span class="number">8</span>CFAxNotRUYL<span class="number">9</span>IF<span class="number">5</span>n<span class="number">3</span>wJOgkPojMy<span class="number">6</span>jetQA<span class="number">5</span>Ogc<span class="number">8</span>Sm<span class="number">7</span>RG<span class="number">6</span>vg<span class="number">1</span>yow==</span><br></pre></td></tr></table></figure>
-
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p><img src="https://img2018.cnblogs.com/blog/1749258/201909/1749258-20190929011952238-1098822669.png"></p>
-<p>最后是设置PyChram的启动图标<br>使用文本编辑器新建一个名字为<code>PyChram.desktop</code>的文件内容为</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Desktop Entry]</span></span><br><span class="line"><span class="attr">Name</span> = PyCharm</span><br><span class="line"><span class="attr">Type</span> = Application</span><br><span class="line"><span class="attr">Exec</span> = /opt/pycharm-<span class="number">2019.2</span>.<span class="number">3</span>/bin/pycharm.sh    <span class="comment">#pycharm.sh文件的绝对路径，一般就在软件安装目录bin文件夹下</span></span><br><span class="line"><span class="attr">Icon</span> = /opt/pycharm-<span class="number">2019.2</span>.<span class="number">3</span>/bin/pycharm.svg    <span class="comment">#图标图片文件路径</span></span><br><span class="line"><span class="attr">Terminal</span> = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<p>现将PyChram.desktop保存在桌面上，然后使用</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp PyChram.desktop <span class="regexp">/usr/</span>share/applications</span><br></pre></td></tr></table></figure>
-<p>完成PyCharm的安装激活</p>
-<h1 id="。。。"><a href="#。。。" class="headerlink" title="。。。"></a>。。。</h1>]]></content>
+    <title>Nuke 基础</title>
+    <url>/2020/02/22/%E7%AD%86%E8%A8%98/nuke/Nuke11/</url>
+    <content><![CDATA[<h2 id="Nuke的基本操作"><a href="#Nuke的基本操作" class="headerlink" title="Nuke的基本操作"></a>Nuke的基本操作</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
       <categories>
         <category>notes</category>
       </categories>
       <tags>
-        <tag>pchram</tag>
+        <tag>nuke</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nuke 技巧</title>
+    <url>/2020/02/22/%E7%AD%86%E8%A8%98/nuke/Nuke%E6%8A%80%E8%83%BD(%E4%B8%80)/</url>
+    <content><![CDATA[<h2 id="nuke中的扭曲效果-能量、热浪、波纹"><a href="#nuke中的扭曲效果-能量、热浪、波纹" class="headerlink" title="nuke中的扭曲效果(能量、热浪、波纹)"></a>nuke中的扭曲效果(能量、热浪、波纹)</h2><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> cut_paste_input <span class="comment">[stack 0]</span></span><br><span class="line">version <span class="comment">12.1 v1</span></span><br><span class="line">push <span class="comment">0</span></span><br><span class="line">push <span class="comment">$cut_paste_input</span></span><br><span class="line">Group <span class="comment">&#123;</span></span><br><span class="line"> inputs <span class="comment">2</span></span><br><span class="line"> name <span class="comment">User-IDistort</span></span><br><span class="line"> selected <span class="comment">true</span></span><br><span class="line"> xpos <span class="comment">862</span></span><br><span class="line"> ypos <span class="comment">-117</span></span><br><span class="line"> addUserKnob <span class="comment">&#123;20 User&#125;</span></span><br><span class="line"> addUserKnob <span class="comment">&#123;41 uv_scale l</span> <span class="comment">&quot;UV scale&quot;</span> <span class="comment">T IDistort1.uv_scale&#125;</span></span><br><span class="line"> addUserKnob <span class="comment">&#123;41 size l</span> <span class="comment">&quot;Blur size&quot;</span> <span class="comment">t</span> <span class="comment">&quot;Blur Size&quot;</span> <span class="comment">T Blur4.size&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"> Input <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">0</span></span><br><span class="line">  name <span class="comment">Channal</span></span><br><span class="line">  note_font_color <span class="comment">0xc6653bff</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">206</span></span><br><span class="line"> &#125;</span><br><span class="line"> Blur <span class="comment">&#123;</span></span><br><span class="line">  size <span class="comment">9.2</span></span><br><span class="line">  name <span class="comment">Blur4</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">246</span></span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">set</span> <span class="comment">Na9f42a20 [stack 0]</span></span><br><span class="line"> Emboss <span class="comment">&#123;</span></span><br><span class="line">  Angle <span class="comment">90</span></span><br><span class="line">  name <span class="comment">Emboss2</span></span><br><span class="line">  xpos <span class="comment">348</span></span><br><span class="line">  ypos <span class="comment">341</span></span><br><span class="line"> &#125;</span><br><span class="line">push <span class="comment">$Na9f42a20</span></span><br><span class="line"> Emboss <span class="comment">&#123;</span></span><br><span class="line">  name <span class="comment">Emboss1</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">337</span></span><br><span class="line"> &#125;</span><br><span class="line"> Merge2 <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">2</span></span><br><span class="line">  operation <span class="comment">plus</span></span><br><span class="line">  Achannels <span class="comment">&#123;rgba.red -rgba.green -rgba.blue rgba.alpha&#125;</span></span><br><span class="line">  Bchannels <span class="comment">&#123;-rgba.red rgba.green -rgba.blue rgba.alpha&#125;</span></span><br><span class="line">  output <span class="comment">&#123;rgba.red rgba.green -rgba.blue rgba.alpha&#125;</span></span><br><span class="line">  name <span class="comment">Merge4</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">441</span></span><br><span class="line"> &#125;</span><br><span class="line"> Grade <span class="comment">&#123;</span></span><br><span class="line">  channels <span class="comment">&#123;rgba.red rgba.green -rgba.blue none&#125;</span></span><br><span class="line">  blackpoint <span class="comment">0.5</span></span><br><span class="line">  whitepoint <span class="comment">0.5</span></span><br><span class="line">  black <span class="comment">0.06</span></span><br><span class="line">  black_clamp <span class="comment">false</span></span><br><span class="line">  name <span class="comment">Grade1</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">518</span></span><br><span class="line"> &#125;</span><br><span class="line"> Input <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">0</span></span><br><span class="line">  name <span class="comment">Source</span></span><br><span class="line">  note_font_color <span class="comment">0x80a33fff</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">472</span></span><br><span class="line">  number <span class="comment">1</span></span><br><span class="line"> &#125;</span><br><span class="line"> Copy <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">2</span></span><br><span class="line">  from0 <span class="comment">rgba.red</span></span><br><span class="line">  to0 <span class="comment">forward.u</span></span><br><span class="line">  from1 <span class="comment">rgba.green</span></span><br><span class="line">  to1 <span class="comment">forward.v</span></span><br><span class="line">  name <span class="comment">Copy1</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">512</span></span><br><span class="line"> &#125;</span><br><span class="line"> IDistort <span class="comment">&#123;</span></span><br><span class="line">  uv <span class="comment">forward</span></span><br><span class="line">  uv_scale <span class="comment">3.6</span></span><br><span class="line">  name <span class="comment">IDistort1</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">605</span></span><br><span class="line"> &#125;</span><br><span class="line"> Output <span class="comment">&#123;</span></span><br><span class="line">  name <span class="comment">Output1</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">693</span></span><br><span class="line"> &#125;</span><br><span class="line">end_group</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a href="https://www.bilibili.com/video/BV13x411o7j3?from=search&seid=17013609913886916459">教程链接</a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>nuke</tag>
+        <tag>function</tag>
       </tags>
   </entry>
   <entry>
@@ -719,8 +1062,8 @@ if __name__ == &#39;__main__&#39;:
         <category>notes</category>
       </categories>
       <tags>
-        <tag>PyQt5</tag>
         <tag>python</tag>
+        <tag>PyQt5</tag>
       </tags>
   </entry>
   <entry>
@@ -742,8 +1085,8 @@ PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用�
         <category>notes</category>
       </categories>
       <tags>
-        <tag>PyQt5</tag>
         <tag>python</tag>
+        <tag>PyQt5</tag>
       </tags>
   </entry>
   <entry>
@@ -788,351 +1131,8 @@ PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用�
         <category>notes</category>
       </categories>
       <tags>
+        <tag>houdini</tag>
         <tag>python</tag>
-        <tag>houdini</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nuke 基础</title>
-    <url>/2020/02/22/%E7%AD%86%E8%A8%98/nuke/Nuke11/</url>
-    <content><![CDATA[<h2 id="Nuke的基本操作"><a href="#Nuke的基本操作" class="headerlink" title="Nuke的基本操作"></a>Nuke的基本操作</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>nuke</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nuke 技巧</title>
-    <url>/2020/02/22/%E7%AD%86%E8%A8%98/nuke/Nuke%E6%8A%80%E8%83%BD(%E4%B8%80)/</url>
-    <content><![CDATA[<h2 id="nuke中的扭曲效果-能量、热浪、波纹"><a href="#nuke中的扭曲效果-能量、热浪、波纹" class="headerlink" title="nuke中的扭曲效果(能量、热浪、波纹)"></a>nuke中的扭曲效果(能量、热浪、波纹)</h2><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> cut_paste_input <span class="comment">[stack 0]</span></span><br><span class="line">version <span class="comment">12.1 v1</span></span><br><span class="line">push <span class="comment">0</span></span><br><span class="line">push <span class="comment">$cut_paste_input</span></span><br><span class="line">Group <span class="comment">&#123;</span></span><br><span class="line"> inputs <span class="comment">2</span></span><br><span class="line"> name <span class="comment">User-IDistort</span></span><br><span class="line"> selected <span class="comment">true</span></span><br><span class="line"> xpos <span class="comment">862</span></span><br><span class="line"> ypos <span class="comment">-117</span></span><br><span class="line"> addUserKnob <span class="comment">&#123;20 User&#125;</span></span><br><span class="line"> addUserKnob <span class="comment">&#123;41 uv_scale l</span> <span class="comment">&quot;UV scale&quot;</span> <span class="comment">T IDistort1.uv_scale&#125;</span></span><br><span class="line"> addUserKnob <span class="comment">&#123;41 size l</span> <span class="comment">&quot;Blur size&quot;</span> <span class="comment">t</span> <span class="comment">&quot;Blur Size&quot;</span> <span class="comment">T Blur4.size&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"> Input <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">0</span></span><br><span class="line">  name <span class="comment">Channal</span></span><br><span class="line">  note_font_color <span class="comment">0xc6653bff</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">206</span></span><br><span class="line"> &#125;</span><br><span class="line"> Blur <span class="comment">&#123;</span></span><br><span class="line">  size <span class="comment">9.2</span></span><br><span class="line">  name <span class="comment">Blur4</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">246</span></span><br><span class="line"> &#125;</span><br><span class="line"><span class="keyword">set</span> <span class="comment">Na9f42a20 [stack 0]</span></span><br><span class="line"> Emboss <span class="comment">&#123;</span></span><br><span class="line">  Angle <span class="comment">90</span></span><br><span class="line">  name <span class="comment">Emboss2</span></span><br><span class="line">  xpos <span class="comment">348</span></span><br><span class="line">  ypos <span class="comment">341</span></span><br><span class="line"> &#125;</span><br><span class="line">push <span class="comment">$Na9f42a20</span></span><br><span class="line"> Emboss <span class="comment">&#123;</span></span><br><span class="line">  name <span class="comment">Emboss1</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">337</span></span><br><span class="line"> &#125;</span><br><span class="line"> Merge2 <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">2</span></span><br><span class="line">  operation <span class="comment">plus</span></span><br><span class="line">  Achannels <span class="comment">&#123;rgba.red -rgba.green -rgba.blue rgba.alpha&#125;</span></span><br><span class="line">  Bchannels <span class="comment">&#123;-rgba.red rgba.green -rgba.blue rgba.alpha&#125;</span></span><br><span class="line">  output <span class="comment">&#123;rgba.red rgba.green -rgba.blue rgba.alpha&#125;</span></span><br><span class="line">  name <span class="comment">Merge4</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">441</span></span><br><span class="line"> &#125;</span><br><span class="line"> Grade <span class="comment">&#123;</span></span><br><span class="line">  channels <span class="comment">&#123;rgba.red rgba.green -rgba.blue none&#125;</span></span><br><span class="line">  blackpoint <span class="comment">0.5</span></span><br><span class="line">  whitepoint <span class="comment">0.5</span></span><br><span class="line">  black <span class="comment">0.06</span></span><br><span class="line">  black_clamp <span class="comment">false</span></span><br><span class="line">  name <span class="comment">Grade1</span></span><br><span class="line">  xpos <span class="comment">209</span></span><br><span class="line">  ypos <span class="comment">518</span></span><br><span class="line"> &#125;</span><br><span class="line"> Input <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">0</span></span><br><span class="line">  name <span class="comment">Source</span></span><br><span class="line">  note_font_color <span class="comment">0x80a33fff</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">472</span></span><br><span class="line">  number <span class="comment">1</span></span><br><span class="line"> &#125;</span><br><span class="line"> Copy <span class="comment">&#123;</span></span><br><span class="line">  inputs <span class="comment">2</span></span><br><span class="line">  from0 <span class="comment">rgba.red</span></span><br><span class="line">  to0 <span class="comment">forward.u</span></span><br><span class="line">  from1 <span class="comment">rgba.green</span></span><br><span class="line">  to1 <span class="comment">forward.v</span></span><br><span class="line">  name <span class="comment">Copy1</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">512</span></span><br><span class="line"> &#125;</span><br><span class="line"> IDistort <span class="comment">&#123;</span></span><br><span class="line">  uv <span class="comment">forward</span></span><br><span class="line">  uv_scale <span class="comment">3.6</span></span><br><span class="line">  name <span class="comment">IDistort1</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">605</span></span><br><span class="line"> &#125;</span><br><span class="line"> Output <span class="comment">&#123;</span></span><br><span class="line">  name <span class="comment">Output1</span></span><br><span class="line">  xpos <span class="comment">11</span></span><br><span class="line">  ypos <span class="comment">693</span></span><br><span class="line"> &#125;</span><br><span class="line">end_group</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><a href="https://www.bilibili.com/video/BV13x411o7j3?from=search&seid=17013609913886916459">教程链接</a></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>nuke</tag>
-        <tag>function</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini 外部编辑器安装配置</title>
-    <url>/2020/03/30/%E7%AD%86%E8%A8%98/houdini/Houdini%20Python%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="Python环境配置"><a href="#Python环境配置" class="headerlink" title="Python环境配置"></a>Python环境配置</h1><h2 id="Houdini-Expr-Editor"><a href="#Houdini-Expr-Editor" class="headerlink" title="Houdini Expr Editor"></a>Houdini Expr Editor</h2><p><a href="http://cgtoolbox.com/">http://cgtoolbox.com/</a> 下载并安装Houdini Expr Editor</p>
-<p><strong>安装方法</strong></br><br>将下载文件解压到houdini plugins文件内，然后在env环境变量中添加</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">HOUDINI_PATH</span> = <span class="string">&quot;/home/luomit/Sidefx_plugins/HoudiniExprEditor_v1_3_3/;&amp;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h2><p><a href="https://code.visualstudio.com/">下载</a><br>安装vscode编辑器</p>
-<p><strong>配置插件</strong></br><br><strong>vscode-icons</strong>    #在vscode中的文件会根据不同格式显示为不同的文件图标</br><br><strong>Bracket Pair Colorizer</strong>  #括号会根据对来分配随即颜色用于区分括号</br><br><strong>Highlight Matching Tag</strong>  #高亮选中括号的另一端</br><br><strong>Auto Rename Tag</strong> #HTML自动匹配标签</br><br><strong>Path Intellisense</strong>   #智能路径提示</br><br><strong>Material Theme</strong>  #vscode皮肤主题</br><br><strong>Auto Import</strong> #代码补全</br><br><strong>Indent-Rainbow</strong>  #对其颜色背景，根据缩进不同赋予不同颜色背景</br><br><strong>Prettier</strong>    #代码格式化，美化你的代码书写格式</br><br><strong>Sublime Text Keymap and Settings Importer</strong>   #sublime text 快捷键</br><br><strong>WakaTime</strong>    #记录的的代码时光</br><br><strong>Code Runner</strong> #代码运行</p>
-<h2 id="Sublime-Text-3"><a href="#Sublime-Text-3" class="headerlink" title="Sublime Text 3"></a>Sublime Text 3</h2><p><a href="https://www.sublimetext.com/3">下载</a> 安装Sublime Text 3编辑器</p>
-<ul>
-<li><p>安装包管理</br><br>安装完成后Ctrl +Shift + P 键入Install Package Control安装包管理器</p>
-</li>
-<li><p>安装软件</br><br>等待安装完毕后Ctrl +Shift + P 键入Install 就会有一项Package Control:Install Package的选项点击它，等待它再次弹出窗口时键入想要安装的插件名即可</p>
-</li>
-<li><p>常用插件</br></p>
-</li>
-</ul>
-<p><strong>ConvertToUTF8</strong></br><br><strong>SublimeTmpl</strong></br><br><strong>A File Icon</strong></br><br><strong>Localization</strong></br><br><strong>SublimeTmpl</strong></br><br><strong>VEX</strong></br><br><strong>BracketHighlighter</strong></br><br><strong>Material Theme</strong></br><br><strong>Alignment</strong></br><br><strong>AutoFileName</strong></br><br><strong>SideBar</strong></br><br><strong>WakaTime</strong></br></p>
-<h2 id="Houdini-Python"><a href="#Houdini-Python" class="headerlink" title="Houdini Python"></a>Houdini Python</h2><p>Edit &gt; Preferences &gt; Set External Experssions Editor &gt; Double Click(双击)<br>选择vscode程序;</br>Ubuntu19使用<code>whereis &quot;软件名&quot;</code>查找软件安装路径如下</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">luomit@luomit&gt;&gt;&gt; whereis code      </span><br><span class="line">code: &#x2F;snap&#x2F;bin&#x2F;code.url-handler &#x2F;snap&#x2F;bin&#x2F;code</span><br></pre></td></tr></table></figure>
-
-<h1 id="Pyqt5-安装与配置"><a href="#Pyqt5-安装与配置" class="headerlink" title="Pyqt5 安装与配置"></a>Pyqt5 安装与配置</h1><h2 id="pip"><a href="#pip" class="headerlink" title="pip"></a>pip</h2><p>查看pip3的版本</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pip3</span> -v</span><br></pre></td></tr></table></figure>
-<p>若是返回<br>command not found: pip<br>则执行下面一行代码安装pip3</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install python3-pip</span><br></pre></td></tr></table></figure>
-
-<h2 id="pyqt5"><a href="#pyqt5" class="headerlink" title="pyqt5"></a>pyqt5</h2><p>使用pip3安装pyqt5</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip3 install pyqt5</span><br></pre></td></tr></table></figure>
-<p>安装其他的工具</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sudo apt-get install python3-pyqt5  </span><br><span class="line">sudo apt-get install pyqt5-dev-tools</span><br><span class="line">sudo apt-get install qttools5-dev-tools</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>使用终端运行</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">qtchooser -run-tool=designer -qt=<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p>或者修改配置文件/usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">/usr/lib/x86_64-linux-gnu/qt5/<span class="built_in">bin</span></span><br><span class="line">/usr/lib/x86_64-linux-gnu</span><br></pre></td></tr></table></figure>
-
-<h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>检验是否正确安装,创建一个uic.py的文件，内容如下</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">child = subprocess.Popen([<span class="string">&#x27;pyuic5&#x27;</span> ,<span class="string">&#x27;-x&#x27;</span>,sys.argv[<span class="number">1</span>]],stdout=subprocess.PIPE)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(child.communicate()[<span class="number">0</span>],encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-
-<p><a href="https://stackoverflow.com/questions/36757752/how-to-install-pyqt5-in-python-3-ubuntu-14-04"><strong>参考</strong></a></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>sublime text</tag>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini Particle Trail</title>
-    <url>/2020/12/14/%E7%AD%86%E8%A8%98/houdini/Houdini-Particle-Trail/</url>
-    <content><![CDATA[<h2 id="Houdini-粒子路徑運動"><a href="#Houdini-粒子路徑運動" class="headerlink" title="Houdini 粒子路徑運動"></a>Houdini 粒子路徑運動</h2>]]></content>
-      <tags>
-        <tag>houdini</tag>
-        <tag>trail</tag>
-        <tag>particle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini流体水花I</title>
-    <url>/2019/09/03/%E7%AD%86%E8%A8%98/houdini/HoudiniFlip/</url>
-    <content><![CDATA[<h2 id="Flip的大体结构"><a href="#Flip的大体结构" class="headerlink" title="Flip的大体结构"></a>Flip的大体结构</h2><p><img src="https://img-blog.csdnimg.cn/20190806010624110.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="Flip"></p>
-<h2 id="fliptank-initial"><a href="#fliptank-initial" class="headerlink" title="fliptank_initial"></a>fliptank_initial</h2><p><img src="https://img-blog.csdnimg.cn/2019080602274844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="fliptank_initial"></p>
-<ul>
-<li><strong>wavetank</strong><br>  用于设置水池的初始大小、位置、粒子间距以及其他一些动力学属性</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20190805013243102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="Boundary Layer"></p>
-<p><font color=red type='楷体' size=3 > <code>BoundaryLayer边界层：用于限制流体运动的边界，将位于边界的流体运动状态减弱，方便后期将流体嵌入到更大的流体系统中 ，又可称其为边界缓冲层</code></font></p>
-<ul>
-<li><strong>Narrow Band</strong> 这是一种流体结算的一种类型<br>  特点：只在流体的表面生成一层粒子用于flip结算，这样大大节省了流体模拟对计算机内存的消耗；但是这样只并不会减少对结算的时间。</li>
-</ul>
-<p><a href="https://v.youku.com/v_show/id_XMTU1NjUxNjU0MA==.html?spm=a1z3jc.11711052.0.0&isextonly=1">Narrow Band FLIP</a><br>视频介绍要使用这种方式创建并模拟Flip需要在创建<code>水箱(OceanSource)</code>时将Particle下的Narrow Band Particle启用(图一)，并且在<code>Dop</code>的Flip Object中(图二)设置Input Type为NarrowBand才可以</p>
-<p><img src="https://img-blog.csdnimg.cn/20190806021810698.png" alt="图一，OceanSource的NarrowBand"></p>
-<p><img src="https://img-blog.csdnimg.cn/2019080602185141.png" alt="图二，Dop中的NarrowBand"></p>
-<h2 id="DopNetwork"><a href="#DopNetwork" class="headerlink" title="DopNetwork"></a>DopNetwork</h2><p><img src="https://img-blog.csdnimg.cn/20190806023632791.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="DopNetwock"></p>
-<ul>
-<li><strong>flipsolver</strong><br>  Narrow Band 默认情况与flipObject关联，Bandwidth控制粒子层的厚度，Attribute-Field Pairs则可以将粒子上的属性转移到Field(场)中，避免属性的丢失；<br>  ParticleMotion-Reseeding 控制粒子再运动时的分布，在粒子分布较多的地方杀掉部分，在粒子稀疏的地方后新增一些以达到粒子在流体表面的平衡状态<br>  ParticleMotion-Vorticity 流体涡旋，在启用流体的涡旋时，能够增加流体模拟的真实度<br>  ParticleMotion-Rest<br>  VolumeMotion-VelosityTransfer这个就是表面粒子运动和底层网格之间相互传递速度属性(指定用于在每一帧结算之前将粒子的速度传递到底层网格，然后返回粒子的方法)。<a href="https://docs.newvfx.com/docs/8630.html">FlipSolverahHelp</a></li>
-<li><strong>collisionsource</strong><br>  用于将polygons对象转为VDB碰撞对象，可以对碰撞网格精度VoxelSize调节，还可以设置碰撞速度的计算Geometry下的Velocity；<br>  通过设置碰撞对象的速度属性可以影响产生碰撞时所受碰撞的力度大小；<br>  <code>如果在collisionsource之前已经设置好了碰撞物体的速度，开启这里的Velocity时collisionsource会 重新根据物体的运动状态来计算速度属性覆盖原有的属性</code></li>
-</ul>
-<h1 id="Fluid-Mesh"><a href="#Fluid-Mesh" class="headerlink" title="Fluid Mesh"></a>Fluid Mesh</h1><p>在流体制作中，将流体粒子转换成mesh模型才可以给fluid赋予材质进行渲染；并且水的形态细节最终也是由这一步决定；</p>
-<h2 id="particlefluid-mesh流程"><a href="#particlefluid-mesh流程" class="headerlink" title="particlefluid mesh流程"></a>particlefluid mesh流程</h2><p><img src="https://img-blog.csdnimg.cn/20190811152718922.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"></p>
-<blockquote>
-<p>流体粒子转mesh，首先需要将particle转为vdb，然后对vdb进行膨胀操作，再将膨胀后的vdb进行smooth，最后对vdb进行收缩；(particle to mesh 的大概流程)</p>
-</blockquote>
-<p><code>在Houdini中使用</code><a href="http://127.0.0.1:48626/nodes/sop/particlefluidsurface">particlefluidsurface</a><code>节点来调节和实现particlefluid mesh的所有操作</code><br><img src="https://img-blog.csdnimg.cn/2019081115274963.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"><br><img src="https://img-blog.csdnimg.cn/20190811152801946.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"></p>
-<blockquote>
-<p>在实际制作particlefulid mesh时，会出现上图的情况，由于以上的操作默认是对整体粒子做相同操作且强度相同，这就导致粒子在高速飞溅的部分完全的smooth掉了，丢失掉水的细节；这是我们需要根据某种属性mask来控制mesh的范围强度，从而保留更多的模拟细节。</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20190811152830629.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="图片来自网络"></p>
-<blockquote>
-<p>最后通过优化polymesh拓扑节省mesh对内存的占用</p>
-</blockquote>
-<h2 id="fluid-mesh-实践技巧"><a href="#fluid-mesh-实践技巧" class="headerlink" title="fluid mesh 实践技巧"></a>fluid mesh 实践技巧</h2><p><img src="https://img-blog.csdnimg.cn/20190811165657149.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li>复制两个particlefluidsurface节点，用作mesh调节的参考(如果对原始的粒子量做调整，每次计算需要耗费大量的时间，所以对particlefluidsurface做一定的裁切，调节出合适的mesh参数后再应用的原始的particlefluidsurface上就可以节省大量的时间，提升工作效率)</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20190811171034712.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>上图红色部分纠正’无线’应为’无限’</p>
-</blockquote>
-<ul>
-<li>使用Regions的BoundingBox对水箱进行裁切，尽量保留既有运动剧烈的流体粒子，有保留相对运动平缓的粒子，这样在mesh时有个参考比较</li>
-</ul>
-<style>
-.font1{text-align:center;color:#D2691E}
-</style>
-<div class="font1">初学Flip笔记，希望大家给点评论，指出错误和不足.</br></div>
-<div class="font1"> **\\ ( >O< ) / ** </div>]]></content>
-      <tags>
-        <tag>houdini</tag>
-        <tag>flip</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini四元数(花开)</title>
-    <url>/2021/05/08/%E7%AD%86%E8%A8%98/houdini/Houdini%E5%9B%9B%E5%85%83%E6%95%B0-%E8%8A%B1%E5%BC%80/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>四元数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini安装与配置</title>
-    <url>/2020/03/06/%E7%AD%86%E8%A8%98/houdini/Houdini%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>官网<a href="https://www.sidefx.com/download/">下载</a><br>也可以从国内各大CG论坛及素材网站下载如：<br><a href="https://filecr.com/windows/houdini-fx/">filecr.com</a>不科学上网不度盘直接下载速度快<br><a href="https://www.vfxforce.cn/">VFXFORCE</a><br><a href="http://qny.ccvfx.cn/">CCVFX</a><br><a href="https://c4dsky.com/">书生CG资源站</a><br>…<br>官网下载流程演示<a href="https://www.sidefx.com/download/">https://www.sidefx.com/download/</a> 选这一种登录方式登录，如果你一种账号都没有就注册一个也是很快的。<br>登录以后选择Get下的Downlode如下图<br><img src="/img/H_downlode.jpg"><br>然后直接点击Downlode下载，网页会根据你当前所使用的系统来下载当前最新稳定版本的软件；如果要下载指定版本可以滑到最下方可看见PRODUCTION BUILDSD点击选择你要下载的版本即可。<br><img src="/img/H_downlode1.jpg"><br><img src="/img/H_downlode2.jpg"></p>
-<h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>windous的安装网上很多也很简单<br>[百度]<a href="https://jingyan.baidu.com/article/495ba841f5d02738b30ede23.html">https://jingyan.baidu.com/article/495ba841f5d02738b30ede23.html</a></p>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>根据上面的方法下载好后应该是以tag.gz结尾的压缩包如houdini-17.5.460-linux_x86_64_gcc6.3.tga.gz;<br>解压到一个位置得到的文件如下所示<br><img src="/img/H_linux.png"><br>然后使用终端</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /下载/houdini-17.5.460-linux_x86_64_gcc6.3/</span><br><span class="line">sudo ./houdini.install</span><br></pre></td></tr></table></figure>
-<p>终端会出现一系列的提示默认yes即可<br>待续….</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="外部编辑器配置"><a href="#外部编辑器配置" class="headerlink" title="外部编辑器配置"></a>外部编辑器配置</h2><p>参考本博客”<a href="https://luomit.xyz/2020/03/30/Python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">Python环境配置</a>“</p>
-<h2 id="houdini文档的配置-Windows"><a href="#houdini文档的配置-Windows" class="headerlink" title="houdini文档的配置(Windows)"></a>houdini文档的配置(Windows)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ---------------- &amp;&amp; Plug-ni PATH &amp;&amp; -------------------</span><br><span class="line">#自定义插件目录</span><br><span class="line">MEHOU &#x3D; D:\Users\luomit\Documents\houdini18.0\plug-in</span><br><span class="line"></span><br><span class="line">MOPS &#x3D; $MEHOU&#x2F;MOPS-master</span><br><span class="line">DM &#x3D; $MEHOU&#x2F;DM-v1.5.25</span><br><span class="line">HDRI &#x3D; $MEHOU&#x2F;Hdri-Link-for-Houdini-master</span><br><span class="line">OPX &#x3D; $MEHOU&#x2F;optix</span><br><span class="line"></span><br><span class="line">ARNOLD &#x3D; C:\arnold\htoa\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;</span><br><span class="line">GAMETOOL &#x3D; $MEHOU&#x2F;SideFX_GameDevToolset_Houdini17.5_1.232</span><br><span class="line">EDITOR &#x3D; &quot;C:\Users\luomit\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;</span><br><span class="line"></span><br><span class="line">#PDG_IMAGEMAGICK &#x3D; &quot;C:\luomitPC\ImageMagick-7.0.9-Q16\magick.exe&quot;</span><br><span class="line">#PDG_FFMPEG &#x3D; &quot;C:\Program Files\ffmpeg-20200227-9b22254-win64-static\bin\ffmpeg.exe&quot;</span><br><span class="line">---------------- &amp;&amp; Plug-ni PATH &amp;&amp; -------------------</span><br><span class="line"></span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;$HOUDINI_PATH;$GAMETOOL;$ARNOLD;$REDSHIFT;$MOPS;&amp;&quot;</span><br><span class="line">PATH &#x3D; &quot;$PATH;$EDITOR;$GAMETOOL&#x2F;bin;$ARNOLD&#x2F;scripts&#x2F;bin;$REDSHIFTPATH&quot;</span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line"></span><br><span class="line">HOUDINI_BUFFERDSAVE&#x3D;1</span><br><span class="line">HOUDINI_UISCALE&#x3D;120</span><br><span class="line">HOUDINI_EXTERNAL_HELP_BROWSER&#x3D;1</span><br><span class="line">HOUDINI_USE_HFS_PYTHON&#x3D;1</span><br><span class="line">HOUDINI_DOS_ERROR&#x3D;2</span><br></pre></td></tr></table></figure>
-
-<h2 id="houdini文档的配置-Linux"><a href="#houdini文档的配置-Linux" class="headerlink" title="houdini文档的配置(Linux)"></a>houdini文档的配置(Linux)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># ---------------- &amp;&amp; Plug-ni PATH &amp;&amp; -------------------</span><br><span class="line">#自定义插件目录</span><br><span class="line">MEHOU &#x3D; D:\Users\luomit\Documents\houdini18.0\plug-in</span><br><span class="line"></span><br><span class="line">MOPS &#x3D; $MEHOU&#x2F;MOPS-master</span><br><span class="line">DM &#x3D; $MEHOU&#x2F;DM-v1.5.25</span><br><span class="line">HDRI &#x3D; $MEHOU&#x2F;Hdri-Link-for-Houdini-master</span><br><span class="line">OPX &#x3D; $MEHOU&#x2F;optix</span><br><span class="line"></span><br><span class="line">ARNOLD &#x3D; C:\arnold\htoa\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;\htoa-5.1.0_r9289183_houdini-$&#123;HOUDINI_VERSION&#125;</span><br><span class="line"></span><br><span class="line">GAMETOOL &#x3D; $MEHOU&#x2F;SideFX_GameDevToolset_Houdini17.5_1.232</span><br><span class="line"></span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;$HOUDINI_PATH:$GAMETOOL:$ARNOLD:$REDSHIFT:$MOPS:&amp;&quot;</span><br><span class="line">PATH &#x3D; &quot;$PATH:$EDITOR:$GAMETOOL&#x2F;bin:$ARNOLD&#x2F;scripts&#x2F;bin:$REDSHIFTPATH&quot;</span><br><span class="line"># --------------------- &amp;&amp; PATH &amp;&amp; -----------------------</span><br><span class="line"></span><br><span class="line">HOUDINI_BUFFERDSAVE&#x3D;1</span><br><span class="line">HOUDINI_UISCALE&#x3D;120</span><br><span class="line">HOUDINI_EXTERNAL_HELP_BROWSER&#x3D;1</span><br><span class="line">HOUDINI_USE_HFS_PYTHON&#x3D;1</span><br><span class="line">HOUDINI_DOS_ERROR&#x3D;2</span><br></pre></td></tr></table></figure>
-<h2 id="常用插件的配置"><a href="#常用插件的配置" class="headerlink" title="常用插件的配置"></a>常用插件的配置</h2><p><code>Arnold</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PATH &#x3D; &quot;Arnold目录&#x2F;scripts&#x2F;bin;$PATH&quot;</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;Arnold目录;&amp;</span><br></pre></td></tr></table></figure>
-<p><code>Redshift</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HOUDINI_DSO_ERROR &#x3D; 2</span><br><span class="line">PATH &#x3D; &quot;C:&#x2F;ProgramData&#x2F;Redshift&#x2F;bin;$PATH&quot;</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;C:&#x2F;ProgramData&#x2F;Redshift&#x2F;Plugins&#x2F;Houdini&#x2F;16.5.268;&amp;&quot;</span><br></pre></td></tr></table></figure>
-<p><code>Deadline</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HOUDINI_PATH &#x3D; &quot;$HOUDINI_PATH;C:&#x2F;Users&#x2F;Administrator&#x2F;AppData&#x2F;Local&#x2F;Thinkbox&#x2F;Deadline10&#x2F;submitters&#x2F;HoudiniSubmitter;&amp;&quot;</span><br><span class="line">HOUDINI_MENU_PATH &#x3D; &quot;$HOUDINI_MENU_PATH;C:&#x2F;Users&#x2F;Administrator&#x2F;AppData&#x2F;Local&#x2F;Thinkbox&#x2F;Deadline10&#x2F;submitters&#x2F;HoudiniSubmitter;&amp;&quot;</span><br></pre></td></tr></table></figure>
-<p><code>Qlib</code><br>下载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/qLab/qLib.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">QLIB &#x3D; &quot;$MEHOU\qLib-master\&quot;</span><br><span class="line">QOTL&#x3D; &quot;$QLIB&#x2F;otls&quot;</span><br><span class="line">HOUDINI_OTLSCAN_PATH &#x3D; &quot;$QOTL&#x2F;base;$QOTL&#x2F;future;$QOTL&#x2F;experimental;$HOUDINI_OTLSCAN_PATH;&amp;&quot;</span><br><span class="line">HOUDINI_PATH &#x3D; &quot;$QLIB;&amp;&quot;</span><br></pre></td></tr></table></figure>
-<p><code>GameDevelopment</code><br>下载</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/sideeffects/GameDevelopmentToolset.git</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HOUDINI_PATH &#x3D; C:\Users\Luiz\Documents\GameDevelopmentToolset;&amp;</span><br><span class="line">PATH &#x3D; C:\Users\Luiz\Documents\GameDevelopmentToolset\bin;$PATH</span><br></pre></td></tr></table></figure>
-
-<h2 id="关于h18复制粘贴报错"><a href="#关于h18复制粘贴报错" class="headerlink" title="关于h18复制粘贴报错"></a>关于h18复制粘贴报错</h2><p>在某群有群友上传这里做个备份，需要的朋友自取</br><br><a href="https://luomit.lanzous.com/ic5g78d">文件下载</a><br>将两个dll复制到安装目录下替换即可</p>
-<p>未完…</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini湖边小屋</title>
-    <url>/2021/05/10/%E7%AD%86%E8%A8%98/houdini/Houdini%E6%B9%96%E8%BE%B9%E5%B0%8F%E5%B1%8B/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Houdini 粒子渲染拖尾 I</title>
-    <url>/2019/09/01/%E7%AD%86%E8%A8%98/houdini/Houdini%E7%B2%92%E5%AD%90%E6%8B%96%E5%B0%BE%20%E2%85%A0/</url>
-    <content><![CDATA[<h1 id="实现路径运动"><a href="#实现路径运动" class="headerlink" title="实现路径运动"></a>实现路径运动</h1><h2 id="节点网络"><a href="#节点网络" class="headerlink" title="节点网络"></a>节点网络</h2><p><img src="https://img-blog.csdnimg.cn/20190831021017911.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="节点概述"><a href="#节点概述" class="headerlink" title="节点概述"></a>节点概述</h2><ul>
-<li>创建一个不规则的发射源用于发射粒子，不规则的形状可以使粒子在发射开始时便获得一个随机的初始位置；</li>
-<li>以粒子发射源位置为起点绘制创建一条曲线(曲线间点和点的位置均分布，不宜过于靠近，否则力会相互间影响)，计算线的切线向量，并转为速度场；</li>
-<li>在粒子系统中使用popadvectbyvolume将速度场引入**(重点：advection type 平流类型使用Update velocity)**，Velocity Blend 速度混合为1，让引入的速度场完全影响粒子；</li>
-<li>通过控制速度场来获得粒子在跟随路径运动过程中飘散出来的效果；</li>
-<li><strong>（重点：粒子在结束模拟之前不允许有粒子死亡，也就是粒子的寿命需要给一个足够高的值来确保在结束模拟时没有粒子死亡）</strong></li>
-</ul>
-<h1 id="拖尾的渲染要点和设置"><a href="#拖尾的渲染要点和设置" class="headerlink" title="拖尾的渲染要点和设置"></a>拖尾的渲染要点和设置</h1><h2 id="要实现粒子在摄像机空间位移路径模糊的需要注意以下几点："><a href="#要实现粒子在摄像机空间位移路径模糊的需要注意以下几点：" class="headerlink" title="要实现粒子在摄像机空间位移路径模糊的需要注意以下几点："></a>要实现粒子在摄像机空间位移路径模糊的需要注意以下几点：</h2><ol>
-<li><font color=red><strong>粒子不能是缓存在磁盘上的粒子，不需使用pop解算完成，暂时缓存在内存上的粒子</strong>；</font></li>
-<li><font color=red><strong>需要创建一套粒子数量恒定不变的粒子系统来替换模拟好的动态</strong>；</font></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(i@id &#x3D; point(1,&quot;id&quot;,i@id))</span><br><span class="line">&#123;</span><br><span class="line">    v@P &#x3D; point(1,&quot;P&quot;,i@id);</span><br><span class="line">&#125;</span><br><span class="line">f@age &#x3D; point(1,&quot;age&quot;,i@id);</span><br><span class="line">f@life &#x3D; point(1,&quot;life&quot;,i@id);</span><br><span class="line">#根据id来匹配位置、生命&#x2F;寿命、年龄等需要的属性</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><font color=red><strong>在节点属性上<font color=blue>不要</font>启用几何体运动动属性</strong></font></li>
-<li>提高渲染相机上的ShutterTime值</li>
-<li>Mantra渲染器使用PBR渲染引擎，然后提高XformTimeSamples、GeoTimeSamples来得到模糊效果</li>
-<li>在Mantra渲染器的Sampling里，需要将PixelSamples提高到20左右才可以得到较清晰的运动模糊</li>
-</ol>
-<h2 id="关于替换粒子"><a href="#关于替换粒子" class="headerlink" title="关于替换粒子"></a>关于替换粒子</h2><p>未来避免麻烦，我将教程中的步骤简化制作了一个HDA，方便日后制作时调用</p>
-<p><img src="https://img-blog.csdnimg.cn/2019090112351688.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x1b21pdA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vector rest &#x3D; point(2,&quot;P&quot;,0);</span><br><span class="line">int pt &#x3D; addpoint(0,rest);</span><br><span class="line">setpointattrib(0,&quot;id&quot;,pt,0,&quot;set&quot;);</span><br><span class="line">setpointattrib(0,&quot;rest&quot;,pt,rest,&quot;set&quot;);</span><br><span class="line"></span><br><span class="line">int off &#x3D; chi(&quot;on_off&quot;);</span><br><span class="line">int num &#x3D; detail(1,&quot;nextid&quot;,0);</span><br><span class="line">int ptnum &#x3D; num*off  + chi(&quot;point_constant&quot;)*off + num*(chf(&quot;point_multi&quot;)*(1-off));</span><br><span class="line">&#x2F;&#x2F;printf(&quot;%d\n&quot;,ptnum);</span><br><span class="line">&#x2F;&#x2F;setpointattrib(0,&quot;ptnum&quot;,pt,ptnum,&quot;set&quot;);</span><br><span class="line"></span><br><span class="line">for (int i &#x3D; 0; i &lt; ptnum-1; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;* code *&#x2F;</span><br><span class="line">	int a &#x3D; addpoint(0,rest);</span><br><span class="line">	setpointattrib(0,&quot;id&quot;,a,i+1,&quot;set&quot;);</span><br><span class="line">	setpointattrib(0,&quot;rest&quot;,a,rest,&quot;set&quot;);</span><br><span class="line">&#125;</span><br><span class="line">#创建恒定粒子数的粒子系统</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(i@id &#x3D; point(1,&quot;id&quot;,i@ptnum))</span><br><span class="line">&#123;</span><br><span class="line">    	v@P &#x3D; point(1,&quot;P&quot;,i@id);</span><br><span class="line">&#125;</span><br><span class="line">f@age &#x3D; point(1,&quot;age&quot;,i@id);</span><br><span class="line">f@life &#x3D; point(1,&quot;life&quot;,i@id);</span><br><span class="line"></span><br><span class="line">if(@P &#x3D;&#x3D; @rest)</span><br><span class="line">&#123;</span><br><span class="line">   	f@Alpha &#x3D; 0;</span><br><span class="line">&#125;</span><br><span class="line">	#根据id传递需要保留的粒子属性</span><br></pre></td></tr></table></figure>
-
-<h2 id="关于粒子死亡"><a href="#关于粒子死亡" class="headerlink" title="关于粒子死亡"></a>关于粒子死亡</h2><p>因为粒子的整个过程需要保持粒子量的恒定不变，所以粒子会一直存在，需要通过控制粒子的Alpha的使粒子消失这就使用到age和life这两个属性了。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">f@Alpha &#x3D; 1.0;</span><br><span class="line"></span><br><span class="line">f@pscale &#x3D; fit01(rand(@id),chf(&quot;min&quot;),chf(&quot;max&quot;));</span><br><span class="line"></span><br><span class="line">v@Cd &#x3D; chramp(&quot;Cd&quot;,@age&#x2F;(@life+rand(@id)*5));</span><br><span class="line"></span><br><span class="line">f@Alpha &#x3D; chramp(&quot;Alpha&quot;,@age&#x2F;@life);</span><br><span class="line">#设置Alpha粒子的透明</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这种方式可以快速得到很棒的粒子曲线模糊的效果，但是也存在很大局限性；比如我感觉最麻烦的就是不能读取磁盘粒子来实现，这在模拟大量粒子时就需要机器拥有足够的内存来存储这些粒子，否则无法实现；如果需要对存盘粒子进行缓存建议阅读<a href="https://www.dxxnvfx.com/article-14938.html">大象小牛</a>的相关文章，他有讲到这种方式的实现；总之第一种方式出来的效果更加完美，第二种则更加实用；<br><font color=red> 以上均为个人学习理解的观点笔记，仅供参考；不足之处还望评论指出！！</font></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>trail</tag>
-        <tag>particle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenColorIO</title>
-    <url>/2020/03/28/%E7%AD%86%E8%A8%98/houdini/OpenColorIO-Configuration/</url>
-    <content><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p><a href="https://www.bilibili.com/video/BV1Yb411E7fY">视频教程</a><br><a href="https://github.com/imageworks/OpenColorIO-Configs">下载</a></p>
-<h1 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h1><h2 id="Houdini"><a href="#Houdini" class="headerlink" title="Houdini"></a>Houdini</h2><p>在文档中添加config.ocio的路径</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">OCIO &#x3D; &quot;D:\User\luomit\Documets\OpenColorIO-Configs-master\aces_1.0.3\config.ocio&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="Maya"><a href="#Maya" class="headerlink" title="Maya"></a>Maya</h2><p>在</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Windows &gt; Setting&#x2F;Preferences &gt; Preferences &gt; ColorManagement &gt; OCIO Config Path</span><br></pre></td></tr></table></figure>
-<p>指定config.ocio的路径并启用Use OCIO Configuration</p>
-<h2 id="Nuke"><a href="#Nuke" class="headerlink" title="Nuke"></a>Nuke</h2><ul>
-<li><p>临时设置<br>S键调出工程设置，在Color栏设置Color Management为OCIO<br>就可以在项目中使用opencolorio</p>
-</li>
-<li><p>永久设置<br>Edit &gt; Preferences &gt; Project Defaults &gt; Color Managment<br>选择aces色彩空间点击OK保存即可</p>
-</li>
-</ul>
-<h1 id="OpenColor基本工作流程"><a href="#OpenColor基本工作流程" class="headerlink" title="OpenColor基本工作流程"></a>OpenColor基本工作流程</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">s&#x3D;&gt;start: 基础素材色彩空间处理</span><br><span class="line">o&#x3D;&gt;output: 输出到CG工作流程中</span><br><span class="line">i&#x3D;&gt;input: 导入CG渲染图像合成处理</span><br><span class="line">c&#x3D;&gt;convert: 转换为SRGB或其他适用的色彩空间格式</span><br><span class="line">e&#x3D;&gt;end: 转换为SRGB或其他适用的色彩空间格式</span><br><span class="line"></span><br><span class="line">s-&gt;o-&gt;i-&gt;c-&gt;e</span><br></pre></td></tr></table></figure>
-
-<h2 id="Nuke中的基础节点流"><a href="#Nuke中的基础节点流" class="headerlink" title="Nuke中的基础节点流"></a>Nuke中的基础节点流</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set cut_paste_input [stack 0]</span><br><span class="line">version 11.3 v5</span><br><span class="line">Read &#123;</span><br><span class="line"> inputs 0</span><br><span class="line"> file_type png</span><br><span class="line"> file F:&#x2F;Houdini&#x2F;Tree_Cloud&#x2F;model&#x2F;tree&#x2F;palm&#x2F;Sample_Palm&#x2F;Bark&#x2F;Palmetto_bark_2.png</span><br><span class="line"> format &quot;1024 4096 0 0 1024 4096 1 &quot;</span><br><span class="line"> origset true</span><br><span class="line"> name Read7</span><br><span class="line"> label 渲染素材</span><br><span class="line"> selected true</span><br><span class="line"> xpos 586</span><br><span class="line"> ypos 325</span><br><span class="line">&#125;</span><br><span class="line">OCIOColorSpace &#123;</span><br><span class="line"> in_colorspace &quot;ACES - ACEScg&quot;</span><br><span class="line"> out_colorspace &quot;Utility - sRGB - Texture&quot;</span><br><span class="line"> name OCIOColorSpace3</span><br><span class="line"> selected true</span><br><span class="line"> xpos 748</span><br><span class="line"> ypos 361</span><br><span class="line">&#125;</span><br><span class="line">Write &#123;</span><br><span class="line"> file_type png</span><br><span class="line"> checkHashOnRead false</span><br><span class="line"> name Write2</span><br><span class="line"> label 渲染输出</span><br><span class="line"> selected true</span><br><span class="line"> xpos 906</span><br><span class="line"> ypos 355</span><br><span class="line">&#125;</span><br><span class="line">Read &#123;</span><br><span class="line"> inputs 0</span><br><span class="line"> file_type png</span><br><span class="line"> file F:&#x2F;Houdini&#x2F;Tree_Cloud&#x2F;model&#x2F;tree&#x2F;palm&#x2F;Sample_Palm&#x2F;Bark&#x2F;Palmetto_bark_2.png</span><br><span class="line"> format &quot;1024 4096 0 0 1024 4096 1 &quot;</span><br><span class="line"> origset true</span><br><span class="line"> colorspace sRGB</span><br><span class="line"> name Read2</span><br><span class="line"> label 普通纹理</span><br><span class="line"> selected true</span><br><span class="line"> xpos 65</span><br><span class="line"> ypos 312</span><br><span class="line">&#125;</span><br><span class="line">OCIOColorSpace &#123;</span><br><span class="line"> in_colorspace &quot;Utility - sRGB - Texture&quot;</span><br><span class="line"> out_colorspace &quot;ACES - ACEScg&quot;</span><br><span class="line"> name OCIOColorSpace2</span><br><span class="line"> selected true</span><br><span class="line"> xpos 222</span><br><span class="line"> ypos 355</span><br><span class="line">&#125;</span><br><span class="line">Write &#123;</span><br><span class="line"> file_type exr</span><br><span class="line"> first_part none</span><br><span class="line"> name Write1</span><br><span class="line"> label 输出纹理到制作</span><br><span class="line"> selected true</span><br><span class="line"> xpos 384</span><br><span class="line"> ypos 349</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="Houdini-amp-Maya"><a href="#Houdini-amp-Maya" class="headerlink" title="Houdini&amp;Maya"></a>Houdini&amp;Maya</h2><p>从Nuke中导入处理好的原始素材；纹理贴图、HDRI等进行CG创作输出ACES色彩空间的图像文件；</p>
-<p><a href="https://blog.csdn.net/qq_31001889/article/details/86625317">Hexo流程图</a><br>hexo使用流程图需要安装插件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-filter-flowchart</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>houdini</tag>
-        <tag>opencolorio</tag>
-        <tag>color</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Smoke Pump</title>
-    <url>/2020/10/11/%E7%AD%86%E8%A8%98/houdini/Smoke-Pump/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>PythonPJManegement</title>
-    <url>/2020/03/17/%E7%AD%86%E8%A8%98/houdini/PythonPJMane/</url>
-    <content><![CDATA[<h2 id="创建基础框架"><a href="#创建基础框架" class="headerlink" title="创建基础框架"></a>创建基础框架</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> hutil.Qt <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">proj = hou.getenv(<span class="string">&#x27;JOB&#x27;</span>)+<span class="string">&#x27;/&#x27;</span></span><br><span class="line"><span class="comment">#使用hou.getenv获取当前工程的环境变量属性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">openScene</span>(<span class="params">item</span>):</span></span><br><span class="line">    hipFile = proj + item.data()</span><br><span class="line">    hou.hipFile.load(hipFile)</span><br><span class="line">    <span class="comment">#print hipFile</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">onCreateInterface</span>():</span></span><br><span class="line">    widget = QtWidgets.QLabel(proj)</span><br><span class="line">    listwidget = QtWidgets.QListWidget()</span><br><span class="line">    <span class="comment">#print &#x27;\n&#x27; &quot;ProjectPath(&quot; + proj +&#x27;)&#x27;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(proj):</span><br><span class="line">        <span class="keyword">if</span> file.endswith(<span class="string">&quot;.hip&quot;</span>):</span><br><span class="line">            listwidget.addItem(file)</span><br><span class="line">            </span><br><span class="line">    <span class="comment">#将按钮链接到函数上执行打开文件的指令</span></span><br><span class="line">    listwidget.doubleClicked.connect(openScene)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> listwidget</span><br></pre></td></tr></table></figure>
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>project</tag>
-        <tag>manage</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Houdini python开发</title>
-    <url>/2020/03/30/%E7%AD%86%E8%A8%98/houdini/houdini%20python%E5%BC%80%E5%8F%91/</url>
-    <content><![CDATA[<h4 id="节点创建"><a href="#节点创建" class="headerlink" title="节点创建"></a>节点创建</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.pwd().createNode(<span class="string">&quot;sphere&quot;</span>,name=<span class="string">&quot;球体&quot;</span>)  </span><br><span class="line"><span class="comment"># hou.pwd()表示当前窗口所在工作路径 creatNode(节点原名，name=“设置新的名字”)    </span></span><br><span class="line">hou.cd(<span class="string">&quot;/obj&quot;</span>) </span><br><span class="line"><span class="comment"># hou.cd() 移动当前窗口工作路径到指定的新路径上</span></span><br></pre></td></tr></table></figure>
-<h4 id="节点删除"><a href="#节点删除" class="headerlink" title="节点删除"></a>节点删除</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">node = hou.node(<span class="string">&quot;/obj/man/box1&quot;</span>)</span><br><span class="line">node.destroy()</span><br><span class="line"><span class="comment"># 先指定node为一个节点，再使用.destroy()来删除这个节点</span></span><br><span class="line">hou.node(<span class="string">&quot;cname&quot;</span>).destroy()</span><br><span class="line"><span class="comment"># 可以直接指定，直接删除</span></span><br></pre></td></tr></table></figure>
-<h4 id="节点连线"><a href="#节点连线" class="headerlink" title="节点连线"></a>节点连线</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setFirstInput(hou.node(<span class="string">&quot;sphere1&quot;</span>))</span><br><span class="line">hou.node(<span class="string">&quot;merge1&quot;</span>).setNextInput(hou.node(<span class="string">&quot;box1&quot;</span>))</span><br><span class="line"><span class="comment"># 假如我在geo1节点内创建了merge1、box1、sphere1三个节点，想要连接这三个节点</span></span><br><span class="line"><span class="comment"># 首先确认当前窗口所在路径hou.pwd(),hou.cd(&quot;/geo1&quot;) 然后移动到geo1内</span></span><br><span class="line"><span class="comment"># 再使用上面两行代码进行依次连接节点</span></span><br><span class="line"><span class="comment"># setFirstInput设置地一个输入端接入连线，setNextInput设置下一个输入端连线</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">有一样隐隐约约</span><br></pre></td></tr></table></figure>
-<h4 id="断开节点"><a href="#断开节点" class="headerlink" title="断开节点"></a>断开节点</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mer</span> = hou.node(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="attribute">mer</span>.setInput(<span class="number">0</span>,None)</span><br><span class="line"><span class="comment"># 设置merge1节点第一号输入端为None(断开)</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="父与子"><a href="#父与子" class="headerlink" title="父与子"></a>父与子</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hou.parent(<span class="string">&quot;merge1&quot;</span>)</span><br><span class="line"><span class="comment"># 返回当前节点merge1的父级节点</span></span><br><span class="line">hou.node(<span class="string">&quot;.&quot;</span>).children()</span><br><span class="line"><span class="comment"># 返回当前节点下的所有节点</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>houdini</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vex随机切割四边面</title>
-    <url>/2021/05/20/%E7%AD%86%E8%A8%98/houdini/vex%E9%9A%8F%E6%9C%BA%E5%88%87%E5%89%B2%E5%9B%9B%E8%BE%B9%E9%9D%A2/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>vex</tag>
-        <tag>四边面</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用VEX</title>
-    <url>/2019/10/23/%E7%AD%86%E8%A8%98/houdini/%E5%B8%B8%E7%94%A8VEX/</url>
-    <content><![CDATA[<h3 id="findattribval-找同类"><a href="#findattribval-找同类" class="headerlink" title="findattribval 找同类"></a>findattribval 找同类</h3><p><a href="http://127.0.0.1:48626/vex/functions/findattribval">findattribval</a><br>用来查找指定层级(vertices、point、prim)上属性是否相同，相同则返回0，否则返回-1；然后再调取相同时的对象的某些属性来进行其他的操作。<br>示例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> result = findattribval(<span class="number">1</span>,<span class="string">&quot;point&quot;</span>,<span class="string">&quot;name&quot;</span>,s@name,<span class="number">0</span>);</span><br><span class="line">v@v = point(<span class="number">1</span>,<span class="string">&quot;v&quot;</span>,result);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如在刚体中查找对比0和1两个输入端刚体的那么属性，如果左右相同，则将1号对象上相同name的元素的某个属性赋予到0号对象对应元素上；</p>
-</blockquote>
-<h3 id="addvariablename-自定义全局变量"><a href="#addvariablename-自定义全局变量" class="headerlink" title="addvariablename 自定义全局变量"></a>addvariablename 自定义全局变量</h3><p><a href="http://127.0.0.1:48626/vex/functions/addvariablename">addvariablename</a><br>在属性调用过程中，有时候使用全局变量的方式会非常的方便；这时候我们可以使用这个方法将自定义属性定义为一个houdini的全局变量来调用；</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">float</span> a = @numpt%<span class="number">2</span>；</span><br><span class="line">f@b = a；</span><br><span class="line">addvariablename(<span class="number">0</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;B&quot;</span>)；</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>addvariablename(数据端口，属性，全局变量名)；</p>
-</blockquote>
-<p>未完…</p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>vex</tag>
       </tags>
   </entry>
   <entry>
@@ -1590,34 +1590,6 @@ PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用�
       </tags>
   </entry>
   <entry>
-    <title>Unreal Engine 地编技巧合集</title>
-    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E5%9C%B0%E7%BC%96%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<h3 id="Unreal-Engine-使用距离场解决地表贴图重复问题"><a href="#Unreal-Engine-使用距离场解决地表贴图重复问题" class="headerlink" title="Unreal Engine 使用距离场解决地表贴图重复问题"></a>Unreal Engine 使用距离场解决地表贴图重复问题</h3><ol>
-<li>PixelDepth在UE4中关于深度Depth的函数，PixelDepth像素景深既屏幕像素场景中的深度信息，就是该像素到摄像机的距离。</li>
-<li>在游戏场景的制作中，常常需要使用到贴图的高重复度来使得贴图在场景表上有足够的细节；但是由于游戏场景是比较庞大的一个空间，在使用高重复的图时，就无法满足近处与远处的重复值，给得过低无法表现近处贴图材质的节，过高会使得远处有过于明显的贴出重复。</li>
-<li>在制作材质时，可以使用PixelDepth获得场景到摄像机的距离，然后使用ler函数将混合两种重复度的贴图，来达到细节表现上贴图重复的平衡。</li>
-</ol>
-<p>[练习封装的材质函数]</p>
-<p><img src="%5B/Image-assets%5D(https://cdn.jsdelivr.net/gh/luomit/cdn-assets@1.3/image/2021.5.12_DitherThresholdAA.jpg"></p>
-<h3 id="Unreal-Engine高效无缝材质衔接"><a href="#Unreal-Engine高效无缝材质衔接" class="headerlink" title="Unreal Engine高效无缝材质衔接"></a>Unreal Engine高效无缝材质衔接</h3><p>场景中模型与模型的交界融合</p>
-<ol>
-<li><p>在材质主节点下有一个Pixel Depth Offset像素深度便宜，创建一个DitherThresholdAA阈值抖动，创建一个常量来与DitherThresholdAA相乘，就可以用这个常量来控制交融的强度范围。</p>
-</li>
-<li></li>
-</ol>
-<h3 id="Unreal-Engine-RVT虚拟纹理使用"><a href="#Unreal-Engine-RVT虚拟纹理使用" class="headerlink" title="Unreal Engine RVT虚拟纹理使用"></a>Unreal Engine RVT虚拟纹理使用</h3><p><a href="https://www.bilibili.com/video/BV1ni4y1A74g">地表重复纹理</a><br><a href="https://www.bilibili.com/video/BV1EA411K79z">物体穿插无缝材质</a><br><a href="https://www.bilibili.com/video/BV1Sf4y1D7KU/?spm_id_from=333.788.recommend_more_video.1">RVT虚拟纹理</a></p>
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>ue4</tag>
-        <tag>shader</tag>
-        <tag>地编</tag>
-        <tag>材质</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ShellScript III</title>
     <url>/2020/10/07/%E7%AD%86%E8%A8%98/shell/ShellScript-III/</url>
     <content><![CDATA[<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>shell函数的本质是一段可以反复使用的脚本代码，这段代码被提前编写好了，放在指定的位置，当用户需要使用时直接调用即可</p>
@@ -1664,6 +1636,57 @@ PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用�
       <tags>
         <tag>linux</tag>
         <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unreal Engine 地编技巧合集</title>
+    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E5%9C%B0%E7%BC%96%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h3 id="Unreal-Engine-使用距离场解决地表贴图重复问题"><a href="#Unreal-Engine-使用距离场解决地表贴图重复问题" class="headerlink" title="Unreal Engine 使用距离场解决地表贴图重复问题"></a>Unreal Engine 使用距离场解决地表贴图重复问题</h3><ol>
+<li>PixelDepth在UE4中关于深度Depth的函数，PixelDepth像素景深既屏幕像素场景中的深度信息，就是该像素到摄像机的距离。</li>
+<li>在游戏场景的制作中，常常需要使用到贴图的高重复度来使得贴图在场景表上有足够的细节；但是由于游戏场景是比较庞大的一个空间，在使用高重复的图时，就无法满足近处与远处的重复值，给得过低无法表现近处贴图材质的节，过高会使得远处有过于明显的贴出重复。</li>
+<li>在制作材质时，可以使用PixelDepth获得场景到摄像机的距离，然后使用ler函数将混合两种重复度的贴图，来达到细节表现上贴图重复的平衡。</li>
+</ol>
+<p>[练习封装的材质函数]</p>
+<p><img src="%5B/Image-assets%5D(https://cdn.jsdelivr.net/gh/luomit/cdn-assets@1.3/image/2021.5.12_DitherThresholdAA.jpg"></p>
+<h3 id="Unreal-Engine高效无缝材质衔接"><a href="#Unreal-Engine高效无缝材质衔接" class="headerlink" title="Unreal Engine高效无缝材质衔接"></a>Unreal Engine高效无缝材质衔接</h3><p>场景中模型与模型的交界融合</p>
+<ol>
+<li><p>在材质主节点下有一个Pixel Depth Offset像素深度便宜，创建一个DitherThresholdAA阈值抖动，创建一个常量来与DitherThresholdAA相乘，就可以用这个常量来控制交融的强度范围。</p>
+</li>
+<li></li>
+</ol>
+<h3 id="Unreal-Engine-RVT虚拟纹理使用"><a href="#Unreal-Engine-RVT虚拟纹理使用" class="headerlink" title="Unreal Engine RVT虚拟纹理使用"></a>Unreal Engine RVT虚拟纹理使用</h3><p><a href="https://www.bilibili.com/video/BV1ni4y1A74g">地表重复纹理</a><br><a href="https://www.bilibili.com/video/BV1EA411K79z">物体穿插无缝材质</a><br><a href="https://www.bilibili.com/video/BV1Sf4y1D7KU/?spm_id_from=333.788.recommend_more_video.1">RVT虚拟纹理</a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>ue4</tag>
+        <tag>shader</tag>
+        <tag>地编</tag>
+        <tag>材质</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unreal Engine 特效小技巧合集</title>
+    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E7%89%B9%E6%95%88%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h3 id="透明材质的折射"><a href="#透明材质的折射" class="headerlink" title="透明材质的折射"></a>透明材质的折射</h3><ol>
+<li>当要实现折射效果的对象是透明材质对象时，需要取消该对象的的材质属性下的Translucency下的 Render After DOF 选项。</li>
+<li>当材质取消Render After DOF 后，镜头远近将影响透明对象的显示，在材质属性Refraction下切换Mode；Index Of Refraction可以等到真实漂亮的折射，Pixel Normal Offset可以纠正相机远近导致材质效果变化较大的问题，但是无法获得折射效果(可能需要配合其他参数实现)。</li>
+</ol>
+<h3 id="MeshDeta-amp-GPU粒子类型"><a href="#MeshDeta-amp-GPU粒子类型" class="headerlink" title="MeshDeta &amp; GPU粒子类型"></a>MeshDeta &amp; GPU粒子类型</h3><ol>
+<li>使用MeshDeta粒子发射类型时，需要将Mesh下的OverrideMaterial勾选，这样才能给发射的Mesh赋予材质。</li>
+<li>当只需要发射一个粒子时，出来需要修改发射率还需要讲Duration的EmitterLoops设置为1，让粒子发射停止循环。</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>ue4</tag>
+        <tag>shader</tag>
+        <tag>材质</tag>
+        <tag>vfx</tag>
+        <tag>特效</tag>
       </tags>
   </entry>
   <entry>
@@ -1718,29 +1741,6 @@ PyQt5有独特的signal&amp;slot(信号槽)机制来处理事件，信号槽用�
         <tag>cache</tag>
         <tag>迁移</tag>
         <tag>缓存</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Unreal Engine 特效小技巧合集</title>
-    <url>/2021/05/11/%E7%AD%86%E8%A8%98/ue4/Unreal-Engine-%E7%89%B9%E6%95%88%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<h3 id="透明材质的折射"><a href="#透明材质的折射" class="headerlink" title="透明材质的折射"></a>透明材质的折射</h3><ol>
-<li>当要实现折射效果的对象是透明材质对象时，需要取消该对象的的材质属性下的Translucency下的 Render After DOF 选项。</li>
-<li>当材质取消Render After DOF 后，镜头远近将影响透明对象的显示，在材质属性Refraction下切换Mode；Index Of Refraction可以等到真实漂亮的折射，Pixel Normal Offset可以纠正相机远近导致材质效果变化较大的问题，但是无法获得折射效果(可能需要配合其他参数实现)。</li>
-</ol>
-<h3 id="MeshDeta-amp-GPU粒子类型"><a href="#MeshDeta-amp-GPU粒子类型" class="headerlink" title="MeshDeta &amp; GPU粒子类型"></a>MeshDeta &amp; GPU粒子类型</h3><ol>
-<li>使用MeshDeta粒子发射类型时，需要将Mesh下的OverrideMaterial勾选，这样才能给发射的Mesh赋予材质。</li>
-<li>当只需要发射一个粒子时，出来需要修改发射率还需要讲Duration的EmitterLoops设置为1，让粒子发射停止循环。</li>
-</ol>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>ue4</tag>
-        <tag>shader</tag>
-        <tag>材质</tag>
-        <tag>vfx</tag>
-        <tag>特效</tag>
       </tags>
   </entry>
   <entry>
